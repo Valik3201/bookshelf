@@ -1,4 +1,4 @@
-# Projekt Bookshelf
+# Bookshelf
 
 Poniżej znajdziesz instrukcje dotyczące uruchamiania projektu oraz korzystania z niego.
 
@@ -20,7 +20,7 @@ Poniżej znajdziesz instrukcje dotyczące uruchamiania projektu oraz korzystania
     ```bash
     npm run dev
 
-##Praca z Systemem Kontroli Wersji
+## Praca z Systemem Kontroli Wersji
 
 1. Aktualizacja gałęzi lokalnej:
     ```bash
