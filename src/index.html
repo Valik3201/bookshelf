@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf</title>
+
+    <!-- Modern Normalize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+      integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
+      crossorigin="anonymous"
+    />
+
+    <!-- Podłączenie zwykłego CSS -->
+    <link rel="stylesheet" type="text/css" href="./style/css/style.css" />
+    <!-- Podłączenie SCSS -->
+    <link rel="stylesheet" type="text/css" href="./style/scss/main.css" />
+  </head>
+  <body>
+    <!-- Plik HTML zawierający sekcję nagłówka -->
+    <include src="./partials/home/home-header.html"></include>
+
+    <main>
+      <include src="./partials/home/home-categories.html"></include>
+      <include src="./partials/home/home-foundation-slider.html"></include>
+      <include src="./partials/home/home-category-books.html"></include>
+    </main>
+
+    <!-- Plik HTML zawierający kod dla modalnego okna z informacjami o książce -->
+    <include src="./partials/modals/book-popup.html"></include>
+
+    <!-- Skrypt -->
+    <script src="./js/index.js" type="module"></script>
+  </body>
+</html>
