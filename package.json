@@ -12,7 +12,8 @@
     "url": "git+https://github.com/Valik3201/bookshelf.git"
   },
   "keywords": [
-    "book"
+    "book",
+    "API"
   ],
   "author": "Valentyn Chernetskyi <valik3201@gmail.com>",
   "license": "ISC",
