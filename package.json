@@ -11,7 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/Valik3201/bookshelf.git"
   },
-  "keywords": [],
+  "keywords": [
+    "book"
+  ],
   "author": "Valentyn Chernetskyi <valik3201@gmail.com>",
   "license": "ISC",
   "bugs": {
