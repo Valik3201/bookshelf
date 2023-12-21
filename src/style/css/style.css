@@ -1,3 +1,4 @@
+/* swicher style*/
 .slider {
   border-radius: 18px;
   position: absolute;
@@ -40,11 +41,15 @@ input:checked + .slider:before {
   -ms-transform: translateX(16px);
   transform: translateX(16px);
 }
-.switch-div {
+/* swicher style end*/
+
+/*header style*/
+.switch-button-div {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 24px;
-  margin: 10px;
+  margin-right: 24px;
 }
 
 .header-items {
@@ -60,6 +65,7 @@ input:checked + .slider:before {
   display: flex;
   justify-content: space-between;
   gap: 76px;
+  margin-left: 24px;
 }
 .nav-list {
   list-style: none;
@@ -67,3 +73,21 @@ input:checked + .slider:before {
   justify-content: space-between;
   gap: 24px;
 }
+.home-link {
+  height: 34px;
+  width: 72px;
+  background-color: #eac645;
+  border-radius: 36px;
+}
+.sign-up-button {
+  width: 184px;
+  height: 45px;
+  border-radius: 36px;
+  background-color: #4f2ee8;
+  border-style: none;
+  font-weight: 500;
+  color: white;
+}
+.sign-up-text {
+}
+/*header style end*/
