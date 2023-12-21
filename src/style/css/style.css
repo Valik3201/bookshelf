@@ -74,11 +74,22 @@ input:checked + .slider:before {
   gap: 24px;
 }
 .home-link {
-  height: 34px;
-  width: 72px;
+  padding: 8 15.5 8 15.5;
   background-color: #eac645;
   border-radius: 36px;
+  font-weight: 700;
 }
+.home-link,
+.shopping-list-link {
+  text-decoration: none;
+  color: black;
+  line-height: 18px;
+  font-size: 14px;
+}
+.shopping-list-link {
+  font-weight: 500;
+}
+
 .sign-up-button {
   width: 184px;
   height: 45px;
@@ -88,6 +99,5 @@ input:checked + .slider:before {
   font-weight: 500;
   color: white;
 }
-.sign-up-text {
-}
+
 /*header style end*/
