@@ -45,6 +45,28 @@ input:checked + .slider:before {
 
 /*header style*/
 @media (max-width: 767px) {
+  body {
+    min-width: 375px;
+    max-width: 767px;
+  }
+  .nav-list,
+  .sign-up-button {
+    display: none;
+  }
+  .header-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    border: 1.5px solid #111111;
+    border-radius: 0px 0px 8px 8px;
+  }
+  .nav-item {
+    margin-left: 20px;
+  }
+  .switch-button-div {
+    margin-right: 20px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   body {
