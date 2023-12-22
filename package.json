@@ -1,7 +1,7 @@
 {
   "name": "bookshelf",
   "version": "1.0.0",
-  "description": "Poniżej znajdziesz instrukcje dotyczące uruchamiania projektu oraz korzystania z niego.",
+  "description": "Bookshelf",
   "homepage": "https://github.com/Valik3201/bookshelf",
   "scripts": {
     "dev": "parcel src/*.html",
@@ -28,6 +28,5 @@
   },
   "dependencies": {
     "axios": "^1.6.2"
-  },
-  "main": "index.js"
+  }
 }
