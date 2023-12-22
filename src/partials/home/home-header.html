@@ -1,11 +1,26 @@
 <header>
-  <div>Bookshelf</div>
-  <button type="button">HOME</button>
-  <button type="button">SHOPPING LIST</button>
-  <button type="button"></button>
-  <!--dark mode swicher-->
-  <button type="button">Sign up</button>
+  <div class="header-items">
+    <nav class="nav-item">
+      <p>Bookshelf</p>
+      <ul class="nav-list">
+        <li><a href="#" class="home-link">HOME</a></li>
+        <li>
+          <a href="/src/shopping-list.html" class="shopping-list-link">SHOPPING LIST</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!--dark mode swicher-->
+    <div class="switch-button-div">
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider"></span>
+      </label>
+      <button type="button" class="sign-up-button">Sign up</button>
+    </div>
+  </div>
 </header>
+
 <form name="signup-form" autocomplete="on" novalidate>
   <label>
     Name
