@@ -1,3 +1,40 @@
+/*Shopping styles */
+
+@media (max-width: 767px) {
+  .heading {
+    font-size: 48px;
+    color: #111;
+    letter-spacing: -1.92px;
+  }
+
+  .heading-span {
+    color: #4f2ee8;
+    font-size: 48px;
+    letter-spacing: -1.92px;
+  }
+
+  .books-img {
+    width: 265px;
+    height: 198px;
+    background: lightgray 50% / cover no-repeat;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heading {
+    font-size: 32px;
+  }
+
+  .heading-span {
+    font-size: 32px;
+  }
+
+  .books-img {
+    width: 322px;
+    height: 241px;
+  }
+}
+
 /* swicher style*/
 .slider {
   border-radius: 18px;
