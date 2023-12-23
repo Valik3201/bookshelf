@@ -1,7 +1,10 @@
-/*Shopping styles */
+/* Shopping styles */
 
 @media (max-width: 767px) {
   .heading {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 20px;
     font-size: 48px;
     color: #111;
     letter-spacing: -1.92px;
@@ -16,22 +19,104 @@
   .books-img {
     width: 265px;
     height: 198px;
-    background: lightgray 50% / cover no-repeat;
   }
+}
+
+.books-card-img {
+  width: 100px;
+  height: 142px;
+  float: left;
+  padding: 10px;
+  border-radius: 16px;
+}
+
+.book-card {
+  display: flex;
+  position: absolute;
+  height: 68px;
+  margin: 14px;
+  gap: 10px;
+  border-radius: 16px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  background: #fff;
+  width: 360px;
+  height: 150px;
+}
+
+.book-description {
+  display: block;
+}
+
+.book-genre {
+  margin-bottom: 4px;
+  color: #b4afaf;
+  font-family: DM Sans;
+  font-size: 12px;
+}
+
+.book-title {
+  padding-top: 10px;
+  margin-bottom: 4px;
+  color: #111;
+  font-family: DM Sans;
+  font-size: 16px;
+  letter-spacing: -0.64px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.book-plot {
+  color: #111;
+  font-size: 14px;
+  font-weight: 400px;
+  white-space: wrap;
+  overflow: hidden;
+  height: 50px;
+}
+
+.book-author {
+  color: #b4afaf;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 16px;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .heading {
+    margin-top: 40px;
+    margin-left: 32px;
+    color: #111;
     font-size: 32px;
   }
 
   .heading-span {
+    color: #4f2ee8;
     font-size: 32px;
   }
 
   .books-img {
     width: 322px;
     height: 241px;
+  }
+
+  .books-card-img {
+    width: 116px;
+    height: 165px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .book-card {
+    width: 704px;
+    height: 180px;
+  }
+  .book-description {
+  }
+  .book-genre {
+  }
+  .book-title {
+    padding-top: 24px;
   }
 }
 
