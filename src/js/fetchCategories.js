@@ -15,7 +15,7 @@ const displayCategories = async () => {
   markup += bookCategories
     .map(({ list_name }) => {
       return `<div>
-            <div class="category-item">${list_name}</div>
+            <button class="category-item" type="button" name="${list_name}">${list_name}</button>
         </div>`;
     })
     .join('');
