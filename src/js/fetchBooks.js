@@ -24,7 +24,7 @@ const displayTopBooks = async () => {
       <div class="top-books__category">
         <h2 class="top-books__category-title category-item">${category.list_name}</h2>
         ${booksMarkup}
-        <button id="see-more-btn" type="button" name="${category.list_name}">See more</button>
+        <button class="see-more-btn" type="button" name="See more" data-category="${category.list_name}">See more</button>
       </div>
     `;
     })
