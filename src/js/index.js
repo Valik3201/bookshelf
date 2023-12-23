@@ -1,2 +1,6 @@
 import './charityData.js';
-import './bookCategories.js';
+import './bookAPI.js';
+import './fetchCategories.js';
+import './fetchBooks.js';
+import './fetchBooksByCategories.js';
+import './shoppingList.js';
