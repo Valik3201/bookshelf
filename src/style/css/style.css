@@ -81,6 +81,30 @@ input:checked + .slider:before {
 /* swicher style end*/
 
 /*header style*/
+.logo-header {
+  display: flex;
+  align-items: center;
+}
+.sign-up-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.arrow-right-icon {
+  margin-right: 14px;
+}
+.sign-up-text {
+  margin-left: 14px;
+}
+.hamburger-icon {
+  stroke: black;
+}
+.switch-button-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
 @media (max-width: 767px) {
   body {
     min-width: 375px;
@@ -103,12 +127,16 @@ input:checked + .slider:before {
   }
   .switch-button-div {
     margin-right: 20px;
+    gap: 19px;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   body {
     min-width: 768px;
     max-width: 1023px;
+  }
+  .hamburger-icon {
+    display: none;
   }
   .switch-button-div {
     display: flex;
@@ -168,7 +196,10 @@ input:checked + .slider:before {
 @media (min-width: 1024px) {
   body {
     max-width: 1440px;
-    min-width: 1023px;
+    min-width: 1024px;
+  }
+  .hamburger-icon {
+    display: none;
   }
 
   .switch-button-div {
