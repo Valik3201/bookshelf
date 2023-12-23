@@ -25,19 +25,18 @@ const displayBooksByCategory = async categoryName => {
     .flat()
     .map(book => {
       return `
-        <div class="top-books__book">
-          <div class="top-books__cover"><img src="${book.book_image}" alt="${book.title}"></div>
-          <div class="top-books__title">${book.title}</div>
-          <div class="top-books__author">${book.author}</div>
-        </div>
+      <div class="books-category__book">
+        <div class="books-category__cover"><img src="${book.book_image}" alt="${book.title}"></div>
+        <div class="books-category__title">${book.title}</div>
+        <div class="books-category__author">${book.author}</div>
+      </div>    
       `;
     })
     .join('');
 
   const categoryTitleMarkup = `
-    <div class="top-books__category">
-      <h1>Books By Category</h1>
-      <h2 class="top-books__category-title">${categoryName}</h2>
+    <div class="books-category">
+      <h2 class="books-category__category-title">${categoryName}</h2>
     </div>
   `;
 

@@ -1,13 +1,22 @@
 import { fetchBooks } from './bookAPI.js';
 
+/**
+ * Displays top books in the specified HTML container.
+ * Fetches top books using the fetchBooks function and updates the DOM accordingly.
+ *
+ * @returns {void}
+ */
 const displayTopBooks = async () => {
+  // Select the HTML container for top books.
   const topBooksContainer = document.querySelector('.top-books');
 
+  // Fetch top books from the API.
   const topBooks = await fetchBooks('top-books');
 
-  // Создание разметки для каждой категории
+  // Generate markup for each top book category.
   const markup = topBooks
     .map(category => {
+      // Generate markup for each book within the category.
       const booksMarkup = category.books
         .map(({ title, author, book_image }) => {
           return `
@@ -20,6 +29,7 @@ const displayTopBooks = async () => {
         })
         .join('');
 
+      // Combine category title, book markup, and "See more" button into a single category markup.
       return `
       <div class="top-books__category">
         <h2 class="top-books__category-title category-item">${category.list_name}</h2>
@@ -30,8 +40,9 @@ const displayTopBooks = async () => {
     })
     .join('');
 
+  // Insert the generated markup into the top books container.
   topBooksContainer.insertAdjacentHTML('beforeend', markup);
 };
 
-// Вызов функции для отображения книг по категориям
+// Call the displayTopBooks function to render top books in the UI.
 displayTopBooks();
