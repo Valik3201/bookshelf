@@ -190,6 +190,15 @@ input:checked + .slider:before {
   align-items: center;
   gap: 24px;
 }
+.home-link,
+.shopping-list-link,
+.logo-header {
+  text-decoration: none;
+  color: black;
+  line-height: 18px;
+  font-size: 14px;
+}
+
 @media (max-width: 767px) {
   body {
     min-width: 375px;
@@ -257,13 +266,7 @@ input:checked + .slider:before {
     border-radius: 36px;
     font-weight: 700;
   }
-  .home-link,
-  .shopping-list-link {
-    text-decoration: none;
-    color: black;
-    line-height: 18px;
-    font-size: 14px;
-  }
+
   .shopping-list-link {
     font-weight: 500;
   }
@@ -321,13 +324,7 @@ input:checked + .slider:before {
     border-radius: 36px;
     font-weight: 700;
   }
-  .home-link,
-  .shopping-list-link {
-    text-decoration: none;
-    color: black;
-    line-height: 18px;
-    font-size: 14px;
-  }
+
   .shopping-list-link {
     font-weight: 500;
   }
