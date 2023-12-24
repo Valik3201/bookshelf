@@ -4,6 +4,7 @@ const mobileMenuField = document.querySelector('.mobile-menu-field');
 
 const openMenu = () => {
   mobileMenuField.style.display = 'block';
+  mobileMenuField.style.transform = 'translateX(0)';
 };
 
 const closeMenu = () => {
