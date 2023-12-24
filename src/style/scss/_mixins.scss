@@ -1,0 +1,6 @@
+@mixin apply-heading($map) {
+  font-size: map-get($map, font-size);
+  font-weight: map-get($map, font-weight);
+  line-height: map-get($map, line-height);
+  letter-spacing: map-get($map, letter-spacing);
+}

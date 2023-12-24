@@ -1,8 +1,6 @@
-@charset "UTF-8";
-/*
- * Główny plik dla stylów.
- * Wszystkie partials podłączamy tutaj.
- */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap");
 * {
   box-sizing: border-box;
@@ -26,4 +24,144 @@ button {
 
 body {
   font-family: "DM Sans", sans-serif;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  row-gap: 86px;
+  margin: 40px 24px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e0e0e0;
+  border-radius: 12px;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  width: 328px;
+  height: 472px;
+  padding-right: 20px;
+  overflow-y: auto;
+}
+.category-list::-webkit-scrollbar {
+  width: 8px;
+}
+.category-list::-webkit-scrollbar-thumb {
+  background-color: #e0e0e0;
+  border-radius: 12px;
+}
+.category-list__item {
+  text-align: left;
+  border: none;
+  color: rgba(17, 17, 17, 0.6);
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.3s ease-in;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.36px;
+}
+.category-list__item:hover {
+  color: #4f2ee8;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+}
+
+.top-books {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.top-books__heading {
+  color: #111111;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: -1.92px;
+}
+.top-books__heading--highlight {
+  color: #4f2ee8;
+}
+.top-books__category {
+  display: flex;
+  flex-direction: column;
+}
+.top-books__category--title {
+  color: #b4afaf;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.42px;
+}
+.top-books__category--books {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.top-books__book {
+  width: 180px;
+  cursor: pointer;
+}
+.top-books__book--cover img {
+  width: 180px;
+  height: 256px;
+  border-radius: 8px;
+}
+.top-books__book--title {
+  color: #111111;
+  margin-top: 14px;
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.64px;
+}
+.top-books__book--author {
+  color: #b4afaf;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.48px;
+}
+.top-books .see-more-btn {
+  align-self: flex-end;
+  color: #111111;
+  background-color: transparent;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 40px;
+  border: 2px solid #4f2ee8;
+  cursor: pointer;
+  transition: color 0.25s ease-in, background-color 0.25s ease-in;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.14px;
+}
+.top-books .see-more-btn:hover, .top-books .see-more-btn:focus {
+  color: #ffffff;
+  background-color: #4f2ee8;
+}
+.top-books .see-more-btn:focus {
+  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
 }/*# sourceMappingURL=main.css.map */
