@@ -1,10 +1,21 @@
 @import './variables';
 @import './mixins';
 
-.top-books {
+.books {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  width: 996px;
+
+  &-category {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .books__category--books {
+      row-gap: 40px;
+    }
+  }
 
   &__heading {
     color: $dark-color;
@@ -29,6 +40,7 @@
 
     &--books {
       display: flex;
+      flex-wrap: wrap;
       gap: 24px;
       margin-bottom: 32px;
     }
@@ -41,7 +53,7 @@
     &--cover {
       position: relative;
 
-      &:hover .top-books__book--cover-overlay {
+      &:hover .books__book--cover-overlay {
         opacity: 1;
       }
 

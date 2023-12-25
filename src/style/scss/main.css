@@ -78,26 +78,35 @@ body {
   letter-spacing: -0.18px;
 }
 
-.top-books {
+.books {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 996px;
+}
+.books-category {
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
-.top-books__heading {
+.books-category .books__category--books {
+  row-gap: 40px;
+}
+.books__heading {
   color: #111111;
   font-size: 48px;
   font-weight: 700;
   line-height: 52px;
-  letter-spacing: -1.92px;
+  letter-spacing: -0.92px;
 }
-.top-books__heading--highlight {
+.books__heading--highlight {
   color: #4f2ee8;
 }
-.top-books__category {
+.books__category {
   display: flex;
   flex-direction: column;
 }
-.top-books__category--title {
+.books__category--title {
   color: #b4afaf;
   text-transform: uppercase;
   margin-bottom: 18px;
@@ -106,27 +115,28 @@ body {
   line-height: 24px;
   letter-spacing: 0.42px;
 }
-.top-books__category--books {
+.books__category--books {
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
   margin-bottom: 32px;
 }
-.top-books__book {
+.books__book {
   width: 180px;
   cursor: pointer;
 }
-.top-books__book--cover {
+.books__book--cover {
   position: relative;
 }
-.top-books__book--cover:hover .top-books__book--cover-overlay {
+.books__book--cover:hover .books__book--cover-overlay {
   opacity: 1;
 }
-.top-books__book--cover img {
+.books__book--cover img {
   width: 180px;
   height: 256px;
   border-radius: 8px;
 }
-.top-books__book--cover-overlay {
+.books__book--cover-overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -139,7 +149,7 @@ body {
   background-color: rgba(234, 198, 69, 0.75);
   border-radius: 8px;
 }
-.top-books__book--cover-overlay-text {
+.books__book--cover-overlay-text {
   color: #111111;
   text-transform: uppercase;
   border-radius: 8px;
@@ -154,7 +164,7 @@ body {
   line-height: 24px;
   letter-spacing: -0.18px;
 }
-.top-books__book--title {
+.books__book--title {
   color: #111111;
   margin-top: 14px;
   margin-bottom: 4px;
@@ -163,7 +173,7 @@ body {
   line-height: 18px;
   letter-spacing: -0.64px;
 }
-.top-books__book--author {
+.books__book--author {
   color: #b4afaf;
   font-style: italic;
   font-size: 12px;
@@ -171,7 +181,7 @@ body {
   line-height: 14px;
   letter-spacing: -0.48px;
 }
-.top-books .see-more-btn {
+.books .see-more-btn {
   align-self: flex-end;
   color: #111111;
   background-color: transparent;
@@ -186,10 +196,10 @@ body {
   line-height: 18px;
   letter-spacing: -0.14px;
 }
-.top-books .see-more-btn:hover, .top-books .see-more-btn:focus {
+.books .see-more-btn:hover, .books .see-more-btn:focus {
   color: #ffffff;
   background-color: #4f2ee8;
 }
-.top-books .see-more-btn:focus {
+.books .see-more-btn:focus {
   box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
 }/*# sourceMappingURL=main.css.map */
