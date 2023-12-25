@@ -37,15 +37,6 @@ body {
   margin: 40px 24px;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #e0e0e0;
-  border-radius: 12px;
-}
-
 .category-list {
   display: flex;
   flex-direction: column;
@@ -76,6 +67,9 @@ body {
   letter-spacing: -0.36px;
 }
 .category-list__item:hover {
+  color: #4f2ee8;
+}
+.category-list__item.active {
   color: #4f2ee8;
   text-transform: uppercase;
   font-size: 18px;
@@ -121,10 +115,44 @@ body {
   width: 180px;
   cursor: pointer;
 }
+.top-books__book:hover .top-books__book--cover-overlay {
+  opacity: 1;
+}
+.top-books__book--cover {
+  position: relative;
+}
 .top-books__book--cover img {
   width: 180px;
   height: 256px;
   border-radius: 8px;
+}
+.top-books__book--cover-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease-in;
+  background-color: rgba(234, 198, 69, 0.75);
+  border-radius: 8px;
+}
+.top-books__book--cover-overlay-text {
+  color: #111111;
+  text-transform: uppercase;
+  border-radius: 8px;
+  padding: 14px 28px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.14px;
 }
 .top-books__book--title {
   color: #111111;
