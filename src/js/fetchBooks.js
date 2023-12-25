@@ -6,7 +6,7 @@ import { fetchBooks } from './bookAPI.js';
  *
  * @returns {void}
  */
-const displayTopBooks = async () => {
+export const displayTopBooks = async () => {
   // Select the HTML container for top books.
   const topBooksContainer = document.querySelector('.top-books');
 
