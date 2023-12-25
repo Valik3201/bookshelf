@@ -1,26 +1,6 @@
 import { fetchBooks } from './bookAPI.js';
 import { displayTopBooks } from './fetchBooks.js';
-
-const booksContainer = document.querySelector('.category-list');
-
-booksContainer.addEventListener('click', event => {
-  const targetButton = event.target.closest('button[name]');
-
-  if (targetButton) {
-    const allButtons = document.querySelectorAll('button[name]');
-    allButtons.forEach(button => button.classList.remove('active'));
-
-    targetButton.classList.add('active');
-
-    const categoryName = targetButton.getAttribute('name');
-
-    if (categoryName === 'All categories') {
-      displayTopBooks();
-    } else {
-      displayBooksByCategory(categoryName);
-    }
-  }
-});
+import { topBooksContainer, booksContainer, switchView } from './viewSwitcher.js';
 
 const displayBooksByCategory = async categoryName => {
   const booksByCategory = await fetchBooks('category', categoryName);
@@ -30,7 +10,7 @@ const displayBooksByCategory = async categoryName => {
     return;
   }
 
-  const booksContainer = document.querySelector('.category');
+  switchView('category');
 
   const booksMarkup = booksByCategory
     .flat()
@@ -54,13 +34,32 @@ const displayBooksByCategory = async categoryName => {
   booksContainer.innerHTML = categoryTitleMarkup + booksMarkup;
 };
 
-const topBooksContainer = document.querySelector('.top-books');
-
 topBooksContainer.addEventListener('click', event => {
   const seeMoreBtn = event.target.closest('button[name="See more"]');
 
   if (seeMoreBtn) {
     const categoryName = seeMoreBtn.getAttribute('data-category');
     displayBooksByCategory(categoryName);
+  }
+});
+
+const categoryListContainer = document.querySelector('.category-list');
+
+categoryListContainer.addEventListener('click', event => {
+  const targetButton = event.target.closest('button[name]');
+
+  if (targetButton) {
+    const allButtons = document.querySelectorAll('button[name]');
+    allButtons.forEach(button => button.classList.remove('active'));
+
+    targetButton.classList.add('active');
+
+    const categoryName = targetButton.getAttribute('name');
+
+    if (categoryName === 'All categories') {
+      displayTopBooks();
+    } else {
+      displayBooksByCategory(categoryName);
+    }
   }
 });

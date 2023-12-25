@@ -1,4 +1,5 @@
 import { fetchBooks } from './bookAPI.js';
+import { topBooksContainer, switchView } from './viewSwitcher.js';
 
 /**
  * Displays top books in the specified HTML container.
@@ -7,8 +8,7 @@ import { fetchBooks } from './bookAPI.js';
  * @returns {void}
  */
 export const displayTopBooks = async () => {
-  // Select the HTML container for top books.
-  const topBooksContainer = document.querySelector('.top-books');
+  switchView('topBooks');
 
   // Fetch top books from the API.
   const topBooks = await fetchBooks('top-books');
