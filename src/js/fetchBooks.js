@@ -21,7 +21,12 @@ export const displayTopBooks = async () => {
         .map(({ title, author, book_image }) => {
           return `
           <div class="top-books__book">
-            <div class="top-books__book--cover"><img src="${book_image}" alt="${title}"></div>
+            <div class="top-books__book--cover">
+              <img src="${book_image}" alt="${title}">
+              <div class="top-books__book--cover-overlay">
+                <div class="top-books__book--cover-overlay-text">Quick View</div>
+              </div>
+            </div>
             <div class="top-books__book--title">${title}</div>
             <div class="top-books__book--author">${author}</div>
           </div>
