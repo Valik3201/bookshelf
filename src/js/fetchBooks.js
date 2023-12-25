@@ -20,15 +20,15 @@ export const displayTopBooks = async () => {
       const booksMarkup = category.books
         .map(({ title, author, book_image }) => {
           return `
-          <div class="top-books__book">
-            <div class="top-books__book--cover">
+          <div class="books__book">
+            <div class="books__book--cover">
               <img src="${book_image}" alt="${title}">
-              <div class="top-books__book--cover-overlay">
-                <div class="top-books__book--cover-overlay-text">Quick View</div>
+              <div class="books__book--cover-overlay">
+                <div class="books__book--cover-overlay-text">Quick View</div>
               </div>
             </div>
-            <div class="top-books__book--title">${title}</div>
-            <div class="top-books__book--author">${author}</div>
+            <div class="books__book--title">${title}</div>
+            <div class="books__book--author">${author}</div>
           </div>
         `;
         })
@@ -36,9 +36,9 @@ export const displayTopBooks = async () => {
 
       // Combine category title, book markup, and "See more" button into a single category markup.
       return `
-      <div class="top-books__category">
-        <h2 class="top-books__category--title">${category.list_name}</h2>
-        <div class="top-books__category--books">
+      <div class="books__category">
+        <h2 class="books__category--title">${category.list_name}</h2>
+        <div class="books__category--books">
           ${booksMarkup}
         </div>
         <button class="see-more-btn" type="button" name="See more" data-category="${category.list_name}">See more</button>

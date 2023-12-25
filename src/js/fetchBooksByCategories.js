@@ -16,22 +16,30 @@ const displayBooksByCategory = async categoryName => {
     .flat()
     .map(book => {
       return `
-      <div class="books-category__book">
-        <div class="books-category__cover"><img src="${book.book_image}" alt="${book.title}"></div>
-        <div class="books-category__title">${book.title}</div>
-        <div class="books-category__author">${book.author}</div>
-      </div>    
+      <div class="books__book">
+        <div class="books__book--cover">
+          <img src="${book.book_image}" alt="${book.title}">
+          <div class="books__book--cover-overlay">
+            <div class="books__book--cover-overlay-text">Quick View</div>
+          </div>
+        </div>
+        <div class="books__book--title">${book.title}</div>
+        <div class="books__book--author">${book.author}</div>
+      </div>
       `;
     })
     .join('');
 
   const categoryTitleMarkup = `
     <div class="books-category">
-      <h2 class="books-category__category-title">${categoryName}</h2>
+      <h2 class="books__heading">${categoryName}</h2>
+      <div class="books__category--books">
+        ${booksMarkup}
+      </div>
     </div>
   `;
 
-  booksContainer.innerHTML = categoryTitleMarkup + booksMarkup;
+  booksContainer.innerHTML = categoryTitleMarkup;
 };
 
 topBooksContainer.addEventListener('click', event => {
