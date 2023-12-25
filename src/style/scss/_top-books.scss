@@ -38,10 +38,49 @@
     width: 180px;
     cursor: pointer;
 
-    &--cover img {
-      width: 180px;
-      height: 256px;
-      border-radius: 8px;
+    &:hover .top-books__book--cover-overlay {
+      opacity: 1;
+    }
+
+    &--cover {
+      position: relative;
+
+      img {
+        width: 180px;
+        height: 256px;
+        border-radius: 8px;
+      }
+
+      &-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: 0.5s ease-in;
+        background-color: rgba($yellow-color, 0.75);
+        border-radius: 8px;
+
+        &-text {
+          color: $dark-color;
+          text-transform: uppercase;
+          border-radius: 8px;
+          padding: 14px 28px;
+
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: center;
+
+          @include apply-heading($button);
+        }
+      }
     }
 
     &--title {

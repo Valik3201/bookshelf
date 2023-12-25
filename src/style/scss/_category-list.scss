@@ -32,6 +32,10 @@
 
     &:hover {
       color: $primary-color;
+    }
+
+    &.active {
+      color: $primary-color;
       text-transform: uppercase;
 
       @include apply-heading($heading-m);
