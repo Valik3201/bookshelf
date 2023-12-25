@@ -115,11 +115,11 @@ body {
   width: 180px;
   cursor: pointer;
 }
-.top-books__book:hover .top-books__book--cover-overlay {
-  opacity: 1;
-}
 .top-books__book--cover {
   position: relative;
+}
+.top-books__book--cover:hover .top-books__book--cover-overlay {
+  opacity: 1;
 }
 .top-books__book--cover img {
   width: 180px;
@@ -132,7 +132,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
+  height: 99%;
   width: 100%;
   opacity: 0;
   transition: 0.5s ease-in;
@@ -149,10 +149,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
-  line-height: 18px;
-  letter-spacing: -0.14px;
+  line-height: 24px;
+  letter-spacing: -0.18px;
 }
 .top-books__book--title {
   color: #111111;
