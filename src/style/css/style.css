@@ -216,11 +216,11 @@ body {
   outline: none;
   cursor: pointer;
 }
-.mobile-menu-field {
-  transform: translateX(100%);
-}
+
 .mobile-menu-field {
   display: none;
+  transition: transform 500ms ease;
+  transform: translateX(-100%);
 }
 .close-button-icon {
   stroke: black;
