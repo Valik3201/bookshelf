@@ -2,3 +2,79 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap');
 
 $main-family: 'DM Sans', sans-serif; // Main font family
+
+// Colors
+$primary-color: #4f2ee8;
+$dark-color: #111111;
+$gray-color: #9a9a9a;
+$white-color: #ffffff;
+$off-white-color: #f3f3f3;
+$black-color: #000000;
+$yellow-color: #eac645;
+$grayish-color: #b4afaf;
+$background-color: #f6f6f6;
+$dark-background-color: #202024;
+
+// Typography
+$heading-xl: (
+  font-size: 48px,
+  font-weight: 700,
+  line-height: 52px,
+  letter-spacing: -0.92px,
+);
+
+$heading-l: (
+  font-size: 24px,
+  font-weight: 700,
+  line-height: 28px,
+  letter-spacing: -0.96px,
+);
+
+$heading-m: (
+  font-size: 18px,
+  font-weight: 700,
+  line-height: 24px,
+  letter-spacing: -0.18px,
+);
+
+$heading-s: (
+  font-size: 16px,
+  font-weight: 700,
+  line-height: 18px,
+  letter-spacing: -0.64px,
+);
+
+$heading-xs: (
+  font-size: 14px,
+  font-weight: 400,
+  line-height: 24px,
+  letter-spacing: 0.42px,
+);
+
+$heading-italic: (
+  font-size: 12px,
+  font-weight: 400,
+  line-height: 14px,
+  letter-spacing: -0.48px,
+);
+
+$button: (
+  font-size: 14px,
+  font-weight: 700,
+  line-height: 18px,
+  letter-spacing: -0.14px,
+);
+
+$body-s: (
+  font-size: 18px,
+  font-weight: 400,
+  line-height: 24px,
+  letter-spacing: -0.36px,
+);
+
+$body-xs: (
+  font-size: 14px,
+  font-weight: 400,
+  line-height: 18px,
+  letter-spacing: -0.56px,
+);

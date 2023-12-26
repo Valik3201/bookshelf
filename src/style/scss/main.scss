@@ -1,7 +1,6 @@
-/*
- * Główny plik dla stylów.
- * Wszystkie partials podłączamy tutaj.
- */
-
-// Style globalne
 @import './globals';
+@import './variables';
+@import './mixins';
+@import './home';
+@import './category-list';
+@import './books';

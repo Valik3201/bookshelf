@@ -1,0 +1,137 @@
+@import './variables';
+@import './mixins';
+
+.books {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 996px;
+
+  &-category {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .books__category--books {
+      row-gap: 40px;
+    }
+  }
+
+  &__heading {
+    color: $dark-color;
+
+    @include apply-heading($heading-xl);
+
+    &--highlight {
+      color: $primary-color;
+    }
+  }
+  &__category {
+    display: flex;
+    flex-direction: column;
+
+    &--title {
+      color: $grayish-color;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+
+      @include apply-heading($heading-xs);
+    }
+
+    &--books {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__book {
+    width: 180px;
+    cursor: pointer;
+
+    &--cover {
+      position: relative;
+
+      &:hover .books__book--cover-overlay {
+        opacity: 1;
+      }
+
+      img {
+        width: 180px;
+        height: 256px;
+        border-radius: 8px;
+      }
+
+      &-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 99%;
+        width: 100%;
+        opacity: 0;
+        transition: 0.5s ease-in;
+        background-color: rgba($yellow-color, 0.75);
+        border-radius: 8px;
+
+        &-text {
+          color: $dark-color;
+          text-transform: uppercase;
+          border-radius: 8px;
+          padding: 14px 28px;
+
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: center;
+
+          @include apply-heading($heading-m);
+        }
+      }
+    }
+
+    &--title {
+      color: $dark-color;
+      margin-top: 14px;
+      margin-bottom: 4px;
+
+      @include apply-heading($heading-s);
+    }
+
+    &--author {
+      color: $grayish-color;
+      font-style: italic;
+
+      @include apply-heading($heading-italic);
+    }
+  }
+
+  .see-more-btn {
+    align-self: flex-end;
+    color: $dark-color;
+    background-color: transparent;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border-radius: 40px;
+    border: 2px solid $primary-color;
+    cursor: pointer;
+    transition: color 0.25s ease-in, background-color 0.25s ease-in;
+
+    @include apply-heading($button);
+
+    &:hover,
+    &:focus {
+      color: $white-color;
+      background-color: $primary-color;
+    }
+
+    &:focus {
+      box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
+    }
+  }
+}

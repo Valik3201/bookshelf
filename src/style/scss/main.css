@@ -1,8 +1,6 @@
-@charset "UTF-8";
-/*
- * Główny plik dla stylów.
- * Wszystkie partials podłączamy tutaj.
- */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap");
 * {
   box-sizing: border-box;
@@ -26,4 +24,182 @@ button {
 
 body {
   font-family: "DM Sans", sans-serif;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  row-gap: 86px;
+  margin: 40px 24px;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  width: 328px;
+  height: 472px;
+  padding-right: 20px;
+  overflow-y: auto;
+}
+.category-list::-webkit-scrollbar {
+  width: 8px;
+}
+.category-list::-webkit-scrollbar-thumb {
+  background-color: #e0e0e0;
+  border-radius: 12px;
+}
+.category-list__item {
+  text-align: left;
+  border: none;
+  color: rgba(17, 17, 17, 0.6);
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.3s ease-in;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.36px;
+}
+.category-list__item:hover {
+  color: #4f2ee8;
+}
+.category-list__item.active {
+  color: #4f2ee8;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+}
+
+.books {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 996px;
+}
+.books-category {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.books-category .books__category--books {
+  row-gap: 40px;
+}
+.books__heading {
+  color: #111111;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: -0.92px;
+}
+.books__heading--highlight {
+  color: #4f2ee8;
+}
+.books__category {
+  display: flex;
+  flex-direction: column;
+}
+.books__category--title {
+  color: #b4afaf;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.42px;
+}
+.books__category--books {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.books__book {
+  width: 180px;
+  cursor: pointer;
+}
+.books__book--cover {
+  position: relative;
+}
+.books__book--cover:hover .books__book--cover-overlay {
+  opacity: 1;
+}
+.books__book--cover img {
+  width: 180px;
+  height: 256px;
+  border-radius: 8px;
+}
+.books__book--cover-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 99%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease-in;
+  background-color: rgba(234, 198, 69, 0.75);
+  border-radius: 8px;
+}
+.books__book--cover-overlay-text {
+  color: #111111;
+  text-transform: uppercase;
+  border-radius: 8px;
+  padding: 14px 28px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.18px;
+}
+.books__book--title {
+  color: #111111;
+  margin-top: 14px;
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.64px;
+}
+.books__book--author {
+  color: #b4afaf;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.48px;
+}
+.books .see-more-btn {
+  align-self: flex-end;
+  color: #111111;
+  background-color: transparent;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 40px;
+  border: 2px solid #4f2ee8;
+  cursor: pointer;
+  transition: color 0.25s ease-in, background-color 0.25s ease-in;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.14px;
+}
+.books .see-more-btn:hover, .books .see-more-btn:focus {
+  color: #ffffff;
+  background-color: #4f2ee8;
+}
+.books .see-more-btn:focus {
+  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
 }/*# sourceMappingURL=main.css.map */

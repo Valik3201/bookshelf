@@ -1,53 +1,73 @@
 import { fetchBooks } from './bookAPI.js';
+import { displayTopBooks } from './fetchBooks.js';
+import { topBooksContainer, booksContainer, switchView } from './viewSwitcher.js';
 
-const categoryItems = document.querySelectorAll('.category-item');
+const displayBooksByCategory = async categoryName => {
+  const booksByCategory = await fetchBooks('category', categoryName);
 
-categoryItems.forEach(category => {
-  category.addEventListener('click', event => {
-    const clickedCategory = event.currentTarget;
-    displayBooksByCategory(clickedCategory);
-  });
-});
+  if (!booksByCategory || !Array.isArray(booksByCategory)) {
+    console.error('Invalid response from fetchBooks:', booksByCategory);
+    return;
+  }
 
-const displayBooksByCategory = async item => {
-  const booksCategory = item.textContent.trim();
-  const booksByCategory = await fetchBooks('category', booksCategory);
+  switchView('category');
 
-  console.log(booksByCategory);
-
-  const booksContainer = document.querySelector('.category');
-
-  const markup = booksByCategory
-    .map(category => {
-      const booksMarkup = category.books
-        .map(({ title, author, book_image }) => {
-          return `
-          <div class="top-books__book">
-            <div class="top-books__cover"><img src="${book_image}" alt="${title}"></div>
-            <div class="top-books__title">${title}</div>
-            <div class="top-books__author">${author}</div>
-          </div>
-        `;
-        })
-        .join('');
-
+  const booksMarkup = booksByCategory
+    .flat()
+    .map(book => {
       return `
-        <div class="top-books__category">
-          <h1>Books By Category</h1>
-          <h2 class="top-books__category-title">${category.list_name}</h2>
-          ${booksMarkup}
-          <button type="button" name="${category.list_name}">See more</button>
+      <div class="books__book">
+        <div class="books__book--cover">
+          <img src="${book.book_image}" alt="${book.title}">
+          <div class="books__book--cover-overlay">
+            <div class="books__book--cover-overlay-text">Quick View</div>
+          </div>
         </div>
+        <div class="books__book--title">${book.title}</div>
+        <div class="books__book--author">${book.author}</div>
+      </div>
       `;
     })
     .join('');
 
-  booksContainer.innerHTML = markup;
+  const categoryTitleMarkup = `
+    <div class="books-category">
+      <h2 class="books__heading">${categoryName}</h2>
+      <div class="books__category--books">
+        ${booksMarkup}
+      </div>
+    </div>
+  `;
+
+  booksContainer.innerHTML = categoryTitleMarkup;
 };
 
-const seeMoreBtn = document.querySelector('#see-more-btn');
+topBooksContainer.addEventListener('click', event => {
+  const seeMoreBtn = event.target.closest('button[name="See more"]');
 
-seeMoreBtn.addEventListener('click', () => {
-  const categoryName = seeMoreBtn.getAttribute('name');
-  displayBooksByCategory(categoryName);
+  if (seeMoreBtn) {
+    const categoryName = seeMoreBtn.getAttribute('data-category');
+    displayBooksByCategory(categoryName);
+  }
+});
+
+const categoryListContainer = document.querySelector('.category-list');
+
+categoryListContainer.addEventListener('click', event => {
+  const targetButton = event.target.closest('button[name]');
+
+  if (targetButton) {
+    const allButtons = document.querySelectorAll('button[name]');
+    allButtons.forEach(button => button.classList.remove('active'));
+
+    targetButton.classList.add('active');
+
+    const categoryName = targetButton.getAttribute('name');
+
+    if (categoryName === 'All categories') {
+      displayTopBooks();
+    } else {
+      displayBooksByCategory(categoryName);
+    }
+  }
 });
