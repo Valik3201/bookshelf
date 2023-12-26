@@ -173,6 +173,11 @@ body {
   display: flex;
   align-items: center;
 }
+.shopping-list-div {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
 .sign-up-button,
 .sign-up-button-mobile-menu {
   display: flex;
