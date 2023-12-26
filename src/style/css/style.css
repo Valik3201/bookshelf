@@ -316,7 +316,25 @@ body {
 .mobile-header-items {
   background-color: white;
 }
-
+.background-cover-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+  flex-wrap: wrap;
+  width: 767px;
+  margin-top: 440px;
+  position: absolute;
+  transform: rotate(-15deg);
+}
+.background-cover {
+  width: 84px;
+  height: 134px;
+}
+.background-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 @media (max-width: 767px) {
   body {
     min-width: 375px;
