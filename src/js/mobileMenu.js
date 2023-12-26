@@ -5,17 +5,16 @@ const mobileMenuField = document.querySelector('.mobile-menu-field');
 const openMenu = () => {
   mobileMenuField.style.display = 'block';
   setTimeout(() => {
-    mobileMenuField.style.transform = 'translateX(0)';
+    mobileMenuField.style.transform = 'translateY(0)';
   }, 1);
 };
 
 const closeMenu = () => {
-  mobileMenuField.style.transform = 'translateX(-100%)';
+  mobileMenuField.style.transform = 'translateY(-100%)';
 
-  // Po zakończeniu animacji ustaw display na none
   setTimeout(() => {
     mobileMenuField.style.display = 'none';
-  }, 500); // Czas trwania animacji (500ms w tym przypadku)
+  }, 500);
 };
 
 openMenuButton.addEventListener('click', openMenu);
