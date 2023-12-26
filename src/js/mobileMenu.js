@@ -1,5 +1,3 @@
-import { fetchBooks } from './bookAPI.js';
-
 const openMenuButton = document.querySelector('.open-mobile-menu');
 const closeMenuButton = document.querySelector('.close-button');
 const mobileMenuField = document.querySelector('.mobile-menu-field');
@@ -10,7 +8,6 @@ const openMenu = () => {
   setTimeout(() => {
     mobileMenuField.style.transform = 'translateY(0)';
   }, 1);
-  displayBooksByCategory(categoryName);
 };
 
 const closeMenu = () => {
