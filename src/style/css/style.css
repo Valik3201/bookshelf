@@ -239,6 +239,9 @@ body {
   display: flex;
   align-items: center;
 }
+svg.logo-icon {
+  margin-right: 8px;
+}
 .shopping-list-div {
   display: flex;
   gap: 4px;
@@ -287,13 +290,14 @@ body {
   background-color: transparent;
   outline: none;
   cursor: pointer;
+  height: 14px;
 }
 
 .mobile-menu-field {
   display: none;
   transition: transform 500ms ease;
   transform: translateY(-100%);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   margin: 0;
@@ -324,7 +328,13 @@ body {
   margin-right: 25px;
 }
 .background-cover-container {
-  margin-top: 440px;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 80%;
+}
+
+.background-cover-container img {
+  width: 125%;
   transform: rotate(-15deg);
 }
 
