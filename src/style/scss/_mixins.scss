@@ -4,3 +4,20 @@
   line-height: map-get($map, line-height);
   letter-spacing: map-get($map, letter-spacing);
 }
+
+// Define breakpoints for media queries
+$breakpoints-up: (
+  xs: 375px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1100px,
+  xxl: 1440px,
+);
+
+// Define mixin for media query with a minimum width
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content; // Content inside the mixin will be included in the media query
+  }
+}
