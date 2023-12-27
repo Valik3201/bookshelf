@@ -23,13 +23,21 @@
   }
 }
 .icon-trash {
-  float: right;
+  fill: #4f2ee8;
+  stroke: #fff;
+  width: 25px;
+  height: 25px;
   padding: 5px;
-  width: 16px;
-  height: 16px;
-  fill: #000;
-  /*border-radius: 50%;*/
-  border-color: #4f2ee8;
+  border-radius: 50%;
+  background-color: #4f2ee8;
+}
+.icon-amazon {
+  fill: #4f2ee8;
+  width: 32px;
+  height: 11px;
+  display: flex;
+  justify-content: end;
+  text-align: end;
 }
 .books-card-img {
   width: 100px;
@@ -40,8 +48,7 @@
 }
 .button-delete {
   float: right;
-  padding: 5px;
-  margin: 10px;
+  margin: 15px;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -129,7 +136,6 @@
     margin-left: 170px;
   }
   .book-message {
-    margin-top: 130px;
     margin-left: 200px;
     color: rgba(0, 0, 0, 0.6);
     display: flex;
@@ -156,6 +162,15 @@
   .book-title {
     padding-top: 24px;
   }
+  .icon-trash {
+    fill: #4f2ee8;
+    stroke: #fff;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #4f2ee8;
+  }
 }
 
 @media (min-width: 1023px) {
@@ -166,7 +181,6 @@
   }
 
   .book-message {
-    margin-top: 140px;
     margin-left: 500px;
   }
 
