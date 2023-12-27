@@ -262,6 +262,7 @@ svg.logo-icon {
 }
 .arrow-right-icon {
   margin-right: 14px;
+  stroke: #eac645;
 }
 .sign-up-text {
   margin-left: 14px;
@@ -462,55 +463,55 @@ svg.logo-icon {
 /*header style end*/
 
 /*DarkMode style*/
-[data-theme="dark"] {
+[data-theme='dark'] {
   body {
     background: #202024;
   }
   .category-list__item.active,
-  .category-list__item:hover{
-    color:#EAC645;
+  .category-list__item:hover {
+    color: #eac645;
     transition: color 0.3s ease-in;
   }
-  header{
+  header {
     background: #111111;
     transition: color 0.3s ease-in;
   }
-  .nav-item p{
-    color:#F3F3F3;
+  .nav-item p {
+    color: #f3f3f3;
     transition: color 0.3s ease-in;
   }
- .heading {
-   color: #111;
-  transition: color 0.3s ease-in;
- }
- .book-card{
-  background: #202024;
-  transition: color 0.3s ease-in;
- }
- .header-items {
-   border: 1.5px solid #AAAAAA;
-  transition: border 0.3s ease-in;
- }
-.shopping-list-icon{
-    fill:#FFFFFF;
+  .heading {
+    color: #111;
+    transition: color 0.3s ease-in;
+  }
+  .book-card {
+    background: #202024;
+    transition: color 0.3s ease-in;
+  }
+  .header-items {
+    border: 1.5px solid #aaaaaa;
+    transition: border 0.3s ease-in;
+  }
+  .shopping-list-icon {
+    fill: #ffffff;
     transition: fill 0.3s ease-in;
   }
- body,
- .books__book--title,
- .books__heading,
- .shopping-list-link,
- .category-list__item,
- h1,
- .sign-up-button{
-  color:#FFFFFF;
-  transition: color 0.3s ease-in;
- }
- .see-more-btn{
-  color: #FFFFFF !important;
-  transition: color 0.3s ease-in;
- }
- .slider{
+  body,
+  .books__book--title,
+  .books__heading,
+  .shopping-list-link,
+  .category-list__item,
+  h1,
+  .sign-up-button {
+    color: #ffffff;
+    transition: color 0.3s ease-in;
+  }
+  .see-more-btn {
+    color: #ffffff !important;
+    transition: color 0.3s ease-in;
+  }
+  .slider {
     background: linear-gradient(to bottom, #4f2ee8, #686868);
- }
- }
+  }
+}
 /*DarkMode style end*/
