@@ -19,8 +19,7 @@
   .books-img {
     width: 265px;
     height: 198px;
-    display: flex;
-    justify-content: center;
+    margin-left: 50px;
   }
 }
 .icon-trash {
@@ -51,7 +50,8 @@
 }
 .book-card {
   display: flex;
-  position: absolute;
+  position: relative;
+  bottom: 200px;
   height: 68px;
   margin: 14px;
   gap: 10px;
@@ -103,8 +103,8 @@
 }
 .book-message {
   margin-top: 20px;
+  margin-left: 50px;
   color: rgba(0, 0, 0, 0.6);
-  float: center;
   text-align: center;
   font-size: 14px;
   width: 244px;
@@ -126,12 +126,11 @@
   .books-img {
     width: 322px;
     height: 241px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    margin-left: 170px;
   }
   .book-message {
-    margin-top: 20px;
+    margin-top: 130px;
+    margin-left: 200px;
     color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
@@ -151,6 +150,7 @@
     width: 100%;
     height: 180px;
     max-width: 100%;
+    position: relative;
   }
 
   .book-title {
@@ -162,10 +162,14 @@
   .books-img {
     width: 265px;
     height: 198px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    margin-left: 500px;
   }
+
+  .book-message {
+    margin-top: 140px;
+    margin-left: 500px;
+  }
+
   .book-card {
     height: 180px;
     width: 996px;
