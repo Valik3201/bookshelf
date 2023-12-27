@@ -1,0 +1,46 @@
+@import './variables';
+@import './mixins';
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  padding-right: 20px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+    border-radius: 12px;
+  }
+
+  &__item {
+    text-align: left;
+    border: none;
+    color: rgba(17, 17, 17, 0.6);
+    background-color: transparent;
+    cursor: pointer;
+    transition: color 0.3s ease-in;
+
+    @include apply-heading($body-s-mobile);
+
+    @include breakpoint-up(sm) {
+      @include apply-heading($body-s);
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    &.active {
+      color: $primary-color;
+      text-transform: uppercase;
+
+      @include apply-heading($heading-m);
+    }
+  }
+}

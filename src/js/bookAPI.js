@@ -31,24 +31,3 @@ export const fetchBooks = async (endpoint, selectedCategory = '') => {
     return null;
   }
 };
-
-export const customOrder = [
-  'Combined Print and E-Book Fiction',
-  'Combined Print and E-Book Nonfiction',
-  'Hardcover Fiction',
-  'Hardcover Nonfiction',
-  'Paperback Trade Fiction',
-  'Paperback Nonfiction',
-  'Advice How-To and Miscellaneous',
-  'Childrens Middle Grade Hardcover',
-  'Middle Grade Paperback Monthly',
-  'Young Adult Paperback Monthly',
-  'Graphic Books and Manga',
-  'Business Books',
-  'Picture Books',
-  'Young Adult Hardcover',
-  'Audio Nonfiction',
-  'Series Books',
-  'Mass Market Monthly',
-  'Audio Fiction',
-];

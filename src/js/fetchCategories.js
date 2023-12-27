@@ -13,16 +13,19 @@ const displayCategories = async () => {
   // Fetch book categories from the API.
   const bookCategories = await fetchBooks('category-list');
 
+  // Sorting categories alphabetically.
+  bookCategories.sort((a, b) => a.list_name.localeCompare(b.list_name));
+
   // Create initial markup for "All categories" button.
   let markup = `<div>
-          <button type="button" name="All categories">All categories</button>
+          <button class="category-list__item active" type="button" name="All categories">All categories</button>
         </div>`;
 
   // Append markup for each book category obtained from the API.
   markup += bookCategories
     .map(({ list_name }) => {
       return `<div>
-            <button class="category-item" type="button" name="${list_name}">${list_name}</button>
+            <button class="category-list__item" type="button" name="${list_name}">${list_name}</button>
         </div>`;
     })
     .join('');

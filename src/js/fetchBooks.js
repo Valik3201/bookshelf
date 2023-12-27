@@ -1,4 +1,5 @@
 import { fetchBooks } from './bookAPI.js';
+import { topBooksContainer, switchView } from './viewSwitcher.js';
 
 /**
  * Displays top books in the specified HTML container.
@@ -6,9 +7,8 @@ import { fetchBooks } from './bookAPI.js';
  *
  * @returns {void}
  */
-const displayTopBooks = async () => {
-  // Select the HTML container for top books.
-  const topBooksContainer = document.querySelector('.top-books');
+export const displayTopBooks = async () => {
+  switchView('topBooks');
 
   // Fetch top books from the API.
   const topBooks = await fetchBooks('top-books');
@@ -20,10 +20,15 @@ const displayTopBooks = async () => {
       const booksMarkup = category.books
         .map(({ title, author, book_image }) => {
           return `
-          <div class="top-books__book">
-            <div class="top-books__cover"><img src="${book_image}" alt="${title}"></div>
-            <div class="top-books__title">${title}</div>
-            <div class="top-books__author">${author}</div>
+          <div class="books__book">
+            <div class="books__book--cover">
+              <img src="${book_image}" alt="${title}">
+              <div class="books__book--cover-overlay">
+                <div class="books__book--cover-overlay-text">Quick View</div>
+              </div>
+            </div>
+            <div class="books__book--title">${title}</div>
+            <div class="books__book--author">${author}</div>
           </div>
         `;
         })
@@ -31,9 +36,11 @@ const displayTopBooks = async () => {
 
       // Combine category title, book markup, and "See more" button into a single category markup.
       return `
-      <div class="top-books__category">
-        <h2 class="top-books__category-title category-item">${category.list_name}</h2>
-        ${booksMarkup}
+      <div class="books__category">
+        <h2 class="books__category--title">${category.list_name}</h2>
+        <div class="books__category--books">
+          ${booksMarkup}
+        </div>
         <button class="see-more-btn" type="button" name="See more" data-category="${category.list_name}">See more</button>
       </div>
     `;
