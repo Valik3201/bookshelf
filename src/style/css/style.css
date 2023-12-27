@@ -465,28 +465,52 @@ svg.logo-icon {
 [data-theme="dark"] {
   body {
     background: #202024;
-    color: #FFFFFF;
+  }
+  .category-list__item.active,
+  .category-list__item:hover{
+    color:#EAC645;
+    transition: color 0.3s ease-in;
   }
   header{
     background: #111111;
+    transition: color 0.3s ease-in;
   }
-  .nav-item{
+  .nav-item p{
     color:#F3F3F3;
+    transition: color 0.3s ease-in;
   }
  .heading {
    color: #111;
+  transition: color 0.3s ease-in;
  }
- 
+ .book-card{
+  background: #202024;
+  transition: color 0.3s ease-in;
+ }
  .header-items {
    border: 1.5px solid #AAAAAA;
+  transition: border 0.3s ease-in;
  }
-
- .shopping-list-link {
-   color: #FFFFFF;
+.shopping-list-icon{
+    fill:#FFFFFF;
+    transition: fill 0.3s ease-in;
+  }
+ body,
+ .books__book--title,
+ .books__heading,
+ .shopping-list-link,
+ .category-list__item,
+ h1,
+ .sign-up-button{
+  color:#FFFFFF;
+  transition: color 0.3s ease-in;
  }
-
- .sign-up-button {
-   color: #FFFFFF;
+ .see-more-btn{
+  color: #FFFFFF !important;
+  transition: color 0.3s ease-in;
+ }
+ .slider{
+    background: linear-gradient(to bottom, #4f2ee8, #686868);
  }
  }
 /*DarkMode style end*/
