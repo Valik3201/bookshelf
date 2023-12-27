@@ -10,13 +10,16 @@
       </a>
       <!--navigation-list-->
       <ul class="nav-list">
-        <li><a href="/src/index.html" class="home-link">HOME</a></li>
         <li>
-          <div class="shopping-list-div">
-            <a href="./shopping-list.html" class="shopping-list-link">SHOPPING LIST</a
-            ><svg class="shopping-list-icon" width="20px" height="20px">
-              <use href="/src/images/icons.svg#icon-shop"></use>
-            </svg>
+          <a href="/src/index.html" class="nav-list__link nav-list__link--active home-link">HOME</a>
+        </li>
+        <li>
+          <div class="nav-list__link">
+            <a href="./shopping-list.html" class="shopping-text"
+              >SHOPPING LIST<svg class="shopping-list-icon" width="20px" height="20px">
+                <use href="/src/images/icons.svg#icon-shop"></use>
+              </svg>
+            </a>
           </div>
         </li>
       </ul>
@@ -29,12 +32,41 @@
         <span class="slider"></span>
       </label>
       <!--sign up button-->
-      <button type="button" class="sign-up-button">
+      <button type="button" class="sign-up-button sign-up-modal-open">
         <span class="sign-up-text">Sign up</span
         ><svg class="arrow-right-icon" width="20px" height="20px">
           <use href="/src/images/icons.svg#icon-arrow-right"></use>
         </svg>
       </button>
+      <!--Sign Up modal-->
+      <div class="sign-up-modal is-hidden">
+        <div class="form-field">
+          <button type="button" class="sign-up-modal-close">
+            <svg class="signup-close-icon" width="14px" height="14px">
+              <use href="/src/images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
+          <form name="signup-form" autocomplete="on" novalidate class="sign-up-form">
+            <label>
+              Name
+              <input type="text" name="name" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" />
+            </label>
+            <button type="submit">SIGN UP</button>
+            <a href="#">SIGN UP</a>
+            <a href="#">SIGN IN</a>
+            <button type="button">X</button>
+          </form>
+        </div>
+      </div>
+      <!--hamburger button-->
       <button class="hamburger-button open-mobile-menu">
         <svg class="hamburger-icon" width="20px" height="20px" fill="black">
           <use href="/src/images/icons.svg#icon-menu-hamburger"></use>
@@ -76,22 +108,3 @@
     </div>
   </div>
 </header>
-
-<form name="signup-form" autocomplete="on" novalidate>
-  <label>
-    Name
-    <input type="text" name="name" />
-  </label>
-  <label>
-    Email
-    <input type="email" name="email" />
-  </label>
-  <label>
-    Password
-    <input type="password" name="password" />
-  </label>
-  <button type="submit">SIGN UP</button>
-  <a href="#">SIGN UP</a>
-  <a href="#">SIGN IN</a>
-  <button type="button">X</button>
-</form>
