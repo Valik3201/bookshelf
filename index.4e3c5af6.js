@@ -1,0 +1,2 @@
+const e=document.querySelector(".open-mobile-menu"),t=document.querySelector(".close-button"),n=document.querySelector(".mobile-menu-field"),o=window.matchMedia("(min-width: 768px)");e.addEventListener("click",()=>{n.style.display="block",setTimeout(()=>{n.style.transform="translateY(0)"},1)}),t.addEventListener("click",()=>{n.style.transform="translateY(-100%)",setTimeout(()=>{n.style.display="none"},500)}),o.addEventListener("change",function(e){e.matches&&(n.style.display="none")});
+//# sourceMappingURL=index.4e3c5af6.js.map
