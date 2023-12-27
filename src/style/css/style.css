@@ -378,3 +378,33 @@ input:checked + .slider:before {
   }
 }
 /*header style end*/
+
+/*DarkMode style*/
+[data-theme="dark"] {
+  body {
+    background: #202024;
+    color: #FFFFFF;
+  }
+  header{
+    background: #111111;
+  }
+  .nav-item{
+    color:#F3F3F3;
+  }
+ .heading {
+   color: #111;
+ }
+ 
+ .header-items {
+   border: 1.5px solid #AAAAAA;
+ }
+
+ .shopping-list-link {
+   color: #FFFFFF;
+ }
+
+ .sign-up-button {
+   color: #FFFFFF;
+ }
+ }
+/*DarkMode style end*/
