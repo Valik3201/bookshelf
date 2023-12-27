@@ -1,5 +1,6 @@
 import { fetchBooks } from './bookAPI.js';
 import { displayTopBooks } from './fetchBooks.js';
+import { displayBookById } from './fetchBookById.js';
 import { topBooksContainer, booksContainer, switchView } from './viewSwitcher.js';
 
 const displayBooksByCategory = async categoryName => {
@@ -16,7 +17,7 @@ const displayBooksByCategory = async categoryName => {
     .flat()
     .map(book => {
       return `
-      <div class="books__book">
+      <div class="books__book" data-book-id="${book._id}">
         <div class="books__book--cover">
           <img src="${book.book_image}" alt="${book.title}">
           <div class="books__book--cover-overlay">
@@ -40,6 +41,16 @@ const displayBooksByCategory = async categoryName => {
   `;
 
   booksContainer.innerHTML = categoryTitleMarkup;
+
+  const books = document.querySelectorAll('.books__book');
+
+  books.forEach(book => {
+    book.addEventListener('click', () => {
+      const bookId = book.dataset.bookId;
+      console.log('Displaying book with ID:', bookId);
+      displayBookById(bookId);
+    });
+  });
 };
 
 topBooksContainer.addEventListener('click', event => {
