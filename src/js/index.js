@@ -4,5 +4,6 @@ import './viewSwitcher.js';
 import './fetchCategories.js';
 import './fetchBooks.js';
 import './fetchBooksByCategories.js';
+import './fetchBookById.js';
 import './shoppingList.js';
 import './mobileMenu.js';

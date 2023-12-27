@@ -1,4 +1,5 @@
 import { fetchBooks } from './bookAPI.js';
+import { displayBookById } from './fetchBookById.js';
 import { topBooksContainer, switchView } from './viewSwitcher.js';
 
 /**
@@ -18,9 +19,9 @@ export const displayTopBooks = async () => {
     .map(category => {
       // Generate markup for each book within the category.
       const booksMarkup = category.books
-        .map(({ title, author, book_image }) => {
+        .map(({ title, author, book_image, _id }) => {
           return `
-          <div class="books__book">
+          <div class="books__book" data-book-id="${_id}">
             <div class="books__book--cover">
               <img src="${book_image}" alt="${title}">
               <div class="books__book--cover-overlay">
@@ -49,6 +50,24 @@ export const displayTopBooks = async () => {
 
   // Insert the generated markup into the top books container.
   topBooksContainer.insertAdjacentHTML('beforeend', markup);
+
+  // Select all elements with the class 'books__category--books'
+  const bookContainers = document.querySelectorAll('.books__category--books');
+
+  // Iterate over each book container
+  bookContainers.forEach(bookContainer => {
+    // Add event listener for click events on books inside the current container
+    bookContainer.addEventListener('click', event => {
+      const targetBook = event.target.closest('.books__book');
+
+      if (targetBook) {
+        const bookId = targetBook.dataset.bookId;
+
+        console.log('Displaying book with ID:', bookId);
+        displayBookById(bookId);
+      }
+    });
+  });
 };
 
 // Call the displayTopBooks function to render top books in the UI.
