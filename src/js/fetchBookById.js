@@ -37,5 +37,5 @@ export const displayBookById = async bookId => {
   `;
 
   // Insert the modal markup into the modal container
-  modalContainer.insertAdjacentHTML('beforeend', markup);
+  modalContainer.innerHTML = markup;
 };

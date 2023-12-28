@@ -60,6 +60,19 @@ topBooksContainer.addEventListener('click', event => {
     const categoryName = seeMoreBtn.getAttribute('data-category');
     displayBooksByCategory(categoryName);
 
+    const categoryListButtons = document.querySelectorAll('.category-list button[name]');
+    categoryListButtons.forEach(button => {
+      button.classList.remove('active');
+      if (button.getAttribute('name') === categoryName) {
+        button.classList.add('active');
+
+        button.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      }
+    });
+
     window.scrollTo({
       top: 0,
       behavior: 'smooth',

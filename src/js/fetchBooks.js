@@ -49,7 +49,9 @@ export const displayTopBooks = async () => {
     .join('');
 
   // Insert the generated markup into the top books container.
-  topBooksContainer.insertAdjacentHTML('beforeend', markup);
+  topBooksContainer.innerHTML = `
+      <h1 class="books__heading">Best Sellers <span class="books__heading--highlight">Books</span></h1>
+      ${markup}`;
 
   // Select all elements with the class 'books__category--books'
   const bookContainers = document.querySelectorAll('.books__category--books');
