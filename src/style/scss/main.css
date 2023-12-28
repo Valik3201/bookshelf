@@ -142,7 +142,7 @@ body {
   gap: 40px;
   visibility: visible;
   overflow: hidden;
-  transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out, overflow 0.5s ease-in-out;
 }
 .books.left {
   transform: translateX(100%);
@@ -155,6 +155,7 @@ body {
 }
 .books.hidden {
   visibility: hidden;
+  overflow: visible;
   max-height: 0;
 }
 .books-category {
