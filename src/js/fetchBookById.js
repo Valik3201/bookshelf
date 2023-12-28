@@ -26,7 +26,7 @@ export const displayBookById = async bookId => {
   // Generate modal HTML markup
   const markup = `
     <div class="modal" data-book-id="${_id}">
-      <img class="modal__image" src="${book_image}" alt="${title}">
+      <img loading="lazy" class="modal__image" src="${book_image}" alt="${title}">
       <div class="modal__details">
           <p class="modal__details-title">Title: ${title}</p>
           <p class="modal__details-author">Author: ${author}</p>

@@ -23,7 +23,7 @@ export const displayTopBooks = async () => {
           return `
           <div class="books__book" data-book-id="${_id}">
             <div class="books__book--cover">
-              <img src="${book_image}" alt="${title}">
+              <img loading="lazy" src="${book_image}" alt="${title}">
               <div class="books__book--cover-overlay">
                 <div class="books__book--cover-overlay-text">Quick View</div>
               </div>
