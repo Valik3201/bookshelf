@@ -6,6 +6,7 @@
   flex-direction: column;
   gap: 40px;
   visibility: visible;
+  overflow: hidden;
 
   transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
 
@@ -23,6 +24,7 @@
 
   &.hidden {
     visibility: hidden;
+    max-height: 0;
   }
 
   &-category {
@@ -178,7 +180,7 @@
       }
 
       @include breakpoint-up(sm) {
-        max-width: calc(50% - 25px);
+        max-width: calc(52% - 25px);
 
         &:nth-last-child(-n + 1) {
           display: block;
@@ -186,7 +188,7 @@
       }
 
       @include breakpoint-up(md) {
-        max-width: calc(34% - 25px);
+        max-width: calc(35% - 25px);
 
         &:nth-last-child(-n + 2) {
           display: block;
@@ -194,7 +196,7 @@
       }
 
       @include breakpoint-up(lg) {
-        max-width: calc(25% - 25px);
+        max-width: calc(26% - 25px);
 
         &:nth-last-child(-n + 3) {
           display: block;
@@ -202,7 +204,7 @@
       }
 
       @include breakpoint-up(xl) {
-        max-width: calc(20% - 25px);
+        max-width: calc(21% - 25px);
 
         &:nth-last-child(-n + 4) {
           display: block;
