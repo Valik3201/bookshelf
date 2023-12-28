@@ -1,12 +1,16 @@
-export const topBooksContainer = document.querySelector('#top-books');
-export const booksContainer = document.querySelector('#category');
+export const topBooksContainer = document.querySelector('[data-content="top-books"]');
+export const booksContainer = document.querySelector('[data-content="category"]');
 
 export const switchView = view => {
   if (view === 'topBooks') {
-    topBooksContainer.style.display = 'flex';
-    booksContainer.style.display = 'none';
+    topBooksContainer.classList.add('visible');
+    topBooksContainer.classList.remove('right', 'hidden');
+    booksContainer.classList.remove('visible');
+    booksContainer.classList.add('left', 'hidden');
   } else if (view === 'category') {
-    topBooksContainer.style.display = 'none';
-    booksContainer.style.display = 'flex';
+    booksContainer.classList.add('visible');
+    booksContainer.classList.remove('left', 'hidden');
+    topBooksContainer.classList.remove('visible');
+    topBooksContainer.classList.add('right', 'hidden');
   }
 };
