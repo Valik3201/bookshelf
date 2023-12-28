@@ -32,7 +32,7 @@ const displayBooksByCategory = async categoryName => {
     .join('');
 
   const categoryTitleMarkup = `
-    <div class="books-category">
+    <div class="books-category visible" data-category="${categoryName}">
       <h2 class="books__heading">${categoryName}</h2>
       <div class="books__category--books">
         ${booksMarkup}
@@ -59,6 +59,11 @@ topBooksContainer.addEventListener('click', event => {
   if (seeMoreBtn) {
     const categoryName = seeMoreBtn.getAttribute('data-category');
     displayBooksByCategory(categoryName);
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }
 });
 

@@ -5,6 +5,25 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  visibility: visible;
+
+  transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+
+  &.left {
+    transform: translateX(100%);
+  }
+
+  &.right {
+    transform: translateX(200%);
+  }
+
+  &.visible {
+    transform: translateX(0);
+  }
+
+  &.hidden {
+    visibility: hidden;
+  }
 
   &-category {
     display: flex;
@@ -148,7 +167,7 @@
   }
 }
 
-#top-books {
+[data-content='top-books'] {
   .books {
     &__book {
       flex: 1;
@@ -193,7 +212,7 @@
   }
 }
 
-#category {
+[data-content='category'] {
   .books {
     flex-wrap: wrap;
 
