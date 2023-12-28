@@ -12,7 +12,7 @@ var t,e,o,i,n,r,a,s,l,f,c=globalThis;function u(t,e,o,i){Object.defineProperty(t
           <p class="modal__details-links">Buy Links: ${l}</p>
       </div>
     </div>
-  `;e.insertAdjacentHTML("beforeend",f)},eY=async()=>{eG("topBooks");let t=(await eV("top-books")).map(t=>{let e=t.books.map(({title:t,author:e,book_image:o,_id:i})=>`
+  `;e.innerHTML=f},eY=async()=>{eG("topBooks");let t=(await eV("top-books")).map(t=>{let e=t.books.map(({title:t,author:e,book_image:o,_id:i})=>`
           <div class="books__book" data-book-id="${i}">
             <div class="books__book--cover">
               <img loading="lazy" src="${o}" alt="${t}">
@@ -31,7 +31,9 @@ var t,e,o,i,n,r,a,s,l,f,c=globalThis;function u(t,e,o,i){Object.defineProperty(t
         </div>
         <button class="see-more-btn" type="button" name="See more" data-category="${t.list_name}">See more</button>
       </div>
-    `}).join("");eX.insertAdjacentHTML("beforeend",t),document.querySelectorAll(".books__category--books").forEach(t=>{t.addEventListener("click",t=>{let e=t.target.closest(".books__book");if(e){let t=e.dataset.bookId;console.log("Displaying book with ID:",t),eK(t)}})})};eY();const eQ=async t=>{let e=await eV("category",t);if(!e||!Array.isArray(e)){console.error("Invalid response from fetchBooks:",e);return}eG("category");let o=e.flat().map(t=>`
+    `}).join("");eX.innerHTML=`
+      <h1 class="books__heading">Best Sellers <span class="books__heading--highlight">Books</span></h1>
+      ${t}`,document.querySelectorAll(".books__category--books").forEach(t=>{t.addEventListener("click",t=>{let e=t.target.closest(".books__book");if(e){let t=e.dataset.bookId;console.log("Displaying book with ID:",t),eK(t)}})})};eY();const eQ=async t=>{let e=await eV("category",t);if(!e||!Array.isArray(e)){console.error("Invalid response from fetchBooks:",e);return}eG("category");let o=e.flat().map(t=>`
       <div class="books__book" data-book-id="${t._id}">
         <div class="books__book--cover">
           <img loading="lazy" src="${t.book_image}" alt="${t.title}">
@@ -49,5 +51,5 @@ var t,e,o,i,n,r,a,s,l,f,c=globalThis;function u(t,e,o,i){Object.defineProperty(t
         ${o}
       </div>
     </div>
-  `;eJ.innerHTML=i,document.querySelectorAll(".books__book").forEach(t=>{t.addEventListener("click",()=>{let e=t.dataset.bookId;console.log("Displaying book with ID:",e),eK(e)})})};eX.addEventListener("click",t=>{let e=t.target.closest('button[name="See more"]');e&&(eQ(e.getAttribute("data-category")),window.scrollTo({top:0,behavior:"smooth"}))}),document.querySelector(".category-list").addEventListener("click",t=>{let e=t.target.closest("button[name]");if(e){document.querySelectorAll("button[name]").forEach(t=>t.classList.remove("active")),e.classList.add("active");let t=e.getAttribute("name");"All categories"===t?eY():eQ(t)}});
-//# sourceMappingURL=index.29586969.js.map
+  `;eJ.innerHTML=i,document.querySelectorAll(".books__book").forEach(t=>{t.addEventListener("click",()=>{let e=t.dataset.bookId;console.log("Displaying book with ID:",e),eK(e)})})};eX.addEventListener("click",t=>{let e=t.target.closest('button[name="See more"]');if(e){let t=e.getAttribute("data-category");eQ(t),document.querySelectorAll(".category-list button[name]").forEach(e=>{e.classList.remove("active"),e.getAttribute("name")===t&&(e.classList.add("active"),e.scrollIntoView({behavior:"smooth",block:"center"}))}),window.scrollTo({top:0,behavior:"smooth"})}}),document.querySelector(".category-list").addEventListener("click",t=>{let e=t.target.closest("button[name]");if(e){document.querySelectorAll("button[name]").forEach(t=>t.classList.remove("active")),e.classList.add("active");let t=e.getAttribute("name");"All categories"===t?eY():eQ(t)}});
+//# sourceMappingURL=index.511898cc.js.map
