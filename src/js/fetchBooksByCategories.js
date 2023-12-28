@@ -73,8 +73,8 @@ topBooksContainer.addEventListener('click', event => {
       }
     });
 
-    window.scrollTo({
-      top: 0,
+    booksContainer.scrollIntoView({
+      block: top,
       behavior: 'smooth',
     });
   }
