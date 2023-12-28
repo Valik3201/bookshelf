@@ -61,12 +61,14 @@
     cursor: pointer;
 
     &--cover {
-      width: 100%;
-      aspect-ratio: 45 / 64;
       position: relative;
+      overflow: hidden;
+      width: 100%;
+      min-height: 75%;
+      aspect-ratio: 45 / 64;
 
       &:hover .books__book--cover-overlay {
-        opacity: 1;
+        transform: translateY(0);
       }
 
       img {
@@ -78,33 +80,29 @@
       }
 
       &-overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 27%;
+        width: 100%;
+
+        background-color: $yellow-color;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+
         position: absolute;
-        top: 0;
         bottom: 0;
         left: 0;
-        right: 0;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        transition: 0.5s ease-in;
-        background-color: rgba($yellow-color, 0.75);
-        border-radius: 8px;
+        transform: translateY(100%);
+
+        transition: 0.3s ease-in-out;
 
         &-text {
           color: $dark-color;
           text-transform: uppercase;
-          border-radius: 8px;
-          padding: 14px 28px;
 
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          -webkit-transform: translate(-50%, -50%);
-          -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-          text-align: center;
-
-          @include apply-heading($heading-m);
+          @include apply-heading($overlay-test);
         }
       }
     }

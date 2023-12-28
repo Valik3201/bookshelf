@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -200,12 +200,14 @@ body {
   cursor: pointer;
 }
 .books__book--cover {
-  width: 100%;
-  aspect-ratio: 45/64;
   position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 75%;
+  aspect-ratio: 45/64;
 }
 .books__book--cover:hover .books__book--cover-overlay {
-  opacity: 1;
+  transform: translateY(0);
 }
 .books__book--cover img {
   width: 100%;
@@ -217,32 +219,27 @@ body {
   border-radius: 8px;
 }
 .books__book--cover-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 27%;
+  width: 100%;
+  background-color: #eac645;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   position: absolute;
-  top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: 0.5s ease-in;
-  background-color: rgba(234, 198, 69, 0.75);
-  border-radius: 8px;
+  transform: translateY(100%);
+  transition: 0.3s ease-in-out;
 }
 .books__book--cover-overlay-text {
   color: #111111;
   text-transform: uppercase;
-  border-radius: 8px;
-  padding: 14px 28px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 24px;
-  letter-spacing: -0.18px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.56px;
 }
 .books__book--title {
   color: #111111;
