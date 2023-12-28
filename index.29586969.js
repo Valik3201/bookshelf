@@ -4,7 +4,7 @@ var t,e,o,i,n,r,a,s,l,f,c=globalThis;function u(t,e,o,i){Object.defineProperty(t
             <button class="category-list__item" type="button" name="${t}">${t}</button>
         </div>`).join(""),t.insertAdjacentHTML("beforeend",o)})();const eK=async t=>{let e=document.querySelector(".modal-pop-up-content"),{_id:o,title:i,author:n,book_image:r,description:a,buy_links:s}=await eV(`${t}`),l=s.filter(t=>["Amazon","Apple Books"].includes(t.name)).map(t=>`<p>${t.name}: <a href="${t.url}" target="_blank">${t.url}</a></p>`).join(""),f=`
     <div class="modal" data-book-id="${o}">
-      <img class="modal__image" src="${r}" alt="${i}">
+      <img loading="lazy" class="modal__image" src="${r}" alt="${i}">
       <div class="modal__details">
           <p class="modal__details-title">Title: ${i}</p>
           <p class="modal__details-author">Author: ${n}</p>
@@ -15,7 +15,7 @@ var t,e,o,i,n,r,a,s,l,f,c=globalThis;function u(t,e,o,i){Object.defineProperty(t
   `;e.insertAdjacentHTML("beforeend",f)},eY=async()=>{eG("topBooks");let t=(await eV("top-books")).map(t=>{let e=t.books.map(({title:t,author:e,book_image:o,_id:i})=>`
           <div class="books__book" data-book-id="${i}">
             <div class="books__book--cover">
-              <img src="${o}" alt="${t}">
+              <img loading="lazy" src="${o}" alt="${t}">
               <div class="books__book--cover-overlay">
                 <div class="books__book--cover-overlay-text">Quick View</div>
               </div>
@@ -34,7 +34,7 @@ var t,e,o,i,n,r,a,s,l,f,c=globalThis;function u(t,e,o,i){Object.defineProperty(t
     `}).join("");eX.insertAdjacentHTML("beforeend",t),document.querySelectorAll(".books__category--books").forEach(t=>{t.addEventListener("click",t=>{let e=t.target.closest(".books__book");if(e){let t=e.dataset.bookId;console.log("Displaying book with ID:",t),eK(t)}})})};eY();const eQ=async t=>{let e=await eV("category",t);if(!e||!Array.isArray(e)){console.error("Invalid response from fetchBooks:",e);return}eG("category");let o=e.flat().map(t=>`
       <div class="books__book" data-book-id="${t._id}">
         <div class="books__book--cover">
-          <img src="${t.book_image}" alt="${t.title}">
+          <img loading="lazy" src="${t.book_image}" alt="${t.title}">
           <div class="books__book--cover-overlay">
             <div class="books__book--cover-overlay-text">Quick View</div>
           </div>
@@ -50,4 +50,4 @@ var t,e,o,i,n,r,a,s,l,f,c=globalThis;function u(t,e,o,i){Object.defineProperty(t
       </div>
     </div>
   `;eJ.innerHTML=i,document.querySelectorAll(".books__book").forEach(t=>{t.addEventListener("click",()=>{let e=t.dataset.bookId;console.log("Displaying book with ID:",e),eK(e)})})};eX.addEventListener("click",t=>{let e=t.target.closest('button[name="See more"]');e&&(eQ(e.getAttribute("data-category")),window.scrollTo({top:0,behavior:"smooth"}))}),document.querySelector(".category-list").addEventListener("click",t=>{let e=t.target.closest("button[name]");if(e){document.querySelectorAll("button[name]").forEach(t=>t.classList.remove("active")),e.classList.add("active");let t=e.getAttribute("name");"All categories"===t?eY():eQ(t)}});
-//# sourceMappingURL=index.ef2ef362.js.map
+//# sourceMappingURL=index.29586969.js.map
