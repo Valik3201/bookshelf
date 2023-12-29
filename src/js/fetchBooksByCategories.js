@@ -53,18 +53,16 @@ const displayBooksByCategory = async categoryName => {
   });
 };
 
-function scrollToCategory() {
-  const bookCategoryTitleEl = document.querySelector('.books-category');
-
-  if (bookCategoryTitleEl) {
-    bookCategoryTitleEl.scrollIntoView({
-      block: 'start',
+const scrollToCategory = () => {
+  if (booksContainer) {
+    booksContainer.scrollIntoView({
       behavior: 'smooth',
+      block: 'start',
     });
   } else {
-    console.error('Element with class "books-category" not found.');
+    console.error('Books not found.');
   }
-}
+};
 
 topBooksContainer.addEventListener('click', event => {
   const seeMoreBtn = event.target.closest('button[name="See more"]');
@@ -72,7 +70,6 @@ topBooksContainer.addEventListener('click', event => {
   if (seeMoreBtn) {
     const categoryName = seeMoreBtn.getAttribute('data-category');
     displayBooksByCategory(categoryName);
-    scrollToCategory();
 
     const categoryListButtons = document.querySelectorAll('.category-list button[name]');
     categoryListButtons.forEach(button => {
@@ -86,6 +83,8 @@ topBooksContainer.addEventListener('click', event => {
         });
       }
     });
+
+    scrollToCategory();
   }
 });
 
