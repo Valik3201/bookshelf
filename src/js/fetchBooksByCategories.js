@@ -1,5 +1,6 @@
 import { fetchBooks } from './bookAPI.js';
 import { displayTopBooks } from './fetchBooks.js';
+import { displayBookById } from './fetchBookById.js';
 import { topBooksContainer, booksContainer, switchView } from './viewSwitcher.js';
 
 const displayBooksByCategory = async categoryName => {
@@ -16,9 +17,9 @@ const displayBooksByCategory = async categoryName => {
     .flat()
     .map(book => {
       return `
-      <div class="books__book">
+      <div class="books__book" data-book-id="${book._id}">
         <div class="books__book--cover">
-          <img src="${book.book_image}" alt="${book.title}">
+          <img loading="lazy" src="${book.book_image}" alt="${book.title}">
           <div class="books__book--cover-overlay">
             <div class="books__book--cover-overlay-text">Quick View</div>
           </div>
@@ -31,7 +32,7 @@ const displayBooksByCategory = async categoryName => {
     .join('');
 
   const categoryTitleMarkup = `
-    <div class="books-category">
+    <div class="books-category visible" data-category="${categoryName}">
       <h2 class="books__heading">${categoryName}</h2>
       <div class="books__category--books">
         ${booksMarkup}
@@ -40,6 +41,27 @@ const displayBooksByCategory = async categoryName => {
   `;
 
   booksContainer.innerHTML = categoryTitleMarkup;
+
+  const books = document.querySelectorAll('.books__book');
+
+  books.forEach(book => {
+    book.addEventListener('click', () => {
+      const bookId = book.dataset.bookId;
+      console.log('Displaying book with ID:', bookId);
+      displayBookById(bookId);
+    });
+  });
+};
+
+const scrollToCategory = () => {
+  if (booksContainer) {
+    booksContainer.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  } else {
+    console.error('Books not found.');
+  }
 };
 
 topBooksContainer.addEventListener('click', event => {
@@ -48,6 +70,21 @@ topBooksContainer.addEventListener('click', event => {
   if (seeMoreBtn) {
     const categoryName = seeMoreBtn.getAttribute('data-category');
     displayBooksByCategory(categoryName);
+
+    const categoryListButtons = document.querySelectorAll('.category-list button[name]');
+    categoryListButtons.forEach(button => {
+      button.classList.remove('active');
+      if (button.getAttribute('name') === categoryName) {
+        button.classList.add('active');
+
+        button.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      }
+    });
+
+    scrollToCategory();
   }
 });
 
@@ -68,6 +105,7 @@ categoryListContainer.addEventListener('click', event => {
       displayTopBooks();
     } else {
       displayBooksByCategory(categoryName);
+      scrollToCategory();
     }
   }
 });

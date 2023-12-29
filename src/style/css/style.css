@@ -292,7 +292,8 @@ svg.logo-icon {
   background-color: transparent;
   outline: none;
   cursor: pointer;
-  height: 14px;
+  height: 20px;
+  stroke: #000;
 }
 
 .mobile-menu-field {

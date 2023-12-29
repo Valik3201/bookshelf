@@ -1,5 +1,5 @@
 // Font
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap');
 
 $main-family: 'DM Sans', sans-serif; // Main font family
 
@@ -70,6 +70,13 @@ $button: (
   font-weight: 700,
   line-height: 18px,
   letter-spacing: -0.14px,
+);
+
+$overlay-test: (
+  font-size: 14px,
+  font-weight: 500,
+  line-height: 18px,
+  letter-spacing: -0.56px,
 );
 
 $body-s: (
