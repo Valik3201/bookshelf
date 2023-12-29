@@ -40,3 +40,4 @@ closeButton.addEventListener('click', function () {
   // Ukryj modal
   toggleModal(false);
 });
+  //zamknięcie za pomocą klawiszy
