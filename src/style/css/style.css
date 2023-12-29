@@ -31,14 +31,7 @@
   border-radius: 50%;
   background-color: #4f2ee8;
 }
-.icon-amazon {
-  fill: #4f2ee8;
-  width: 32px;
-  height: 11px;
-  display: flex;
-  justify-content: end;
-  text-align: end;
-}
+
 .books-card-img {
   width: 100px;
   height: 142px;
@@ -116,6 +109,9 @@
   font-size: 14px;
   width: 244px;
 }
+.hidden {
+  display: none;
+}
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .heading {
@@ -134,6 +130,7 @@
     width: 322px;
     height: 241px;
     margin-left: 170px;
+    overflow: hidden;
   }
   .book-message {
     margin-left: 200px;
@@ -157,6 +154,7 @@
     height: 180px;
     max-width: 100%;
     position: relative;
+    margin-top: 0px;
   }
 
   .book-title {

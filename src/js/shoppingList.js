@@ -1,14 +1,15 @@
-import { fetchBooks } from './bookAPI.js';
+// Funkcja wyświetlająca dane z local storage na karcie
+const displayBookFromLocalStorage = () => {
+  // Pobierz dane z local storage
+  const selectedBookData = JSON.parse(localStorage.getItem('selectedBook'));
 
-// Funkcja wyświetlająca dane z API na karcie
-const displayBooksFromAPI = bookData => {
   // Pobierz referencję do diva .book-card
   const bookCard = document.querySelector('.book-card');
 
   // Sprawdź, czy div .book-card istnieje
   if (bookCard) {
-    // Sprawdź, czy są dane z API
-    if (bookData) {
+    // Sprawdź, czy są dane w local storage
+    if (selectedBookData) {
       // Zaktualizuj treść elementów w .book-card
       const booksCardImg = bookCard.querySelector('.books-card-img');
       const bookTitle = bookCard.querySelector('.book-title');
@@ -16,23 +17,40 @@ const displayBooksFromAPI = bookData => {
       const bookPlot = bookCard.querySelector('.book-plot');
       const bookAuthor = bookCard.querySelector('.book-author');
 
-      booksCardImg.src = bookData.book_image;
-      booksCardImg.alt = bookData.title;
-      bookTitle.textContent = bookData.title;
-      bookGenre.textContent = bookData.genre;
-      bookPlot.textContent = bookData.plot;
-      bookAuthor.textContent = bookData.author;
+      booksCardImg.src = selectedBookData.book_image;
+      booksCardImg.alt = selectedBookData.title;
+      bookTitle.textContent = selectedBookData.title;
+      bookGenre.textContent = selectedBookData.genre;
+      bookPlot.textContent = selectedBookData.plot;
+      bookAuthor.textContent = selectedBookData.author;
     } else {
-      // Jeśli brak danych, wyświetl komunikat
-      console.warn('Brak danych z API.');
+      // Jeśli brak danych w local storage, wyświetl komunikat
+      console.warn('Brak danych o książce w local storage.');
     }
   } else {
     console.warn('Div .book-card nie istnieje.');
   }
 };
 
+// Pobierz i wyświetl dane z local storage po załadowaniu strony
+document.addEventListener('DOMContentLoaded', () => {
+  // Wyświetl dane na karcie
+  displayBookFromLocalStorage();
+  // Sprawdź stan kart, ale nie pokazuj komunikatu
+  checkBookCardExistence(false);
+});
+
+// Pobierz wszystkie przyciski .button-delete i dodaj nasłuchiwanie na kliknięcie
+const deleteButtons = document.querySelectorAll('.button-delete');
+deleteButtons.forEach(button => {
+  button.addEventListener('click', deleteBookCard);
+});
+
 // Funkcja obsługująca kliknięcie przycisku usuwania
 function deleteBookCard() {
+  // Usuń dane z local storage
+  localStorage.removeItem('selectedBook');
+
   // Pobierz referencję do diva .book-card
   const bookCard = document.querySelector('.book-card');
 
@@ -41,16 +59,14 @@ function deleteBookCard() {
     // Usuń div .book-card
     bookCard.remove();
     // Po usunięciu karty, sprawdź stan kart
-    checkBookCardExistence();
-    // Pobierz i wyświetl nowe dane z API
-    displayBooksFromAPI();
+    checkBookCardExistence(true); // Przekazujemy wartość true, aby pokazać komunikat
   } else {
     console.warn('Div .book-card do usunięcia nie istnieje.');
   }
 }
 
 // Funkcja sprawdzająca czy karta książki istnieje
-function checkBookCardExistence() {
+function checkBookCardExistence(showMessage) {
   // Pobierz referencję do diva .book-card
   const bookCard = document.querySelector('.book-card');
 
@@ -65,7 +81,7 @@ function checkBookCardExistence() {
     }
   } else {
     // Sprawdź, czy komunikat nie istnieje i dodaj go
-    if (!emptyMessage) {
+    if (!emptyMessage && showMessage) {
       const messageDiv = document.createElement('div');
       messageDiv.className = 'book-message';
       messageDiv.textContent = 'This page is empty, add some books and proceed to order.';
@@ -73,19 +89,3 @@ function checkBookCardExistence() {
     }
   }
 }
-
-// Pobierz i wyświetl dane z API po załadowaniu strony
-document.addEventListener('DOMContentLoaded', async () => {
-  const booksData = await fetchBooks('category');
-
-  // Wyświetl dane na karcie
-  displayBooksFromAPI(booksData && booksData.length > 0 ? booksData[0] : null);
-  // Sprawdź stan kart
-  checkBookCardExistence();
-});
-
-// Pobierz wszystkie przyciski .button-delete i dodaj nasłuchiwanie na kliknięcie
-const deleteButtons = document.querySelectorAll('.button-delete');
-deleteButtons.forEach(function (button) {
-  button.addEventListener('click', deleteBookCard);
-});
