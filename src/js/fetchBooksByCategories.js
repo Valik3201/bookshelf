@@ -19,7 +19,7 @@ const displayBooksByCategory = async categoryName => {
       return `
       <div class="books__book" data-book-id="${book._id}">
         <div class="books__book--cover">
-          <img src="${book.book_image}" alt="${book.title}">
+          <img loading="lazy" src="${book.book_image}" alt="${book.title}">
           <div class="books__book--cover-overlay">
             <div class="books__book--cover-overlay-text">Quick View</div>
           </div>
