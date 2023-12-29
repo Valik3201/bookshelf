@@ -1,2 +1,0 @@
-var r=globalThis,e={},i={},o=r.parcelRequire0688;null==o&&((o=function(r){if(r in e)return e[r].exports;if(r in i){var o=i[r];delete i[r];var t={id:r,exports:{}};return e[r]=t,o.call(t.exports,t,t.exports),t.exports}var n=Error("Cannot find module '"+r+"'");throw n.code="MODULE_NOT_FOUND",n}).register=function(r,e){i[r]=e},r.parcelRequire0688=o),o.register,o("iIDod");
-//# sourceMappingURL=shopping-list.1b11fd22.js.map
