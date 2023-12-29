@@ -23,7 +23,7 @@ export const displayTopBooks = async () => {
           return `
           <div class="books__book" data-book-id="${_id}">
             <div class="books__book--cover">
-              <img src="${book_image}" alt="${title}">
+              <img loading="lazy" src="${book_image}" alt="${title}">
               <div class="books__book--cover-overlay">
                 <div class="books__book--cover-overlay-text">Quick View</div>
               </div>
@@ -49,7 +49,9 @@ export const displayTopBooks = async () => {
     .join('');
 
   // Insert the generated markup into the top books container.
-  topBooksContainer.insertAdjacentHTML('beforeend', markup);
+  topBooksContainer.innerHTML = `
+      <h1 class="books__heading">Best Sellers <span class="books__heading--highlight">Books</span></h1>
+      ${markup}`;
 
   // Select all elements with the class 'books__category--books'
   const bookContainers = document.querySelectorAll('.books__category--books');

@@ -19,7 +19,7 @@ const displayBooksByCategory = async categoryName => {
       return `
       <div class="books__book" data-book-id="${book._id}">
         <div class="books__book--cover">
-          <img src="${book.book_image}" alt="${book.title}">
+          <img loading="lazy" src="${book.book_image}" alt="${book.title}">
           <div class="books__book--cover-overlay">
             <div class="books__book--cover-overlay-text">Quick View</div>
           </div>
@@ -32,7 +32,7 @@ const displayBooksByCategory = async categoryName => {
     .join('');
 
   const categoryTitleMarkup = `
-    <div class="books-category">
+    <div class="books-category visible" data-category="${categoryName}">
       <h2 class="books__heading">${categoryName}</h2>
       <div class="books__category--books">
         ${booksMarkup}
@@ -59,6 +59,24 @@ topBooksContainer.addEventListener('click', event => {
   if (seeMoreBtn) {
     const categoryName = seeMoreBtn.getAttribute('data-category');
     displayBooksByCategory(categoryName);
+
+    const categoryListButtons = document.querySelectorAll('.category-list button[name]');
+    categoryListButtons.forEach(button => {
+      button.classList.remove('active');
+      if (button.getAttribute('name') === categoryName) {
+        button.classList.add('active');
+
+        button.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      }
+    });
+
+    booksContainer.scrollIntoView({
+      block: top,
+      behavior: 'smooth',
+    });
   }
 });
 
