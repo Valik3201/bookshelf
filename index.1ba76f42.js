@@ -2,17 +2,17 @@ var t,e,o,i,n,r,a,s,l,f,c=globalThis;function u(t,e,o,i){Object.defineProperty(t
           <button class="category-list__item active" type="button" name="All categories">All categories</button>
         </div>`;o+=e.map(({list_name:t})=>`<div>
             <button class="category-list__item" type="button" name="${t}">${t}</button>
-        </div>`).join(""),t.insertAdjacentHTML("beforeend",o)})();const eK=async t=>{let e=document.querySelector(".modal-pop-up-content"),{_id:o,title:i,author:n,book_image:r,description:a,buy_links:s}=await eV(`${t}`),l=s.filter(t=>["Amazon","Apple Books"].includes(t.name)).map(t=>`<p>${t.name}: <a href="${t.url}" target="_blank">${t.url}</a></p>`).join(""),f=`
-    <div class="modal" data-book-id="${o}">
-      <img loading="lazy" class="modal__image" src="${r}" alt="${i}">
+        </div>`).join(""),t.insertAdjacentHTML("beforeend",o)})();const eK=document.querySelector(".modal-pop-up-content"),eY=t=>{let e=document.querySelector(".backdrop-pop-up");t?e.classList.remove("is-hidden"):e.classList.add("is-hidden")};document.querySelector(".close-modal-button").addEventListener("click",function(){eK.innerHTML="",eY(!1)});const eQ=async t=>{eY(!0);let{_id:e,title:o,author:i,book_image:n,description:r,buy_links:a}=await eV(`${t}`),s=a.filter(t=>["Amazon","Apple Books"].includes(t.name)).map(t=>`<p>${t.name}: <a href="${t.url}" target="_blank">${t.url}</a></p>`).join(""),l=`
+    <div class="modal" data-book-id="${e}">
+      <img loading="lazy" class="modal__image" src="${n}" alt="${o}">
       <div class="modal__details">
-          <p class="modal__details-title">Title: ${i}</p>
-          <p class="modal__details-author">Author: ${n}</p>
-          <p class="modal__details-description">Description: ${a}</p>
-          <p class="modal__details-links">Buy Links: ${l}</p>
+          <p class="modal__details-title">Title: ${o}</p>
+          <p class="modal__details-author">Author: ${i}</p>
+          <p class="modal__details-description">Description: ${r}</p>
+          <p class="modal__details-links">Buy Links: ${s}</p>
       </div>
     </div>
-  `;e.innerHTML=f},eY=async()=>{eG("topBooks");let t=(await eV("top-books")).map(t=>{let e=t.books.map(({title:t,author:e,book_image:o,_id:i})=>`
+  `;eK.innerHTML=l},eZ=async()=>{eG("topBooks");let t=(await eV("top-books")).map(t=>{let e=t.books.map(({title:t,author:e,book_image:o,_id:i})=>`
           <div class="books__book" data-book-id="${i}">
             <div class="books__book--cover">
               <img loading="lazy" src="${o}" alt="${t}">
@@ -33,7 +33,7 @@ var t,e,o,i,n,r,a,s,l,f,c=globalThis;function u(t,e,o,i){Object.defineProperty(t
       </div>
     `}).join("");eX.innerHTML=`
       <h1 class="books__heading">Best Sellers <span class="books__heading--highlight">Books</span></h1>
-      ${t}`,document.querySelectorAll(".books__category--books").forEach(t=>{t.addEventListener("click",t=>{let e=t.target.closest(".books__book");if(e){let t=e.dataset.bookId;console.log("Displaying book with ID:",t),eK(t)}})})};eY();const eQ=async t=>{let e=await eV("category",t);if(!e||!Array.isArray(e)){console.error("Invalid response from fetchBooks:",e);return}eG("category");let o=e.flat().map(t=>`
+      ${t}`,document.querySelectorAll(".books__category--books").forEach(t=>{t.addEventListener("click",t=>{let e=t.target.closest(".books__book");if(e){let t=e.dataset.bookId;console.log("Displaying book with ID:",t),eQ(t)}})})};eZ();const e0=async t=>{let e=await eV("category",t);if(!e||!Array.isArray(e)){console.error("Invalid response from fetchBooks:",e);return}eG("category");let o=e.flat().map(t=>`
       <div class="books__book" data-book-id="${t._id}">
         <div class="books__book--cover">
           <img loading="lazy" src="${t.book_image}" alt="${t.title}">
@@ -51,5 +51,5 @@ var t,e,o,i,n,r,a,s,l,f,c=globalThis;function u(t,e,o,i){Object.defineProperty(t
         ${o}
       </div>
     </div>
-  `;eJ.innerHTML=i,document.querySelectorAll(".books__book").forEach(t=>{t.addEventListener("click",()=>{let e=t.dataset.bookId;console.log("Displaying book with ID:",e),eK(e)})})};eX.addEventListener("click",t=>{let e=t.target.closest('button[name="See more"]');if(e){let t=e.getAttribute("data-category");eQ(t),document.querySelectorAll(".category-list button[name]").forEach(e=>{e.classList.remove("active"),e.getAttribute("name")===t&&(e.classList.add("active"),e.scrollIntoView({behavior:"smooth",block:"center"}))}),eJ.scrollIntoView({block:top,behavior:"smooth"})}}),document.querySelector(".category-list").addEventListener("click",t=>{let e=t.target.closest("button[name]");if(e){document.querySelectorAll("button[name]").forEach(t=>t.classList.remove("active")),e.classList.add("active");let t=e.getAttribute("name");"All categories"===t?eY():eQ(t)}});
-//# sourceMappingURL=index.2702d150.js.map
+  `;eJ.innerHTML=i,document.querySelectorAll(".books__book").forEach(t=>{t.addEventListener("click",()=>{let e=t.dataset.bookId;console.log("Displaying book with ID:",e),eQ(e)})})};eX.addEventListener("click",t=>{let e=t.target.closest('button[name="See more"]');if(e){let t=e.getAttribute("data-category");e0(t),document.querySelectorAll(".category-list button[name]").forEach(e=>{e.classList.remove("active"),e.getAttribute("name")===t&&(e.classList.add("active"),e.scrollIntoView({behavior:"smooth",block:"center"}))}),eJ.scrollIntoView({block:top,behavior:"smooth"})}}),document.querySelector(".category-list").addEventListener("click",t=>{let e=t.target.closest("button[name]");if(e){document.querySelectorAll("button[name]").forEach(t=>t.classList.remove("active")),e.classList.add("active");let t=e.getAttribute("name");"All categories"===t?eZ():e0(t)}});
+//# sourceMappingURL=index.1ba76f42.js.map
