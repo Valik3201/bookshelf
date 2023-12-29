@@ -5,11 +5,13 @@
 <!--Karta książki-->
 <div class="book-card">
   <img class="books-card-img" src="./images/book-example.jpg" alt="books" />
-  <svg class="icon-trash">
-    <use href="/src/images/icons.svg#icon-trash"></use>
-  </svg>
+
   <div class="book-description">
-    <button class="button-delete" type="button"></button>
+    <button class="button-delete" type="button">
+      <svg class="icon-trash">
+        <use href="/src/images/icons.svg#icon-trash"></use>
+      </svg>
+    </button>
     <p class="book-title">I will find you</p>
     <p class="book-genre">Hardcover fiction</p>
     <p class="book-plot">
@@ -20,16 +22,12 @@
     </p>
     <p class="book-author">Harlan Coben</p>
 
-    <!--<svg>
-  <use
-    href="./ścieżka-do-svg-sprite'a/nazwa-sprite'a.svg#amazon"
-  ></use>
-</svg>
-<svg>
-  <use
-    href="./ścieżka-do-svg-sprite'a/nazwa-sprite'a.svg#mini-książka"
-  ></use>
-</svg> -->
+    <!--<a href="https://www.amazon.pl/"> <img href=""> <a/> -->
+    <!--<a href=""> <img href=""> <a/> -->
   </div>
 </div>
-<script src="/src/js/shoppingList.js"></script>
+<!--<div class="pagination">
+  <button id="prevPage">Poprzednia</button>
+  <button id="nextPage">Następna</button>
+</div> -->
+<script type="module" src="/src/js/shoppingList.js"></script>
