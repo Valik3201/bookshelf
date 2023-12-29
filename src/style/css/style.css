@@ -268,6 +268,7 @@ svg.logo-icon {
   margin-left: 14px;
 }
 .hamburger-icon {
+  fill: #000000;
   stroke: black;
 }
 .switch-button-div,
@@ -495,6 +496,26 @@ svg.logo-icon {
   .shopping-list-icon {
     fill: #ffffff;
     transition: fill 0.3s ease-in;
+  }
+  svg.hamburger-icon {
+    fill: #ffffff;
+    stroke: rgb(255, 255, 255);
+  }
+  body,
+  .books__book--title,
+  .books__heading,
+  .shopping-list-link,
+  .category-list__item,
+  h1,
+  .sign-up-button {
+    color: #ffffff;
+    transition: color 0.3s ease-in;
+  }
+  .see-more-btn {
+    color: #ffffff !important;
+    transition: color 0.3s ease-in;
+  }
+  .slider {
   }
   body,
   .books__book--title,
