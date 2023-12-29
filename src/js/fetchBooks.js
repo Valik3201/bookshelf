@@ -56,6 +56,36 @@ export const displayTopBooks = async () => {
   // Select all elements with the class 'books__category--books'
   const bookContainers = document.querySelectorAll('.books__category--books');
 
+  const blocks = document.querySelectorAll('.books__category');
+
+  function checkBlocksVisibility() {
+    let windowHeight = window.innerHeight;
+
+    console.log('Window height', windowHeight);
+
+    blocks.forEach(block => {
+      let blockPosition = block.getBoundingClientRect().top;
+
+      console.log('Block position', blockPosition);
+
+      if (blockPosition < windowHeight + 400) {
+        block.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+        block.style.opacity = '1';
+        block.style.transform = 'translateY(0)';
+      } else {
+        block.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+        block.style.opacity = '0';
+        block.style.transform = 'translateY(100%)';
+      }
+    });
+  }
+
+  checkBlocksVisibility();
+
+  window.addEventListener('scroll', function () {
+    checkBlocksVisibility();
+  });
+
   // Iterate over each book container
   bookContainers.forEach(bookContainer => {
     // Add event listener for click events on books inside the current container
