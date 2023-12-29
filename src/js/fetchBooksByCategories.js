@@ -53,6 +53,17 @@ const displayBooksByCategory = async categoryName => {
   });
 };
 
+const scrollToCategory = () => {
+  if (booksContainer) {
+    booksContainer.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  } else {
+    console.error('Books not found.');
+  }
+};
+
 topBooksContainer.addEventListener('click', event => {
   const seeMoreBtn = event.target.closest('button[name="See more"]');
 
@@ -73,10 +84,7 @@ topBooksContainer.addEventListener('click', event => {
       }
     });
 
-    booksContainer.scrollIntoView({
-      block: top,
-      behavior: 'smooth',
-    });
+    scrollToCategory();
   }
 });
 
@@ -97,6 +105,7 @@ categoryListContainer.addEventListener('click', event => {
       displayTopBooks();
     } else {
       displayBooksByCategory(categoryName);
+      scrollToCategory();
     }
   }
 });
