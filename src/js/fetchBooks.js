@@ -1,4 +1,5 @@
 import { fetchBooks } from './bookAPI.js';
+import { displayBookById } from './fetchBookById.js';
 import { topBooksContainer, switchView } from './viewSwitcher.js';
 
 /**
@@ -18,11 +19,11 @@ export const displayTopBooks = async () => {
     .map(category => {
       // Generate markup for each book within the category.
       const booksMarkup = category.books
-        .map(({ title, author, book_image }) => {
+        .map(({ title, author, book_image, _id }) => {
           return `
-          <div class="books__book">
+          <div class="books__book" data-book-id="${_id}">
             <div class="books__book--cover">
-              <img src="${book_image}" alt="${title}">
+              <img loading="lazy" src="${book_image}" alt="${title}">
               <div class="books__book--cover-overlay">
                 <div class="books__book--cover-overlay-text">Quick View</div>
               </div>
@@ -48,7 +49,57 @@ export const displayTopBooks = async () => {
     .join('');
 
   // Insert the generated markup into the top books container.
-  topBooksContainer.insertAdjacentHTML('beforeend', markup);
+  topBooksContainer.innerHTML = `
+      <h1 class="books__heading">Best Sellers <span class="books__heading--highlight">Books</span></h1>
+      ${markup}`;
+
+  // Select all elements with the class 'books__category--books'
+  const bookContainers = document.querySelectorAll('.books__category--books');
+
+  const blocks = document.querySelectorAll('.books__category');
+
+  function checkBlocksVisibility() {
+    let windowHeight = window.innerHeight;
+
+    console.log('Window height', windowHeight);
+
+    blocks.forEach(block => {
+      let blockPosition = block.getBoundingClientRect().top;
+
+      console.log('Block position', blockPosition);
+
+      if (blockPosition < windowHeight + 400) {
+        block.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+        block.style.opacity = '1';
+        block.style.transform = 'translateY(0)';
+      } else {
+        block.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+        block.style.opacity = '0';
+        block.style.transform = 'translateY(100%)';
+      }
+    });
+  }
+
+  checkBlocksVisibility();
+
+  window.addEventListener('scroll', function () {
+    checkBlocksVisibility();
+  });
+
+  // Iterate over each book container
+  bookContainers.forEach(bookContainer => {
+    // Add event listener for click events on books inside the current container
+    bookContainer.addEventListener('click', event => {
+      const targetBook = event.target.closest('.books__book');
+
+      if (targetBook) {
+        const bookId = targetBook.dataset.bookId;
+
+        console.log('Displaying book with ID:', bookId);
+        displayBookById(bookId);
+      }
+    });
+  });
 };
 
 // Call the displayTopBooks function to render top books in the UI.

@@ -1,5 +1,28 @@
 import axios from 'axios';
 
+// Importing Notiflix Notify and Loading modules for notifications and loading indicators
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
+
+// Initializing Notiflix Notify with custom settings
+Notify.init({
+  fontSize: '1rem',
+  width: '550px',
+  cssAnimationStyle: 'from-bottom',
+  useIcon: false,
+  success: {
+    background: '#4f2ee8',
+  },
+  info: {
+    background: '#EAC645',
+  },
+});
+
+// Initializing Notiflix Loading with custom settings
+Loading.init({
+  svgColor: '#4f2ee8',
+});
+
 /**
  * The base URL for the books API.
  * @type {string}
@@ -15,6 +38,9 @@ export const API_URL = 'https://books-backend.p.goit.global/books/';
  */
 export const fetchBooks = async (endpoint, selectedCategory = '') => {
   try {
+    // Display loading dots while fetching data.
+    Loading.dots();
+
     // Construct the complete URL based on the endpoint and optional category.
     const URL = selectedCategory
       ? `${API_URL}${endpoint}?category=${selectedCategory}`
@@ -23,11 +49,30 @@ export const fetchBooks = async (endpoint, selectedCategory = '') => {
     // Make a GET request using axios.
     const response = await axios.get(URL);
 
-    // Return the data received in the response.
-    return response.data;
+    // Check the HTTP status code and handle accordingly.
+    if (response.status === 200) {
+      // Return the data received in the response.
+      return response.data;
+    } else if (response.status === 404) {
+      // Handle 404 Not Found
+      console.error('Error fetching: Not Found');
+      Notify.failure('Books not found. Please check your search criteria.');
+    } else if (response.status === 500) {
+      // Handle 500 Internal Server Error
+      console.error('Error fetching: Internal Server Error');
+      Notify.failure('Internal server error. Please try again later.');
+    } else {
+      // Handle other status codes if needed
+      console.error('Error fetching: Unexpected status', response.status);
+      Notify.failure('An unexpected error occurred. Please try again later.');
+    }
   } catch (error) {
     // Log an error message if fetching fails and return null.
     console.error('Error fetching:', error.message);
+    Notify.failure('Failed to fetch books. Please try again later.');
     return null;
+  } finally {
+    // Remove loading indicators
+    Loading.remove(500);
   }
 };
