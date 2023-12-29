@@ -61,12 +61,8 @@ export const displayTopBooks = async () => {
   function checkBlocksVisibility() {
     let windowHeight = window.innerHeight;
 
-    console.log('Window height', windowHeight);
-
     blocks.forEach(block => {
       let blockPosition = block.getBoundingClientRect().top;
-
-      console.log('Block position', blockPosition);
 
       if (blockPosition < windowHeight + 400) {
         block.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
