@@ -1,4 +1,5 @@
 import { fetchBooks } from './bookAPI.js';
+import { modalContainer, toggleModal } from './modalHandler.js';
 
 /**
  * Display book details by ID in a modal pop-up.
@@ -6,8 +7,8 @@ import { fetchBooks } from './bookAPI.js';
  * @returns {void}
  */
 export const displayBookById = async bookId => {
-  // Find the modal container in the DOM
-  const modalContainer = document.querySelector('.modal-pop-up-content');
+  // Open the modal window
+  toggleModal(true);
 
   // Fetch book details using the provided bookId
   const bookById = await fetchBooks(`${bookId}`);
