@@ -27,6 +27,12 @@
     "posthtml-include": "^1.7.4"
   },
   "dependencies": {
+<<<<<<< Updated upstream
     "axios": "^1.6.2"
+=======
+    "axios": "^1.6.2",
+    "notiflix": "^3.2.6",
+    "swiper": "^11.0.5"
+>>>>>>> Stashed changes
   }
 }
