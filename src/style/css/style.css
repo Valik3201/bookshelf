@@ -19,19 +19,19 @@
   .books-img {
     width: 265px;
     height: 198px;
-    display: flex;
-    justify-content: center;
+    margin-left: 50px;
   }
 }
 .icon-trash {
-  float: right;
+  fill: #4f2ee8;
+  stroke: #fff;
+  width: 25px;
+  height: 25px;
   padding: 5px;
-  width: 16px;
-  height: 16px;
-  fill: #000;
-  /*border-radius: 50%;*/
-  border-color: #4f2ee8;
+  border-radius: 50%;
+  background-color: #4f2ee8;
 }
+
 .books-card-img {
   width: 100px;
   height: 142px;
@@ -41,8 +41,7 @@
 }
 .button-delete {
   float: right;
-  padding: 5px;
-  margin: 10px;
+  margin: 15px;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -51,7 +50,8 @@
 }
 .book-card {
   display: flex;
-  position: absolute;
+  position: relative;
+  bottom: 200px;
   height: 68px;
   margin: 14px;
   gap: 10px;
@@ -103,11 +103,14 @@
 }
 .book-message {
   margin-top: 20px;
+  margin-left: 50px;
   color: rgba(0, 0, 0, 0.6);
-  float: center;
   text-align: center;
   font-size: 14px;
   width: 244px;
+}
+.hidden {
+  display: none;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -126,12 +129,11 @@
   .books-img {
     width: 322px;
     height: 241px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    margin-left: 170px;
+    overflow: hidden;
   }
   .book-message {
-    margin-top: 20px;
+    margin-left: 200px;
     color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
@@ -151,10 +153,21 @@
     width: 100%;
     height: 180px;
     max-width: 100%;
+    position: relative;
+    margin-top: 0px;
   }
 
   .book-title {
     padding-top: 24px;
+  }
+  .icon-trash {
+    fill: #4f2ee8;
+    stroke: #fff;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #4f2ee8;
   }
 }
 
@@ -162,10 +175,13 @@
   .books-img {
     width: 265px;
     height: 198px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    margin-left: 500px;
   }
+
+  .book-message {
+    margin-left: 500px;
+  }
+
   .book-card {
     height: 180px;
     width: 996px;
@@ -230,7 +246,45 @@ input:checked + .slider:before {
   transform: translateX(20px);
 }
 /* swicher style end*/
+/* Sign Up modal */
+.is-hidden {
+  display: none;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+.sign-up-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4f2ee8;
+  z-index: 10;
+}
+.form-field {
+  position: relative;
+  top: 25%;
+  left: 25%;
+  width: 579px;
+  height: 516px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 18px;
+}
+.sign-up-modal-close {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  position: absolute;
+  top: 31px;
+  left: 534px;
+}
+.signup-close-icon {
+  stroke: black;
+}
 
+/* End Sign Up modal */
 /*header style*/
 body {
   overflow-x: hidden;
@@ -241,11 +295,6 @@ body {
 }
 svg.logo-icon {
   margin-right: 8px;
-}
-.shopping-list-div {
-  display: flex;
-  gap: 4px;
-  align-items: center;
 }
 .sign-up-button,
 .sign-up-button-mobile-menu {
@@ -259,14 +308,17 @@ svg.logo-icon {
   border-style: none;
   font-weight: 500;
   color: white;
+  cursor: pointer;
 }
 .arrow-right-icon {
   margin-right: 14px;
+  stroke: #eac645;
 }
 .sign-up-text {
   margin-left: 14px;
 }
 .hamburger-icon {
+  fill: #000000;
   stroke: black;
 }
 .switch-button-div,
@@ -277,12 +329,25 @@ svg.logo-icon {
   gap: 24px;
 }
 .home-link,
-.shopping-list-link,
+.shopping-text,
+.nav-list__link,
 .logo-header {
   text-decoration: none;
   color: black;
   line-height: 18px;
   font-size: 14px;
+}
+.nav-list__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8 16 8 16;
+  border-radius: 36px;
+}
+.shopping-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .hamburger-button,
 .close-button {
@@ -290,7 +355,8 @@ svg.logo-icon {
   background-color: transparent;
   outline: none;
   cursor: pointer;
-  height: 14px;
+  height: 20px;
+  stroke: #000;
 }
 
 .mobile-menu-field {
@@ -336,6 +402,9 @@ svg.logo-icon {
 .background-cover-container img {
   width: 125%;
   transform: rotate(-15deg);
+}
+.nav-list__link--active {
+  background-color: #eac645;
 }
 
 @media (max-width: 767px) {
@@ -399,15 +468,15 @@ svg.logo-icon {
     display: flex;
     justify-content: space-between;
     gap: 24px;
+    align-items: center;
   }
   .home-link {
     padding: 8 15.5 8 15.5;
-    background-color: #eac645;
     border-radius: 36px;
     font-weight: 700;
   }
 
-  .shopping-list-link {
+  .nav-list__link {
     font-weight: 500;
   }
 }
@@ -447,16 +516,90 @@ svg.logo-icon {
     display: flex;
     justify-content: space-between;
     gap: 24px;
+    align-items: center;
   }
   .home-link {
     padding: 8 15.5 8 15.5;
-    background-color: #eac645;
     border-radius: 36px;
     font-weight: 700;
   }
 
-  .shopping-list-link {
+  .nav-list__link {
     font-weight: 500;
   }
 }
 /*header style end*/
+
+/*DarkMode style*/
+[data-theme='dark'] {
+  body {
+    background: #202024;
+  }
+  .category-list__item.active,
+  .category-list__item:hover {
+    color: #eac645;
+    transition: color 0.3s ease-in;
+  }
+  header {
+    background: #111111;
+    transition: color 0.3s ease-in;
+  }
+  .nav-item p {
+    color: #f3f3f3;
+    transition: color 0.3s ease-in;
+  }
+  .heading {
+    color: #111;
+    transition: color 0.3s ease-in;
+  }
+  .book-card {
+    background: #202024;
+    transition: color 0.3s ease-in;
+  }
+  .header-items {
+    border: 1.5px solid #aaaaaa;
+    transition: border 0.3s ease-in;
+  }
+  .shopping-list-icon {
+    fill: #ffffff;
+    transition: fill 0.3s ease-in;
+  }
+  svg.hamburger-icon {
+    fill: #ffffff;
+    stroke: rgb(255, 255, 255);
+  }
+  body,
+  .books__book--title,
+  .books__heading,
+  .shopping-list-link,
+  .category-list__item,
+  h1,
+  .sign-up-button {
+    color: #ffffff;
+    transition: color 0.3s ease-in;
+  }
+  .see-more-btn {
+    color: #ffffff !important;
+    transition: color 0.3s ease-in;
+  }
+  .slider {
+  }
+  body,
+  .books__book--title,
+  .books__heading,
+  .shopping-list-link,
+  .category-list__item,
+  h1,
+  .sign-up-button {
+    color: #ffffff;
+    transition: color 0.3s ease-in;
+  }
+  .see-more-btn {
+    color: #ffffff !important;
+    transition: color 0.3s ease-in;
+  }
+  .slider {
+    background: linear-gradient(to bottom, #4f2ee8, #686868);
+  }
+}
+/*DarkMode style end*/
