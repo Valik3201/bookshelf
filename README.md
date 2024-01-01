@@ -53,7 +53,7 @@
 
 <!-- Screenshot -->
 
-**Bookshelf** is a web application for browsing and purchasing books, with additional features such as the ability to add books to a shopping list, explore categories, view popular books, and support charitable foundations.
+**Bookshelf** is a web application for browsing books, with additional features such as the ability to add books to a shopping list, explore categories, view popular books, and support charitable foundations.
 
 > [!NOTE]\
 > The project is set up for automatic deployment to GitHub Pages using GitHub Actions by JamesIves ([GitHub Pages Deployment Action](https://github.com/marketplace/actions/deploy-to-github-pages)). The deployment action is configured to push production-ready code into the `gh-pages` branch.
