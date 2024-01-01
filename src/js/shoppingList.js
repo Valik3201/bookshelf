@@ -1,3 +1,18 @@
+// Importuj funkcję fetchBooks zamiast fetchBookById
+import { fetchBooks } from './bookAPI.js';
+
+let addToShoppingListButton; // Zmienna zadeklarowana globalnie
+
+document.addEventListener('DOMContentLoaded', () => {
+  addToShoppingListButton = document.querySelector('.modal-pop-up-btn');
+
+  if (addToShoppingListButton) {
+    addToShoppingListButton.addEventListener('click', addToShoppingList);
+  } else {
+    console.warn('Przycisk "Add to shopping list" nie został znaleziony.');
+  }
+});
+
 // Funkcja wyświetlająca dane z local storage na karcie
 const displayBookFromLocalStorage = () => {
   // Pobierz dane z local storage
@@ -39,6 +54,33 @@ document.addEventListener('DOMContentLoaded', () => {
   // Sprawdź stan kart, ale nie pokazuj komunikatu
   checkBookCardExistence(false);
 });
+
+// Funkcja obsługująca kliknięcie przycisku "Add to shopping list"
+function addToShoppingList() {
+  // Pobierz dane z local storage
+  const selectedBookData = JSON.parse(localStorage.getItem('selectedBook'));
+
+  console.log('Selected Book Data:', selectedBookData);
+
+  // Sprawdź, czy są dane w local storage
+  if (selectedBookData) {
+    // Pobierz listę książek z local storage
+    const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
+
+    // Dodaj aktualnie wybraną książkę do listy
+    shoppingList.push(selectedBookData);
+
+    // Zapisz zaktualizowaną listę w local storage
+    localStorage.setItem('shoppingList', JSON.stringify(shoppingList));
+
+    // Wywołaj funkcję wyświetlającą dane na karcie
+    displayBookFromLocalStorage();
+  } else {
+    // Jeśli brak danych w local storage, wyświetl komunikat
+    console.warn('Brak danych o książce w local storage.');
+  }
+}
+//////////////////////////////////////////////////////////////////////////////////////
 
 // Pobierz wszystkie przyciski .button-delete i dodaj nasłuchiwanie na kliknięcie
 const deleteButtons = document.querySelectorAll('.button-delete');
