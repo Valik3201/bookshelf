@@ -8,10 +8,10 @@ export const addToLocalStorage = async bookId => {
   //sprawdzamy czy lacalStorage jest obsługiwane w bieżącej przeglądarce
   if (typeof Storage != 'undefined') {
     //pobieramy aktualną wartość a localStorage (jeśli istnieje)
-    var storedBooks = JSON.parse(localStorage.getItem('books')) || [];
+    const storedBooks = JSON.parse(localStorage.getItem('books')) || [];
 
     //tworzymy unikalny lkucz dla każdej książki
-    var localStorageKey = 'book_' + bookId;
+    const localStorageKey = 'book_' + bookId;
 
     //sprawdzamy czy klucz już istnieje w localStorage
     if (localStorage.getItem(localStorageKey)) {
@@ -20,7 +20,7 @@ export const addToLocalStorage = async bookId => {
     }
 
     //tworzymy obiekt dle nowej książki
-    var newBook = {
+    const newBook = {
       bookId: bookId,
       _id: bookById._id,
       title: bookById.title,
