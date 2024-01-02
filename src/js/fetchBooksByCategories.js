@@ -19,7 +19,12 @@ const displayBooksByCategory = async categoryName => {
       return `
       <div class="books__book" data-book-id="${book._id}">
         <div class="books__book--cover">
-          <img loading="lazy" src="${book.book_image}" alt="${book.title}">
+          <img class="lazyload" 
+          src="/src/images/ph-desktop.png"
+          srcset= "/src/images/ph-mobile2.png 150w,
+           /src/images/ph-mobile.png 300w, 
+           /src/images/ph-tablet.png 600w,
+           /src/images/ph-desktop 1200w" data-src="${book.book_image}" alt="${book.title}">
           <div class="books__book--cover-overlay">
             <div class="books__book--cover-overlay-text">Quick View</div>
           </div>

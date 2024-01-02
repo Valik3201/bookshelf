@@ -27,7 +27,13 @@ export const displayBookById = async bookId => {
   // Generate modal HTML markup
   const markup = `
     <div class="modal" data-book-id="${_id}">
-      <img loading="lazy" class="modal__image" src="${book_image}" alt="${title}">
+      <img class="lazyload" 
+      src="/src/images/ph-desktop.png"
+      srcset= "/src/images/ph-mobile2.png 150w,
+       /src/images/ph-mobile.png 300w, 
+       /src/images/ph-tablet.png 600w,
+       /src/images/ph-desktop 1200w"
+      data-src="${book_image}" alt="${title}">
       <div class="modal__details">
           <p class="modal__details-title">Title: ${title}</p>
           <p class="modal__details-author">Author: ${author}</p>
@@ -35,6 +41,7 @@ export const displayBookById = async bookId => {
           <p class="modal__details-links">Buy Links: ${buyLinksMarkup}</p>
       </div>
     </div>
+    
   `;
 
   // Insert the modal markup into the modal container
