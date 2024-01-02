@@ -1,4 +1,5 @@
 import { fetchBooks } from './bookAPI.js';
+import { addToLocalStorage } from './localStorage.js';
 import { modalContainer, toggleModal } from './modalHandler.js';
 
 /**
@@ -41,9 +42,22 @@ export const displayBookById = async bookId => {
           <p class="modal__details-links">Buy Links: ${buyLinksMarkup}</p>
       </div>
     </div>
-    
+    <button type = "button" class = "modal-pop-up-btn button" data-book-id = "${_id}">Add to shopping list</button>
   `;
 
   // Insert the modal markup into the modal container
   modalContainer.innerHTML = markup;
+
+  // Adding event handling for the "Add to Shopping List" buttons
+  const addToShoppingListButtons = document.querySelectorAll('.modal-pop-up-btn');
+  addToShoppingListButtons.forEach(function (button) {
+    // Adding click event listener with asynchronous function
+    button.addEventListener('click', async function () {
+      // Retrieving bookId from the data-book-id attribute
+      const bookId = button.getAttribute('data-book-id');
+
+      // Calling the function to add the book to localStorage
+      await addToLocalStorage(bookId);
+    });
+  });
 };
