@@ -40,4 +40,12 @@ closeButton.addEventListener('click', function () {
   // Ukryj modal
   toggleModal(false);
 });
-  //zamknięcie za pomocą klawiszy
+//zamknięcie za pomocą klawiszy
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    toggleModal(false);
+  }
+});
+
+

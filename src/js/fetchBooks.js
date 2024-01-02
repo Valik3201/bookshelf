@@ -14,6 +14,8 @@ export const displayTopBooks = async () => {
   // Fetch top books from the API.
   const topBooks = await fetchBooks('top-books');
 
+  const placeholderImageURL = new URL('/src/images/placeholder.jpg', import.meta.url).href;
+
   // Generate markup for each top book category.
   const markup = topBooks
     .map(category => {
@@ -23,7 +25,11 @@ export const displayTopBooks = async () => {
           return `
           <div class="books__book" data-book-id="${_id}">
             <div class="books__book--cover">
-              <img loading="lazy" src="${book_image}" alt="${title}">
+              <img class="lazyload" 
+              data-sizes="auto"
+              src="${placeholderImageURL}"
+              data-src="${book_image}"
+              alt="${title}">
               <div class="books__book--cover-overlay">
                 <div class="books__book--cover-overlay-text">Quick View</div>
               </div>
