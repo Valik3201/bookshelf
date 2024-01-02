@@ -9,19 +9,20 @@ const signUpModal = document.querySelector('.sign-up-modal');
 const signInModal = document.querySelector('.sign-in-modal');
 
 export const signUpButton = document.querySelector('.sign-up-button');
+export const logOutButton = document.querySelector('#log-out');
 
-const switchToSignInButton = document.getElementById('switch-to-sign-in');
-const switchToSignUpButton = document.getElementById('switch-to-sign-up');
-const signUpForm = document.forms['signup-form'];
-const signInForm = document.forms['signin-form'];
+const switchToSignInButton = document.querySelector('#switch-to-sign-in');
+const switchToSignUpButton = document.querySelector('#switch-to-sign-up');
+const signUpForm = document.querySelector('form[name="signup-form"]');
+const signInForm = document.querySelector('form[name="signin-form"]');
 const signUpModalCloseButton = document.querySelector('.sign-up-modal-close');
 const signInModalCloseButton = document.querySelector('.sign-in-modal-close');
-const userNameDisplay = document.getElementById('user-name-display');
+const userNameDisplay = document.querySelector('#user-name-display');
 
-export const userProfile = document.getElementById('user-profile');
-export const userButton = document.getElementById('user-info');
+export const userProfile = document.querySelector('#user-profile');
+export const userButton = document.querySelector('#user-info');
 
-export const logOutButton = document.getElementById('log-out');
+const userInfo = document.querySelector('#user-info');
 
 userProfile.classList.add('hidden');
 
@@ -124,4 +125,4 @@ const toggleDropdownMenu = () => {
   dropdownMenu.classList.toggle('hidden');
 };
 
-document.getElementById('user-info').addEventListener('click', toggleDropdownMenu);
+userInfo.addEventListener('click', toggleDropdownMenu);
