@@ -14,6 +14,8 @@ export const displayTopBooks = async () => {
   // Fetch top books from the API.
   const topBooks = await fetchBooks('top-books');
 
+  const placeholderImageURL = new URL('/src/images/placeholder.jpg', import.meta.url).href;
+
   // Generate markup for each top book category.
   const markup = topBooks
     .map(category => {
@@ -23,7 +25,11 @@ export const displayTopBooks = async () => {
           return `
           <div class="books__book" data-book-id="${_id}">
             <div class="books__book--cover">
-              <img loading="lazy" src="${book_image}" alt="${title}">
+              <img class="lazyload" 
+              data-sizes="auto"
+              src="${placeholderImageURL}"
+              data-src="${book_image}"
+              alt="${title}">
               <div class="books__book--cover-overlay">
                 <div class="books__book--cover-overlay-text">Quick View</div>
               </div>
@@ -55,6 +61,32 @@ export const displayTopBooks = async () => {
 
   // Select all elements with the class 'books__category--books'
   const bookContainers = document.querySelectorAll('.books__category--books');
+
+  const blocks = document.querySelectorAll('.books__category');
+
+  function checkBlocksVisibility() {
+    let windowHeight = window.innerHeight;
+
+    blocks.forEach(block => {
+      let blockPosition = block.getBoundingClientRect().top;
+
+      if (blockPosition < windowHeight + 400) {
+        block.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+        block.style.opacity = '1';
+        block.style.transform = 'translateY(0)';
+      } else {
+        block.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+        block.style.opacity = '0';
+        block.style.transform = 'translateY(100%)';
+      }
+    });
+  }
+
+  checkBlocksVisibility();
+
+  window.addEventListener('scroll', function () {
+    checkBlocksVisibility();
+  });
 
   // Iterate over each book container
   bookContainers.forEach(bookContainer => {

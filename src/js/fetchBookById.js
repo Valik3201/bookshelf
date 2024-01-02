@@ -1,4 +1,5 @@
 import { fetchBooks } from './bookAPI.js';
+import { addToLocalStorage } from './localStorage.js';
 import { modalContainer, toggleModal } from './modalHandler.js';
 
 /**
@@ -19,25 +20,50 @@ export const displayBookById = async bookId => {
   // Filter buy links to include only 'Amazon' and 'Apple Books'
   const filteredBuyLinks = buy_links.filter(link => ['Amazon', 'Apple Books'].includes(link.name));
 
+  const placeholderImageURL = new URL('/src/images/placeholder.jpg', import.meta.url).href;
+
   // Generate HTML markup for buy links
   const buyLinksMarkup = filteredBuyLinks
-    .map(link =>  `<a href="${link.url}" target="_blank"></a>`)
+    .map(link => `<a href="${link.url}" target="_blank"></a>`)
     .join('');
 
   // Generate modal HTML markup
   const markup = `
     <div class="modal" data-book-id="${_id}">
-      <img loading="lazy" class="modal__image" src="${book_image}" alt="${title}">
+      <img class="lazyload" 
+      src="${placeholderImageURL}"
+      data-src="${book_image}" alt="${title}">
       <div class="modal__details">
           <p class="modal__details-title">${title}</p>
           <p class="modal__details-author">${author}</p>
+<<<<<<< HEAD
           <p class="modal__details-description">${description}</p>
           <div class="modal__details-links">${buyLinksMarkup}
           </div>
+=======
+          <p class="modal__details-description">${
+            description ? description : 'Sorry, the description for this book is not available.'
+          }</p>
+          <div class="modal__details-links">${buyLinksMarkup}</div>
+>>>>>>> cc3a637755052c527984be0cbc8a692d94a9e4de
       </div>
     </div>
+    <button type = "button" class = "modal-pop-up-btn button" data-book-id = "${_id}">Add to shopping list</button>
   `;
 
   // Insert the modal markup into the modal container
   modalContainer.innerHTML = markup;
+
+  // Adding event handling for the "Add to Shopping List" buttons
+  const addToShoppingListButtons = document.querySelectorAll('.modal-pop-up-btn');
+  addToShoppingListButtons.forEach(function (button) {
+    // Adding click event listener with asynchronous function
+    button.addEventListener('click', async function () {
+      // Retrieving bookId from the data-book-id attribute
+      const bookId = button.getAttribute('data-book-id');
+
+      // Calling the function to add the book to localStorage
+      await addToLocalStorage(bookId);
+    });
+  });
 };
