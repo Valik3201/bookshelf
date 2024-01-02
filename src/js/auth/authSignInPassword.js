@@ -2,10 +2,17 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 
 import { auth } from './firebase.js';
 
+import { Notify } from '../notiflixConfig.js';
+
 export const signInUser = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
+
+    if (user && user.displayName) {
+      Notify.success(`Welcome back, ${user.displayName}!`);
+    }
+
     console.log('User signed in:', user);
     return user;
   } catch (error) {
@@ -13,13 +20,13 @@ export const signInUser = async (email, password) => {
     const errorMessage = error.message;
 
     if (errorCode === 'auth/user-not-found') {
-      console.error('User not found. Please check your email and password.');
+      Notify.failure('User not found. Please check your email and password.');
     } else if (errorCode === 'auth/wrong-password') {
-      console.error('Invalid password. Please check your email and password.');
+      Notify.failure('Invalid password. Please check your email and password.');
     } else if (errorCode === 'auth/invalid-email') {
-      console.error('Invalid email address.');
+      Notify.failure('Invalid email address.');
     } else {
-      console.error(`Error: ${errorCode} - ${errorMessage}`);
+      Notify.failure(`Error: ${errorCode} - ${errorMessage}`);
     }
     throw error;
   }

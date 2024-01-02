@@ -17,8 +17,6 @@ export const onAuthStateChangedListener = userNameDisplay => {
 
       logOutButton.addEventListener('click', handleLogout);
     } else {
-      console.log('User signed out');
-
       userNameDisplay.textContent = '';
 
       userProfile.classList.add('hidden');
