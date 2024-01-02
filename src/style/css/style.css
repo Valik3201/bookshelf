@@ -707,7 +707,12 @@ svg.logo-icon {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+.modal__details-links a {
   mix-blend-mode: luminosity;
+}
+.modal__details-links a:hover {
+  mix-blend-mode: normal;
 }
 
 .modal-pop-up-btn.button {
