@@ -20,7 +20,6 @@ input,
 button {
   margin: 0;
   padding: 0;
-  transition: background-color 0.3s ease-in;
 }
 
 body {
@@ -127,7 +126,6 @@ body {
 }
 .category-list__item:hover {
   color: #4f2ee8;
-  transition: color 0.3s ease-in;
 }
 .category-list__item.active {
   color: #4f2ee8;
@@ -136,7 +134,6 @@ body {
   font-weight: 700;
   line-height: 24px;
   letter-spacing: -0.18px;
-  transition: color 0.3s ease-in;
 }
 
 .books {
@@ -174,7 +171,6 @@ body {
   font-weight: 700;
   line-height: 38px;
   letter-spacing: -0.28px;
-  transition: color 0.3s ease-in;
 }
 @media (min-width: 576px) {
   .books__heading {
@@ -199,7 +195,6 @@ body {
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.42px;
-  transition: color 0.3s ease-in;
 }
 .books__category--books {
   display: flex;
@@ -270,7 +265,6 @@ body {
   font-weight: 700;
   line-height: 18px;
   letter-spacing: -0.64px;
-  transition: color 0.3s ease-in;
 }
 .books__book--author {
   color: #b4afaf;
@@ -368,42 +362,4 @@ body {
   [data-content=category] .books__book {
     flex-basis: calc(20% - 25px);
   }
-}
-
-.backdrop-pop-up {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.backdrop-pop-up.is-hidden {
-  display: none;
-}
-.backdrop-pop-up .modal-pop-up {
-  background-color: #fff;
-  max-width: 600px;
-  width: 100%;
-  padding: 20px;
-  border-radius: 8px;
-  position: relative;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-.backdrop-pop-up .modal-pop-up .close-modal-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.backdrop-pop-up .modal-pop-up .close-modal-button__icon {
-  width: 20px;
-  height: 20px;
-  stroke: #000;
 }/*# sourceMappingURL=main.css.map */
