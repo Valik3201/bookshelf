@@ -493,9 +493,13 @@ svg.logo-icon {
   justify-content: center;
   align-items: center;
 }
+.modal {
+  display: flex;
+
+}
 .modal__image {
-  max-width: 192px;
-  min-height: 281px;
+  max-width: 408px;
+  min-height: 287px;
   border-radius: 8px;
   margin-bottom: 14px;
   margin-top: 40px;
@@ -585,7 +589,9 @@ svg.logo-icon {
     margin-bottom: 40px;
   }
   .modal {
+    display: flex;
     flex-direction: row;
+    gap: 24px;
   }
   .modal-pop-up-btn.button {
     padding: 20px 0;
