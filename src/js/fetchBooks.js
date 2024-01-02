@@ -24,12 +24,11 @@ export const displayTopBooks = async () => {
           <div class="books__book" data-book-id="${_id}">
             <div class="books__book--cover">
               <img class="lazyload" 
-              src="/src/images/ph-desktop.png"
-              srcset= "/src/images/ph-mobile2.png 150w,
-               /src/images/ph-mobile.png 300w, 
-               /src/images/ph-tablet.png 600w,
-               /src/images/ph-desktop 1200w" 
-               data-src="${book_image}" alt="${title}">
+              data-sizes="auto"
+              src="/src/images/ph-mobile2.jpg"
+              data-src="${book_image}"
+              data-srcset="/src/images/ph-mobile2.jpg 150w, /src/images/ph-mobile.jpg 300w, /src/images/ph-tablet.jpg 600w, /src/images/ph-desktop.jpg 900w, ${book_image} 1200w"
+              alt="${title}">
               <div class="books__book--cover-overlay">
                 <div class="books__book--cover-overlay-text">Quick View</div>
               </div>

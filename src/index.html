@@ -24,6 +24,15 @@
     <!-- Plik HTML zawierający sekcję nagłówka -->
     <include src="./partials/home/home-header.html"></include>
 
+    <img
+      class="lazyloaded"
+      data-sizes="auto"
+      src="/src/images/ph-mobile2.jpg"
+      data-src="https://storage.googleapis.com/du-prd/books/images/9780735211292.jpg"
+      data-srcset="/src/images/ph-mobile2.jpg 150w, /src/images/ph-mobile.jpg 300w, /src/images/ph-tablet.jpg 600w, /src/images/ph-desktop.jpg 900w, https://storage.googleapis.com/du-prd/books/images/9780735211292.jpg 1200w"
+      alt="ATOMIC HABITS"
+    />
+
     <main>
       <div class="home">
         <include src="./partials/home/home-categories.html"></include>
@@ -39,11 +48,5 @@
     <!-- Skrypt -->
     <script src="./js/common.js" type="module"></script>
     <script src="./js/indexModules.js" type="module"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"
-      integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
   </body>
 </html>
