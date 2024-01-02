@@ -253,7 +253,8 @@ input:checked + .slider:before {
   visibility: hidden;
   opacity: 0;
 }
-.sign-up-modal {
+.sign-up-modal,
+.sign-in-modal {
   position: fixed;
   left: 0;
   top: 0;
@@ -272,7 +273,8 @@ input:checked + .slider:before {
   border: 2px solid black;
   border-radius: 18px;
 }
-.sign-up-modal-close {
+.sign-up-modal-close,
+.sign-in-modal-close {
   border: none;
   background-color: transparent;
   outline: none;
