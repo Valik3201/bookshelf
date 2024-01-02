@@ -29,7 +29,16 @@
     "posthtml-include": "^1.7.4"
   },
   "dependencies": {
+    "@parcel/transformer-image": "^2.10.3",
     "axios": "^1.6.2",
+    "lazysizes": "^5.3.2",
     "notiflix": "^3.2.6"
+  },
+  "parcel": {
+    "transformers": {
+      "*.{png,jpg,jpeg,gif,svg}": [
+        "@parcel/transformer-image"
+      ]
+    }
   }
 }
