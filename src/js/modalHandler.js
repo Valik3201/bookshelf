@@ -41,3 +41,11 @@ closeButton.addEventListener('click', function () {
   toggleModal(false);
 });
   //zamknięcie za pomocą klawiszy
+
+  function closePreview(event) {
+    if (event.key == "Escape") {
+      console.log("Click ESC");
+      document.removeEventListener("keydown", closePreview);
+      instance.close();
+    }
+  }
