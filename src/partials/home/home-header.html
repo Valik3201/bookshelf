@@ -31,41 +31,9 @@
         <input type="checkbox" class="theme-switch" id="t-switch" checked />
         <span class="slider"></span>
       </label>
-      <!--sign up button-->
-      <button type="button" class="sign-up-button sign-up-modal-open">
-        <span class="sign-up-text">Sign up</span
-        ><svg class="arrow-right-icon" width="20px" height="20px">
-          <use href="/src/images/icons.svg#icon-arrow-right"></use>
-        </svg>
-      </button>
-      <!--Sign Up modal-->
-      <div class="sign-up-modal is-hidden">
-        <div class="form-field">
-          <button type="button" class="sign-up-modal-close">
-            <svg class="signup-close-icon" width="14px" height="14px">
-              <use href="/src/images/icons.svg#icon-close"></use>
-            </svg>
-          </button>
-          <form name="signup-form" autocomplete="on" novalidate class="sign-up-form">
-            <label>
-              Name
-              <input type="text" name="name" />
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" />
-            </label>
-            <label>
-              Password
-              <input type="password" name="password" />
-            </label>
-            <button type="submit">SIGN UP</button>
-            <a href="#">SIGN UP</a>
-            <a href="#">SIGN IN</a>
-            <button type="button">X</button>
-          </form>
-        </div>
-      </div>
+
+      <include src="./partials/authorization/auth.html"></include>
+
       <!--hamburger button-->
       <button class="hamburger-button open-mobile-menu">
         <svg class="hamburger-icon" width="20px" height="20px">
