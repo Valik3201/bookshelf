@@ -42,14 +42,15 @@ export const displayBookById = async bookId => {
   // Insert the modal markup into the modal container
   modalContainer.innerHTML = markup;
 
-  // Dodajemy obsługę zdarzenia dla przycisków "Dodaj do listy zakupów"
+  // Adding event handling for the "Add to Shopping List" buttons
   const addToShoppingListButtons = document.querySelectorAll('.modal-pop-up-btn');
   addToShoppingListButtons.forEach(function (button) {
+    // Adding click event listener with asynchronous function
     button.addEventListener('click', async function () {
-      //pobieramy bookId z atrybutu data-book-id
+      // Retrieving bookId from the data-book-id attribute
       const bookId = button.getAttribute('data-book-id');
 
-      // wywołujemy funkcje dodającą książkę do localStorage
+      // Calling the function to add the book to localStorage
       await addToLocalStorage(bookId);
     });
   });
