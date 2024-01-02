@@ -31,14 +31,18 @@
         <input type="checkbox" class="theme-switch" id="t-switch" checked />
         <span class="slider"></span>
       </label>
-      <!--sign up button-->
+
+      <!-- Authorization forms  -->
       <button type="button" class="sign-up-button sign-up-modal-open">
-        <span class="sign-up-text">Sign up</span
-        ><svg class="arrow-right-icon" width="20px" height="20px">
+        <span class="sign-up-text">Sign up</span>
+        <svg class="arrow-right-icon" width="20px" height="20px">
           <use href="/src/images/icons.svg#icon-arrow-right"></use>
         </svg>
       </button>
-      <!--Sign Up modal-->
+
+      <div id="user-name-display"></div>
+
+      <!-- Sign Up modal -->
       <div class="sign-up-modal is-hidden">
         <div class="form-field">
           <button type="button" class="sign-up-modal-close">
@@ -59,13 +63,39 @@
               Password
               <input type="password" name="password" />
             </label>
-            <button type="submit">SIGN UP</button>
-            <a href="#">SIGN UP</a>
-            <a href="#">SIGN IN</a>
+            <button type="submit" id="sign-up">SIGN UP</button>
+            <!-- Кнопка для переключения на форму SIGN IN -->
+            <button type="button" id="switch-to-sign-in">SWITCH TO SIGN IN</button>
+            <!-- Кнопка закрытия формы -->
             <button type="button">X</button>
           </form>
         </div>
       </div>
+
+      <!-- Sign In modal -->
+      <div class="sign-in-modal is-hidden">
+        <div class="form-field">
+          <button type="button" class="sign-in-modal-close">
+            <svg class="signup-close-icon" width="14px" height="14px">
+              <use href="/src/images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
+          <form name="signin-form" autocomplete="on" novalidate class="sign-in-form">
+            <label>
+              Email
+              <input type="email" name="email" />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" />
+            </label>
+            <button type="submit" id="sign-in">SIGN IN</button>
+            <!-- Кнопка для переключения на форму SIGN UP -->
+            <button type="button" id="switch-to-sign-up">SWITCH TO SIGN UP</button>
+          </form>
+        </div>
+      </div>
+
       <!--hamburger button-->
       <button class="hamburger-button open-mobile-menu">
         <svg class="hamburger-icon" width="20px" height="20px">
