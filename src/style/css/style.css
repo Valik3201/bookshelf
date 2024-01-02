@@ -605,8 +605,24 @@ svg.logo-icon {
   }
 }
 
+/* Authorization */
+
 .hidden {
   display: none;
+}
+
+#user-profile,
+#logout-button {
+  display: none;
+}
+
+#user-profile:not(.hidden),
+#logout-button:not(.hidden) {
+  display: block;
+}
+
+#sign-up-button:not(.hidden) {
+  display: block;
 }
 
 #user-dropdown-menu {

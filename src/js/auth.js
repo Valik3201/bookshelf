@@ -23,6 +23,8 @@ export const userButton = document.getElementById('user-info');
 
 export const logOutButton = document.getElementById('log-out');
 
+userProfile.classList.add('hidden');
+
 let currentForm = 'sign-up';
 
 onAuthStateChangedListener(userNameDisplay);
