@@ -635,7 +635,7 @@ svg.logo-icon {
   justify-content: center;
   align-items: center;
 }
-.modal {
+.modal__info {
   display: flex;
 }
 

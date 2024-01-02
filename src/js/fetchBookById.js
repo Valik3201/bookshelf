@@ -29,17 +29,19 @@ export const displayBookById = async bookId => {
 
   // Generate modal HTML markup
   const markup = `
-    <div class="modal" data-book-id="${_id}">
-      <div class="modal__cover">
-      <img class="lazyload" src="${placeholderImageURL}" data-src="${book_image}" alt="${title}">
-      </div>
-      <div class="modal__details">
-          <p class="modal__details-title">${title}</p>
-          <p class="modal__details-author">${author}</p>
-          <p class="modal__details-description">${
-            description ? description : 'Sorry, the description for this book is not available.'
-          }</p>
-          <div class="modal__details-links">${buyLinksMarkup}</div>
+    <div class="modal">
+      <div class="modal__info">
+        <div class="modal__cover">
+        <img class="lazyload" src="${placeholderImageURL}" data-src="${book_image}" alt="${title}">
+        </div>
+        <div class="modal__details">
+            <p class="modal__details-title">${title}</p>
+            <p class="modal__details-author">${author}</p>
+            <p class="modal__details-description">${
+              description ? description : 'Sorry, the description for this book is not available.'
+            }</p>
+            <div class="modal__details-links">${buyLinksMarkup}</div>
+        </div>
       </div>
     </div>
     <button type = "button" class = "modal-pop-up-btn button" data-book-id = "${_id}">Add to shopping list</button>
