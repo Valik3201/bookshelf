@@ -112,6 +112,16 @@
 .hidden {
   display: none;
 }
+.shopping-text--active {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 18px;
+  font-size: 14px;
+  color: #000000;
+  transition: color 0.3s ease-in;
+}
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .heading {
@@ -531,43 +541,94 @@ svg.logo-icon {
 /*header style end*/
 
 /*DarkMode style*/
-[data-theme='dark'] {
+[data-theme="dark"] {
   body {
     background: #202024;
   }
-  .category-list__item.active,
-  .category-list__item:hover {
-    color: #eac645;
+
+  div.modal-pop-up {
+    background-color: #202024;
+  }
+
+  .close-modal-button__icon {
+    stroke: #FFFFFF !important;
+  }
+
+  .heading {
+    color: #FFFFFF !important;
     transition: color 0.3s ease-in;
   }
+
+  .book-card {
+    background-color: #111111 !important;
+  }
+
+  a.home-link {
+    color: #000000;
+    transition: color 0.3s ease-in;
+  }
+
+  .nav-list__link--active {
+    color: #000000;
+    fill: #000000;
+    transition: color 0.3s ease-in;
+  }
+
+  .nav-list__link,
+  .shopping-text,
+  .book-title,
+  .book-plot,
+  .book-message {
+    color: #FFFFFF;
+    transition: color 0.3s ease-in;
+  }
+
+  .shopping-list-icon{
+    fill: #FFFFFF;
+    transition: fill 0.3s ease-in;
+  }
+  .shopping-list-icon--active {
+    fill: #000000;
+    transition: fill 0.3s ease-in;
+  }
+
+
+  .category-list__item.active,
+  .category-list__item:hover {
+    color: #EAC645;
+    transition: color 0.3s ease-in;
+  }
+
   header {
     background: #111111;
     transition: color 0.3s ease-in;
   }
+
   .nav-item p {
-    color: #f3f3f3;
+    color: #F3F3F3;
     transition: color 0.3s ease-in;
   }
+
   .heading {
     color: #111;
     transition: color 0.3s ease-in;
   }
+
   .book-card {
     background: #202024;
     transition: color 0.3s ease-in;
   }
+
   .header-items {
     border: 1.5px solid #aaaaaa;
     transition: border 0.3s ease-in;
   }
-  .shopping-list-icon {
-    fill: #ffffff;
-    transition: fill 0.3s ease-in;
-  }
+
   svg.hamburger-icon {
     fill: #ffffff;
     stroke: rgb(255, 255, 255);
   }
+
   body,
   .books__book--title,
   .books__heading,
@@ -578,12 +639,32 @@ svg.logo-icon {
     color: #ffffff;
     transition: color 0.3s ease-in;
   }
+
   .see-more-btn {
     color: #ffffff !important;
     transition: color 0.3s ease-in;
   }
+
+  body,
+  .books__book--title,
+  .books__heading,
+  .shopping-list-link,
+  .category-list__item,
+  h1,
+  .sign-up-button {
+    color: #ffffff;
+    transition: color 0.3s ease-in;
+  }
+
+  .see-more-btn {
+    color: #ffffff !important;
+    transition: color 0.3s ease-in;
+  }
+
   .slider {
+    background: linear-gradient(to bottom, #4f2ee8, #686868);
   }
+
   body,
   .books__book--title,
   .books__heading,
@@ -591,13 +672,15 @@ svg.logo-icon {
   .category-list__item,
   h1,
   .sign-up-button {
-    color: #ffffff;
+    color: #FFFFFF;
     transition: color 0.3s ease-in;
   }
+
   .see-more-btn {
-    color: #ffffff !important;
+    color: #FFFFFF !important;
     transition: color 0.3s ease-in;
   }
+
   .slider {
     background: linear-gradient(to bottom, #4f2ee8, #686868);
   }
