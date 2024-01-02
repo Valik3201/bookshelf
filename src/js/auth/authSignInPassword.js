@@ -13,7 +13,6 @@ export const signInUser = async (email, password) => {
       Notify.success(`Welcome back, ${user.displayName}!`);
     }
 
-    console.log('User signed in:', user);
     return user;
   } catch (error) {
     const errorCode = error.code;
