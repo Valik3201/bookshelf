@@ -221,6 +221,7 @@ body {
   width: 100%;
   min-height: 75%;
   aspect-ratio: 45/64;
+  border-radius: 8px;
 }
 .books__book--cover:hover .books__book--cover-overlay {
   transform: translateY(0);
@@ -232,7 +233,6 @@ body {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  border-radius: 8px;
 }
 .books__book--cover-overlay {
   display: flex;
