@@ -635,7 +635,7 @@ svg.logo-icon {
   justify-content: center;
   align-items: center;
 }
-.modal__image {
+.modal__cover img {
   max-width: 192px;
   min-height: 281px;
   border-radius: 8px;
