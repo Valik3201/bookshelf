@@ -635,6 +635,10 @@ svg.logo-icon {
   justify-content: center;
   align-items: center;
 }
+.modal {
+  display: flex;
+}
+
 .modal__cover img {
   max-width: 192px;
   min-height: 281px;
@@ -723,7 +727,9 @@ svg.logo-icon {
     margin-bottom: 40px;
   }
   .modal {
+    display: flex;
     flex-direction: row;
+    gap: 24px;
   }
   .modal-pop-up-btn.button {
     padding: 20px 0;

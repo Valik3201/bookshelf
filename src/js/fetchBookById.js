@@ -36,10 +36,16 @@ export const displayBookById = async bookId => {
       <div class="modal__details">
           <p class="modal__details-title">${title}</p>
           <p class="modal__details-author">${author}</p>
+<<<<<<< HEAD
+          <p class="modal__details-description">${description}</p>
+          <div class="modal__details-links">${buyLinksMarkup}
+          </div>
+=======
           <p class="modal__details-description">${
             description ? description : 'Sorry, the description for this book is not available.'
           }</p>
           <div class="modal__details-links">${buyLinksMarkup}</div>
+>>>>>>> cc3a637755052c527984be0cbc8a692d94a9e4de
       </div>
     </div>
     <button type = "button" class = "modal-pop-up-btn button" data-book-id = "${_id}">Add to shopping list</button>
