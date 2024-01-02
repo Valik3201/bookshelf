@@ -20,6 +20,8 @@ export const displayBookById = async bookId => {
   // Filter buy links to include only 'Amazon' and 'Apple Books'
   const filteredBuyLinks = buy_links.filter(link => ['Amazon', 'Apple Books'].includes(link.name));
 
+  const placeholderImageURL = new URL('/src/images/placeholder.jpg', import.meta.url).href;
+
   // Generate HTML markup for buy links
   const buyLinksMarkup = filteredBuyLinks
     .map(link => `<p>${link.name}: <a href="${link.url}" target="_blank">${link.url}</a></p>`)
@@ -29,11 +31,7 @@ export const displayBookById = async bookId => {
   const markup = `
     <div class="modal" data-book-id="${_id}">
       <img class="lazyload" 
-      src="/src/images/ph-desktop.png"
-      srcset= "/src/images/ph-mobile2.png 150w,
-       /src/images/ph-mobile.png 300w, 
-       /src/images/ph-tablet.png 600w,
-       /src/images/ph-desktop 1200w"
+      src="${placeholderImageURL}"
       data-src="${book_image}" alt="${title}">
       <div class="modal__details">
           <p class="modal__details-title">Title: ${title}</p>
