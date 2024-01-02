@@ -44,10 +44,8 @@ closeButton.addEventListener('click', function () {
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
-    closeModal();
+    toggleModal(false);
   }
 });
 
-function closeModal() {
-  toggleModal(false);
-}
+
