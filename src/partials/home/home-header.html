@@ -32,15 +32,33 @@
         <span class="slider"></span>
       </label>
 
-      <!-- Authorization forms  -->
+      <!-- Authorization  -->
       <button type="button" class="sign-up-button sign-up-modal-open">
         <span class="sign-up-text">Sign up</span>
-        <svg class="arrow-right-icon" width="20px" height="20px">
+        <svg class="arrow-right-icon" width="20" height="20">
           <use href="/src/images/icons.svg#icon-arrow-right"></use>
         </svg>
       </button>
 
-      <div id="user-name-display"></div>
+      <div id="user-profile">
+        <div id="user-info" class="sign-up-button">
+          <div id="user-profile-image">
+            <svg width="12" height="16" fill="#4F2EE8">
+              <use href="/src/images/icons.svg#icon-user"></use>
+            </svg>
+          </div>
+
+          <div id="user-name-display"></div>
+
+          <svg id="user-dropdown-arrow" width="20" height="20" fill="#fff">
+            <use href="/src/images/icons.svg#icon-arrow-user"></use>
+          </svg>
+        </div>
+
+        <div id="user-dropdown-menu" class="hidden">
+          <button id="log-out">Log Out</button>
+        </div>
+      </div>
 
       <!-- Sign Up modal -->
       <div class="sign-up-modal is-hidden">

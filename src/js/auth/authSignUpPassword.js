@@ -1,6 +1,6 @@
 import { auth } from './firebase.js';
 
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 export const createUser = async (email, password) => {
   try {

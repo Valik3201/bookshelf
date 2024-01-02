@@ -3,10 +3,13 @@ import { updateProfile } from 'firebase/auth';
 import { createUser } from './auth/authSignUpPassword.js';
 import { signInUser } from './auth/authSignInPassword.js';
 import { signOutUser } from './auth/authSignOut.js';
+import { onAuthStateChangedListener } from './auth/authStateListener.js';
 
 const signUpModal = document.querySelector('.sign-up-modal');
 const signInModal = document.querySelector('.sign-in-modal');
-const signUpButton = document.querySelector('.sign-up-button');
+
+export const signUpButton = document.querySelector('.sign-up-button');
+
 const switchToSignInButton = document.getElementById('switch-to-sign-in');
 const switchToSignUpButton = document.getElementById('switch-to-sign-up');
 const signUpForm = document.forms['signup-form'];
@@ -15,7 +18,14 @@ const signUpModalCloseButton = document.querySelector('.sign-up-modal-close');
 const signInModalCloseButton = document.querySelector('.sign-in-modal-close');
 const userNameDisplay = document.getElementById('user-name-display');
 
+export const userProfile = document.getElementById('user-profile');
+export const userButton = document.getElementById('user-info');
+
+export const logOutButton = document.getElementById('log-out');
+
 let currentForm = 'sign-up';
+
+onAuthStateChangedListener(userNameDisplay);
 
 signUpButton.addEventListener('click', function () {
   currentForm = 'sign-up';
@@ -45,12 +55,10 @@ function showForm(form) {
     signUpForm.reset();
     signUpModal.classList.remove('is-hidden');
     signInModal.classList.add('is-hidden');
-    userNameDisplay.textContent = '';
   } else if (form === 'sign-in') {
     signInForm.reset();
     signUpModal.classList.add('is-hidden');
     signInModal.classList.remove('is-hidden');
-    userNameDisplay.textContent = '';
   }
 }
 
@@ -70,6 +78,8 @@ signUpForm.addEventListener('submit', async function (event) {
 
     signUpModal.classList.add('is-hidden');
 
+    onAuthStateChangedListener(userNameDisplay);
+
     console.log('User signed up and profile updated:', user);
   } catch (error) {
     console.error('Authentication error:', error);
@@ -86,5 +96,30 @@ signInForm.addEventListener('submit', async function (event) {
     await signInUser(email, password);
 
     signInModal.classList.add('is-hidden');
+
+    onAuthStateChangedListener(userNameDisplay);
   }
 });
+
+logOutButton.addEventListener('click', async function () {
+  try {
+    await signOutUser();
+  } catch (error) {
+    console.error('Logout error:', error);
+  }
+});
+
+export const handleLogout = async () => {
+  try {
+    await signOut(auth);
+  } catch (error) {
+    console.error('Error during logout:', error);
+  }
+};
+
+const toggleDropdownMenu = () => {
+  const dropdownMenu = document.getElementById('user-dropdown-menu');
+  dropdownMenu.classList.toggle('hidden');
+};
+
+document.getElementById('user-info').addEventListener('click', toggleDropdownMenu);

@@ -2,33 +2,28 @@ import { onAuthStateChanged } from 'firebase/auth';
 
 import { auth } from './firebase.js';
 
-// Nasłuchujemy zmiany stanu autentykacji, czyli logowania i wylogowywania użytkownika
-export const onAuthStateChangedListener = async () => {
-  try {
-    await onAuthStateChanged(auth, user => {
-      if (user) {
-        // Jeżeli użytkownik istnieje, oznacza to, że jest zalogowany
-        const uid = user.uid;
-        console.log('User signed in:', uid);
-        // Tutaj możemy wykonać dodatkowe czynności po zalogowaniu użytkownika
-      } else {
-        // Jeżeli użytkownik nie istnieje, oznacza to, że jest wylogowany
-        console.log('User signed out');
-        // Вы можете выполнить дополнительные действия при выходе пользователя
-      }
-    });
-  } catch (error) {
-    // Tutaj możemy wykonać dodatkowe czynności po wylogowaniu użytkownika
-    console.error('Error in onAuthStateChangedListener:', error);
-  }
+import { logOutButton, handleLogout, signUpButton, userProfile, userButton } from '../auth.js';
+
+export const onAuthStateChangedListener = userNameDisplay => {
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      const displayName = user.displayName;
+
+      userNameDisplay.textContent = displayName;
+
+      userProfile.classList.remove('hidden');
+      userButton.classList.remove('hidden');
+      signUpButton.classList.add('hidden');
+
+      logOutButton.addEventListener('click', handleLogout);
+    } else {
+      console.log('User signed out');
+
+      userNameDisplay.textContent = '';
+
+      userProfile.classList.add('hidden');
+      userButton.classList.add('hidden');
+      signUpButton.classList.remove('hidden');
+    }
+  });
 };
-
-// const startAuthListener = async () => {
-//   try {
-//     await onAuthStateChangedListener();
-//   } catch (error) {
-//     console.error('Error starting auth listener:', error);
-//   }
-// };
-
-// startAuthListener();

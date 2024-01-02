@@ -604,4 +604,39 @@ svg.logo-icon {
     background: linear-gradient(to bottom, #4f2ee8, #686868);
   }
 }
-/*DarkMode style end*/
+
+.hidden {
+  display: none;
+}
+
+#user-dropdown-menu {
+  display: none;
+}
+
+#user-dropdown-menu:not(.hidden) {
+  display: block;
+}
+
+#user-info.sign-up-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 12px;
+}
+
+#user-profile-image {
+  width: 37px;
+  height: 37px;
+  background-color: #f6f6f6;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-profile:not(.hidden) {
+  display: block;
+}
+
+#sign-up-button:not(.hidden) {
+  display: block;
+}
