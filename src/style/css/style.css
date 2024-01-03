@@ -406,6 +406,17 @@ input:checked + .slider:before {
 .signup-close-icon {
   stroke: black;
 }
+.modal-buttons {
+  display: flex;
+}
+.form-div {
+  margin: 80px 40px 0px 40px;
+}
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
 
 /* End Sign Up modal */
 /*header style*/

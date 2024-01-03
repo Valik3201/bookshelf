@@ -34,24 +34,30 @@
         <use href="/src/images/icons.svg#icon-close"></use>
       </svg>
     </button>
+    <div class="form-div">
     <form name="signup-form" autocomplete="on" novalidate class="sign-up-form">
-      <label>
-        Name
-        <input type="text" name="name" />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit" id="sign-up">SIGN UP</button>
-      <!-- Кнопка для переключения на форму SIGN IN -->
-      <button type="button" id="switch-to-sign-in">SWITCH TO SIGN IN</button>
-      <!-- Кнопка закрытия формы -->
-      <button type="button">X</button>
+      <div class="form-inputs">
+        <label>
+          Name
+          <input type="text" name="name" />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" />
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" />
+        </label>
+        <button type="submit" id="sign-up">SIGN UP</button>
+      </div>
+      <div class="modal-buttons">
+        <!-- Кнопка для переключения на форму SIGN IN -->
+        <button type="button" id="switch-to-sign-in">SWITCH TO SIGN IN</button>
+        <!-- Кнопка закрытия формы -->
+        <button type="button">X</button>
+      </div>
+      </div>
     </form>
   </div>
 </div>
