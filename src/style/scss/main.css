@@ -2,9 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
 * {
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 html,
@@ -364,37 +364,26 @@ body {
     flex-basis: calc(20% - 25px);
   }
 }
+
 #scrollUp {
-  z-index: 1000;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  opacity: 0.7;
-  fill: #000;
-  background-color: #fcfcfc;
-  border: none;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
+  display: none;
   position: fixed;
-  bottom: 95px;
-  right: 30px;
-  transform: scale(1);
-  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-}
-
-#scrollUp:hover {
-  opacity: 1.1;
-  background-color: rgba(252, 252, 252, 0.5490196078);
+  top: 85%;
+  right: 2%;
+  width: 54px;
+  height: 54px;
   cursor: pointer;
+  background-color: #4f2ee8;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  transition: border 0.5s ease-in;
 }
-
-#top-btn svg {
-  fill: #000;
+#scrollUp svg {
+  fill: #ffffff;
 }
-
-#top-btn:hover svg {
-  fill: #f8d24e;
+#scrollUp:hover {
+  border: 5px solid rgba(213, 184, 255, 0.7);
+}
+#scrollUp.on {
+  display: block;
 }/*# sourceMappingURL=main.css.map */
