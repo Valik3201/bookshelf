@@ -1,16 +1,24 @@
-const button = document.querySelector('#scrollUp');
+const scrollUpBtn = document.querySelector('#scrollUp');
 
-function scrollUp() {
-  window.scrollTo(0, 0);
-}
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    button.style.display = 'block';
+const showScrollUpButton = () => {
+  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    scrollUpBtn.classList.add('on');
   } else {
-    button.style.display = 'none';
+    scrollUpBtn.classList.remove('on');
   }
-}
+};
 
-button.addEventListener('click', scrollUp);
-document.addEventListener('scroll', scrollFunction);
+const scrollUp = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
+
+const handleScroll = () => {
+  showScrollUpButton();
+};
+
+window.addEventListener('scroll', handleScroll);
+
+scrollUpBtn.addEventListener('click', scrollUp);
