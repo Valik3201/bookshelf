@@ -3,31 +3,50 @@
 <div class="books-container"></div>
 
 <div class="pagination">
-  <button class="go-to-first-page">
-    <svg width="24" height="24">
-      <use href="/src/images/icons.svg#icon-slider-pages-left"></use>
-    </svg>
-    <svg width="24" height="24">
-      <use href="/src/images/icons.svg#icon-slider-pages-left"></use>
-    </svg>
-  </button>
-  <button class="prev-page">
-    <svg width="24" height="24">
-      <use href="/src/images/icons.svg#icon-slider-pages-left"></use>
-    </svg>
-  </button>
-  <button class="first-page">1</button>
-  <button class="second-page">2</button>
-  <button class="third-page">3</button>
-  <button class="morePages">...</button>
-  <button class="next-page">
-    <svg width="24" height="24">
-      <use href="/src/images/icons.svg#icon-slider-pages-right"></use>
-    </svg>
-  </button>
-  <button class="go-to-last-page">
-    <svg width="24" height="24">
-      <use href="/src/images/icons.svg#icon-slider-pages-right"></use>
-    </svg>
-  </button>
+  <div class="pagination-container pagination_container-back">
+    <button
+      type="button"
+      name="startButton"
+      class="pagination_btn pagination_btn--back"
+      aria-label="Jump to first page"
+    >
+      <svg class="pagination_icon" width="24" height="24">
+        <use href="./images/icons.svg#icon-slider-double-left"></use>
+      </svg>
+    </button>
+    <button
+      type="button"
+      name="previousButton"
+      class="pagination_btn pagination_btn--back"
+      aria-label="Previous page"
+    >
+      <svg class="pagination_icon" width="24" height="24">
+        <use href="./images/icons.svg#icon-slider-left"></use>
+      </svg>
+    </button>
+  </div>
+  <div class="pagination-container pagination_container-pages"></div>
+
+  <div class="pagination-container pagination_container-end">
+    <button
+      type="button"
+      name="nextButton"
+      class="pagination_btn pagination_btn--end"
+      aria-label="Next page"
+    >
+      <svg class="pagination_icon" width="24" height="24">
+        <use href="./images/icons.svg#icon-slider-right"></use>
+      </svg>
+    </button>
+    <button
+      type="button"
+      name="endButton"
+      class="pagination_btn pagination_btn--end"
+      aria-label="Jump to last pages"
+    >
+      <svg class="pagination_icon" width="24" height="24">
+        <use href="./images/icons.svg#icon-slider-double-right"></use>
+      </svg>
+    </button>
+  </div>
 </div>

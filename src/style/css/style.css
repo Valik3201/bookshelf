@@ -1026,3 +1026,76 @@ svg.logo-icon {
 #sign-up-button:not(.hidden) {
   display: block;
 }
+
+/* Pagination */
+.pagination {
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.pagination_container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination_container-back,
+.pagination_container-end {
+  display: none;
+}
+
+.pagination_container-pages {
+  display: flex;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+@media screen and (min-width: 767px) {
+  .pagination_container-pages {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+
+.pagination_btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  border: 1px solid black;
+}
+@media screen and (min-width: 767px) {
+  .pagination_btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.pagination_btn--back {
+  justify-content: center;
+  align-items: center;
+  margin-left: 8px;
+  background-color: black;
+  border-color: black;
+  fill: #b4afaf;
+}
+
+.pagination_btn--pages {
+  margin-left: 10px;
+  background-color: transparent;
+  border-color: black;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.pagination_btn--end {
+  justify-content: center;
+  align-items: center;
+  margin-left: 8px;
+  background-color: #eac645;
+  border-color: black;
+}
+
+.pagination_icon {
+  pointer-events: none;
+}
