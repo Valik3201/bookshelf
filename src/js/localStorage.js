@@ -80,7 +80,7 @@ export const displayBooksFromLocalStorage = () => {
 
   const imageBooks = new URL('/src/images/books.png', import.meta.url).href;
   // Sprawdź, czy localStorage jest pusty
-  if (storedBooks.length === 0) {
+  if (storedBooks.length === 0 && container) {
     // Jeśli localStorage jest pusty, wyświetl komunikat
     const emptyMessageMarkup = `
       <div class="book-message">This page is empty, add some books and proceed to order.</div>
@@ -88,7 +88,7 @@ export const displayBooksFromLocalStorage = () => {
     `;
 
     container.innerHTML = emptyMessageMarkup;
-  } else if (container) {
+  } else {
     // Jeśli localStorage nie jest pusty, dodaj książki do kontenera
     storedBooks.forEach(book => {
       const { _id, title, author, book_image, description, buy_links } = book;
