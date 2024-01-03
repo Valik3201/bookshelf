@@ -417,7 +417,18 @@ input:checked + .slider:before {
   flex-direction: column;
   gap: 28px;
 }
-
+.inputs {
+  width: 499px;
+  height: 64px;
+  border: 2px solid black;
+  border-radius: 40px;
+}
+.sign-button-form {
+  width: 499px;
+  height: 64px;
+  border: 2px solid black;
+  border-radius: 40px;
+}
 /* End Sign Up modal */
 /*header style*/
 body {
