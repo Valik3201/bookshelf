@@ -1,7 +1,6 @@
 import localStorage from './localStorage.js';
 
-const divEl = document.querySelector('.localStorage.js');
-const paginationsSection = document.querySelector('.pagination');
+const paginationSection = document.querySelector('.pagination');
 const paginationContainerPages = document.querySelector('.pagination_container-pages');
 const paginationContainerBackBtn = document.querySelector('.pagination_container-back');
 const paginationContainerEndBtn = document.querySelector('.pagination_container-end');
@@ -15,9 +14,6 @@ const shoppingList = JSON.parse(localStorage.getItem()) || [];
 const pageSize = 3;
 let totalPages = Math.ceil(shoppingList.length / pageSize);
 let currentPage = 1;
-let startIndex = (currentPage - 1) * pageSize;
-let endIndex = startIndex + pageSize;
-let itemsOnPage = shoppingList.slice(startIndex, endIndex);
 
 for (let i = 1; i <= totalPages; i++) {
   if (shoppingList.length <= 3) {
@@ -47,7 +43,7 @@ paginationSection.addEventListener('click', handlerPaginationButtonsStartPreviou
 function handlerPaginationButtonsStartPreviousNextStart(event) {
   const activButton = document.querySelector('.active');
   console.log(event.target);
-  if (event.terget.tagName !== 'BUTTON') {
+  if (event.target.tagName !== 'BUTTON') {
     return;
   }
 
@@ -99,10 +95,6 @@ function handleButtonPaginationContainerPages(event) {
   highlighteTheCurrentPage(event.target);
 }
 
-function deleteMarkup() {
-  divEl.innerHTML = '';
-}
-
 function removeDisableforElement(element) {
   element.disabled = false;
 }
@@ -113,19 +105,6 @@ function addDisableforElement(element) {
 
 function activDisplayFlexOnElement(element) {
   element.style.display = 'flex';
-}
-
-function activeDisplayNoneOnElement(element) {
-  element.style.display = 'none';
-}
-
-function destroyChildElement(element) {
-  const a = shoppingList.length / pageSize;
-  if (Math.round(a) === a) {
-    return element.lastElementChild.remove();
-  } else {
-    return;
-  }
 }
 
 function highlighteTheCurrentPage(element) {
