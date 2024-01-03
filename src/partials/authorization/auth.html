@@ -37,29 +37,36 @@
     <div class="form-div">
     <form name="signup-form" autocomplete="on" novalidate class="sign-up-form">
       <div class="form-inputs">
-        <div class="input-position">
+        <div class="input-position hf-style">
         <label>
-          <span class="input-text">Name</span>
-          <input type="text" name="name" class="inputs"/>
+          <span class="input-text hf-style">Name</span>
+          <input type="text" name="name" class="inputs hf-style"/>
         </label>
         </div>
-        <div class="input-position">
+        <div class="input-position hf-style">
         <label>
-          <span class="input-text">Email</span>
-          <input type="email" name="email" class="inputs"/>
+          <span class="input-text hf-style">Email</span>
+          <input type="email" name="email" class="inputs hf-style"/>
+           <svg class="icon-mobile-position hf-style" width="21px" height="21px">
+                  <use href="/src/images/icons.svg#icon-email"></use>
+                </svg>
         </label >
         </div>
-        <div class="input-position">
+        <div class="input-position hf-style">
         <label>
-          <span class="input-text">Password</span>
-          <input type="password" name="password" class="inputs"/>
+          <span class="input-text hf-style">Password</span>
+          <input type="password" name="password" class="inputs hf-style"/>
+          <svg class="icon-mobile-position hf-style" width="21px" height="21px">
+                  <use href="/src/images/icons.svg#icon-lock"></use>
+                </svg>
         </label>
         </div>
         <button type="submit" id="sign-up" class="sign-button-form">SIGN UP</button>
       </div>
       <div class="modal-buttons">
+        <button type="submit" id="sign-up" class="buttons-style">SIGN UP</button>
         <!-- Кнопка для переключения на форму SIGN IN -->
-        <button type="button" id="switch-to-sign-in">SWITCH TO SIGN IN</button>
+        <button type="button" id="switch-to-sign-in" class="buttons-style">SIGN IN</button>
         <!-- Кнопка закрытия формы -->
       </div>
       </div>
