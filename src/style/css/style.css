@@ -98,8 +98,26 @@
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
-  margin-top: 16px;
+  margin-top: 14px;
 }
+.book-card-icons {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 14px;
+  gap: 10px;
+}
+.amazon {
+  width: 32px;
+  height: 11px;
+  filter: grayscale(100%);
+}
+
+.apple-books {
+  width: 16px;
+  height: 16px;
+  filter: grayscale(100%);
+}
+
 .book-message {
   margin-top: 20px;
   margin-left: 50px;
@@ -177,6 +195,62 @@
     border-radius: 50%;
     background-color: #4f2ee8;
   }
+
+  .book-card-icons {
+    display: flex;
+    justify-content: end;
+    margin-right: 14px;
+    gap: 10px;
+  }
+  .amazon {
+    width: 48px;
+    height: 15px;
+    margin-top: 7px;
+  }
+
+  .apple-books {
+    width: 28px;
+    height: 27px;
+  }
+
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  .page-arrows-left {
+    display: flex;
+    flex-direction: row;
+  }
+  .next-page,
+  .go-to-last-page {
+    width: 30px;
+    height: 30px;
+    border: #111, solid;
+    border-radius: 50%;
+    background-color: #eac645;
+  }
+  .morePages,
+  .first-page,
+  .second-page,
+  .third-page {
+    font-family: DM Sans;
+    width: 30px;
+    height: 30px;
+    border: #111, solid;
+    border-radius: 50%;
+  }
+  .prev-page,
+  .go-to-first-page {
+    width: 30px;
+    height: 30px;
+    fill: white;
+    border: #000, solid;
+    background-color: #000;
+    border-radius: 50%;
+  }
 }
 
 @media (min-width: 1023px) {
@@ -207,6 +281,23 @@
     color: #4f2ee8;
     font-size: 48px;
     letter-spacing: -1.92px;
+  }
+
+  .book-card-icons {
+    display: flex;
+    justify-content: end;
+    margin-right: 14px;
+    gap: 10px;
+  }
+  .amazon {
+    margin-top: 10px;
+    width: 48px;
+    height: 15px;
+  }
+
+  .apple-books {
+    width: 28px;
+    height: 27px;
   }
 }
 
