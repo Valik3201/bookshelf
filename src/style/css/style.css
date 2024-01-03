@@ -50,7 +50,6 @@
 }
 .book-card {
   display: flex;
-  position: relative;
   bottom: 200px;
   height: 68px;
   margin: 14px;
@@ -163,7 +162,6 @@
     width: 100%;
     height: 180px;
     max-width: 100%;
-    position: relative;
     margin-top: 0px;
   }
 
@@ -543,7 +541,7 @@ svg.logo-icon {
 /*header style end*/
 
 /*DarkMode style*/
-[data-theme="dark"] {
+[data-theme='dark'] {
   body {
     background: #202024;
   }
@@ -553,11 +551,11 @@ svg.logo-icon {
   }
 
   .close-modal-button__icon {
-    stroke: #FFFFFF !important;
+    stroke: #ffffff !important;
   }
 
   .heading {
-    color: #FFFFFF !important;
+    color: #ffffff !important;
     transition: color 0.3s ease-in;
   }
 
@@ -581,12 +579,12 @@ svg.logo-icon {
   .book-title,
   .book-plot,
   .book-message {
-    color: #FFFFFF;
+    color: #ffffff;
     transition: color 0.3s ease-in;
   }
 
-  .shopping-list-icon{
-    fill: #FFFFFF;
+  .shopping-list-icon {
+    fill: #ffffff;
     transition: fill 0.3s ease-in;
   }
   .shopping-list-icon--active {
@@ -594,10 +592,9 @@ svg.logo-icon {
     transition: fill 0.3s ease-in;
   }
 
-
   .category-list__item.active,
   .category-list__item:hover {
-    color: #EAC645;
+    color: #eac645;
     transition: color 0.3s ease-in;
   }
 
@@ -607,7 +604,7 @@ svg.logo-icon {
   }
 
   .nav-item p {
-    color: #F3F3F3;
+    color: #f3f3f3;
     transition: color 0.3s ease-in;
   }
 
@@ -674,12 +671,12 @@ svg.logo-icon {
   .category-list__item,
   h1,
   .sign-up-button {
-    color: #FFFFFF;
+    color: #ffffff;
     transition: color 0.3s ease-in;
   }
 
   .see-more-btn {
-    color: #FFFFFF !important;
+    color: #ffffff !important;
     transition: color 0.3s ease-in;
   }
 
