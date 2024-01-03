@@ -78,12 +78,13 @@ export const displayBooksFromLocalStorage = () => {
   // Znajdź kontener na stronie, do którego będziemy dodawać książki
   const container = document.querySelector('.books-container');
 
+  const imageBooks = new URL('/src/images/books.png', import.meta.url).href;
   // Sprawdź, czy localStorage jest pusty
   if (storedBooks.length === 0) {
     // Jeśli localStorage jest pusty, wyświetl komunikat
     const emptyMessageMarkup = `
       <div class="book-message">This page is empty, add some books and proceed to order.</div>
-      <img class="books-img" src="./images/books.png" alt="books" />
+      <img class="books-img" src="${imageBooks}" alt="books" />
     `;
 
     container.innerHTML = emptyMessageMarkup;
