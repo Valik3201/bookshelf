@@ -13,13 +13,18 @@ const displayBooksByCategory = async categoryName => {
 
   switchView('category');
 
+  const placeholderImageURL = new URL('/src/images/placeholder.jpg', import.meta.url).href;
+
   const booksMarkup = booksByCategory
     .flat()
     .map(book => {
       return `
       <div class="books__book" data-book-id="${book._id}">
         <div class="books__book--cover">
-          <img loading="lazy" src="${book.book_image}" alt="${book.title}">
+          <img class="lazyload" 
+          src="${placeholderImageURL}"
+          data-src="${book.book_image}"
+          alt="${book.title}">
           <div class="books__book--cover-overlay">
             <div class="books__book--cover-overlay-text">Quick View</div>
           </div>
