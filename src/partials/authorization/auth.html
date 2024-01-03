@@ -37,25 +37,30 @@
     <div class="form-div">
     <form name="signup-form" autocomplete="on" novalidate class="sign-up-form">
       <div class="form-inputs">
+        <div class="input-position">
         <label>
-          Name
+          <span class="input-text">Name</span>
           <input type="text" name="name" class="inputs"/>
         </label>
+        </div>
+        <div class="input-position">
         <label>
-          Email
+          <span class="input-text">Email</span>
           <input type="email" name="email" class="inputs"/>
-        </label>
+        </label >
+        </div>
+        <div class="input-position">
         <label>
-          Password
+          <span class="input-text">Password</span>
           <input type="password" name="password" class="inputs"/>
         </label>
+        </div>
         <button type="submit" id="sign-up" class="sign-button-form">SIGN UP</button>
       </div>
       <div class="modal-buttons">
         <!-- Кнопка для переключения на форму SIGN IN -->
         <button type="button" id="switch-to-sign-in">SWITCH TO SIGN IN</button>
         <!-- Кнопка закрытия формы -->
-        <button type="button">X</button>
       </div>
       </div>
     </form>
