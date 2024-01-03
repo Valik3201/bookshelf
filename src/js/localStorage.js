@@ -88,7 +88,7 @@ export const displayBooksFromLocalStorage = () => {
     `;
 
     container.innerHTML = emptyMessageMarkup;
-  } else {
+  } else if (container) {
     // Jeśli localStorage nie jest pusty, dodaj książki do kontenera
     storedBooks.forEach(book => {
       const { _id, title, author, book_image, description, buy_links } = book;
@@ -147,33 +147,32 @@ export const displayBooksFromLocalStorage = () => {
 
       // Dodaj wygenerowany markup do kontenera
       container.innerHTML += markup;
+    });
 
-      // Dodaj obsługę zdarzenia dla każdego przycisku usuwania
-      const deleteButtons = container.querySelectorAll('.button-delete');
-      deleteButtons.forEach(deleteButton => {
-        deleteButton.addEventListener('click', () => {
-          const bookId = deleteButton.getAttribute('data-book-id');
-
-          // Usuń książkę z localStorage
-          removeFromLocalStorage(bookId);
-        });
-      });
+    // Dodaj obsługę zdarzenia dla każdego przycisku usuwania
+    const deleteButtons = container.querySelectorAll('.button-delete');
+    deleteButtons.forEach(deleteButton => {
+      deleteButton.removeEventListener('click', handleDeleteButtonClick);
+      deleteButton.addEventListener('click', handleDeleteButtonClick);
     });
   }
+};
+
+// Funkcja obsługująca kliknięcie przycisku usuwania
+const handleDeleteButtonClick = event => {
+  const bookId = event.currentTarget.getAttribute('data-book-id');
+
+  // Usuń książkę z localStorage
+  removeFromLocalStorage(bookId);
+
+  // Ponownie wyświetl książki (aktualizacja widoku)
+  displayBooksFromLocalStorage();
 };
 
 // Funkcja usuwająca książkę z localStorage
 const removeFromLocalStorage = bookId => {
   const localStorageKey = 'book_' + bookId;
   localStorage.removeItem(localStorageKey);
-
-  document.querySelector('.books-container').innerHTML = '';
-
-  // Ponownie wyświetl książki (aktualizacja widoku)
-  displayBooksFromLocalStorage();
-
-  // // Ręczne odświeżenie strony
-  // location.reload();
 };
 
 displayBooksFromLocalStorage();
