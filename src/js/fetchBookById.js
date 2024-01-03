@@ -18,14 +18,37 @@ export const displayBookById = async bookId => {
   const { _id, title, author, book_image, description, buy_links } = bookById;
 
   // Filter buy links to include only 'Amazon' and 'Apple Books'
-  const filteredBuyLinks = buy_links.filter(link => ['Amazon', 'Apple Books'].includes(link.name));
+  const buyLinks = [
+    {
+      name: 'Amazon',
+      imageUrl: new URL('/src/images/amazon.png', import.meta.url).href,
+      buyUrl: '',
+    },
+    {
+      name: 'Apple Books',
+      imageUrl: new URL('/src/images/apple.png', import.meta.url).href,
+      buyUrl: '',
+    },
+  ];
 
-  const placeholderImageURL = new URL('/src/images/placeholder.jpg', import.meta.url).href;
+  const filteredBuyLinks = buy_links.filter(link =>
+    buyLinks.some(store => store.name === link.name),
+  );
+
+  buyLinks.forEach(store => {
+    const link = filteredBuyLinks.find(filteredLink => filteredLink.name === store.name);
+    store.buyUrl = link ? link.url : '';
+  });
 
   // Generate HTML markup for buy links
-  const buyLinksMarkup = filteredBuyLinks
-    .map(link => `<a href="${link.url}" target="_blank"></a>`)
+  const buyLinksMarkup = buyLinks
+    .map(
+      store =>
+        `<a href="${store.buyUrl}" target="_blank"><img src="${store.imageUrl}" alt="${store.name}"></a>`,
+    )
     .join('');
+
+  const placeholderImageURL = new URL('/src/images/placeholder.jpg', import.meta.url).href;
 
   // Generate modal HTML markup
   const markup = `
@@ -35,8 +58,10 @@ export const displayBookById = async bookId => {
         <img class="lazyload" src="${placeholderImageURL}" data-src="${book_image}" alt="${title}">
         </div>
         <div class="modal__details">
-            <p class="modal__details-title">${title}</p>
-            <p class="modal__details-author">${author}</p>
+            <div class="modal__details-header">
+              <p class="modal__details-title">${title}</p>
+              <p class="modal__details-author">${author}</p>
+            </div>
             <p class="modal__details-description">${
               description ? description : 'Sorry, the description for this book is not available.'
             }</p>

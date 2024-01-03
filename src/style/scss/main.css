@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -20,7 +21,6 @@ input,
 button {
   margin: 0;
   padding: 0;
-  transition: background-color 0.3s ease-in;
 }
 
 body {
@@ -127,7 +127,6 @@ body {
 }
 .category-list__item:hover {
   color: #4f2ee8;
-  transition: color 0.3s ease-in;
 }
 .category-list__item.active {
   color: #4f2ee8;
@@ -136,7 +135,6 @@ body {
   font-weight: 700;
   line-height: 24px;
   letter-spacing: -0.18px;
-  transition: color 0.3s ease-in;
 }
 
 .books {
@@ -174,7 +172,6 @@ body {
   font-weight: 700;
   line-height: 38px;
   letter-spacing: -0.28px;
-  transition: color 0.3s ease-in;
 }
 @media (min-width: 576px) {
   .books__heading {
@@ -199,7 +196,6 @@ body {
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.42px;
-  transition: color 0.3s ease-in;
 }
 .books__category--books {
   display: flex;
@@ -226,6 +222,7 @@ body {
   width: 100%;
   min-height: 75%;
   aspect-ratio: 45/64;
+  border-radius: 8px;
 }
 .books__book--cover:hover .books__book--cover-overlay {
   transform: translateY(0);
@@ -237,7 +234,6 @@ body {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  border-radius: 8px;
 }
 .books__book--cover-overlay {
   display: flex;
@@ -270,7 +266,6 @@ body {
   font-weight: 700;
   line-height: 18px;
   letter-spacing: -0.64px;
-  transition: color 0.3s ease-in;
 }
 .books__book--author {
   color: #b4afaf;
@@ -369,41 +364,37 @@ body {
     flex-basis: calc(20% - 25px);
   }
 }
-
-.backdrop-pop-up {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 100;
-  display: flex;
+#scrollUp {
+  z-index: 1000;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  opacity: 0.7;
+  fill: #000;
+  background-color: #fcfcfc;
+  border: none;
+  border-radius: 50%;
   justify-content: center;
   align-items: center;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  position: fixed;
+  bottom: 95px;
+  right: 30px;
+  transform: scale(1);
+  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
 }
-.backdrop-pop-up.is-hidden {
-  display: none;
-}
-.backdrop-pop-up .modal-pop-up {
-  background-color: #fff;
-  max-width: 600px;
-  width: 100%;
-  padding: 20px;
-  border-radius: 8px;
-  position: relative;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-.backdrop-pop-up .modal-pop-up .close-modal-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
+
+#scrollUp:hover {
+  opacity: 1.1;
+  background-color: rgba(252, 252, 252, 0.5490196078);
   cursor: pointer;
 }
-.backdrop-pop-up .modal-pop-up .close-modal-button__icon {
-  width: 20px;
-  height: 20px;
-  stroke: #000;
+
+#top-btn svg {
+  fill: #000;
+}
+
+#top-btn:hover svg {
+  fill: #f8d24e;
 }/*# sourceMappingURL=main.css.map */
