@@ -91,7 +91,7 @@ export const displayBooksFromLocalStorage = () => {
   } else if (container) {
     // Jeśli localStorage nie jest pusty, dodaj książki do kontenera
     storedBooks.forEach(book => {
-      const { _id, title, author, book_image, description, buy_links } = book;
+      const { _id, list_name, title, author, book_image, description, buy_links } = book;
 
       const buyLinks = [
         {
@@ -124,18 +124,28 @@ export const displayBooksFromLocalStorage = () => {
 
       const placeholderImageURL = new URL('/src/images/placeholder.jpg', import.meta.url).href;
 
+      const iconTrashURL = new URL('/src/images/icons.svg', import.meta.url).href;
+
+      const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svgElement.classList.add('icon-trash');
+
+      const useElement = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+      useElement.setAttribute('href', `${iconTrashURL}#icon-trash`);
+
+      svgElement.appendChild(useElement);
+
+      const svgString = new XMLSerializer().serializeToString(svgElement);
+
       const markup = `
         <div class="book-card">
           <img class="books-card-img lazyload" src="${placeholderImageURL}" data-src="${book_image}" alt="${title}">
         
           <div class="book-description">
             <button class="button-delete" type="button" data-book-id="${_id}">
-              <svg class="icon-trash">
-                <use href="/src/images/icons.svg#icon-trash"></use>
-              </svg>
+              ${svgString}
             </button>
             <p class="book-title">${title}</p>
-            <p class="book-genre">${author}</p>
+            <p class="book-genre">${list_name}</p>
             <p class="book-plot">${
               description ? description : 'Sorry, the description for this book is not available.'
             }</p>
@@ -164,6 +174,8 @@ const handleDeleteButtonClick = event => {
 
   // Usuń książkę z localStorage
   removeFromLocalStorage(bookId);
+
+  document.querySelector('.books-container').innerHTML = '';
 
   // Ponownie wyświetl książki (aktualizacja widoku)
   displayBooksFromLocalStorage();
