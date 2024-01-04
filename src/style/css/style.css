@@ -799,7 +799,7 @@ svg.logo-icon {
 }
 /* DarkMode style end */
 
-/* Modal window styles */
+/* -------Modal window styles------- */
 
 .backdrop-pop-up {
   position: fixed;
@@ -833,6 +833,182 @@ svg.logo-icon {
 }
 
 .modal-pop-up {
+  position: relative;
+  min-width: 335px;
+  background-color: #fff;
+  padding: 40px 24px;
+  max-height: 100vh;
+  border: 2px solid #111;
+  border-radius: 18px;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .modal-pop-up {
+    max-width: 579px;
+    padding: 40px;
+    max-height: 465px;
+  }
+}
+.close-modal-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border-radius: 50px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+@media screen and (min-width: 768px) {
+  .close-modal-button {
+    top: 24px;
+    right: 24px;
+    width: 28px;
+    height: 28px;
+  }
+}
+.modal__info {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 768px) {
+  .modal__info {
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+.modal__cover img {
+  width: 100%;
+  max-height: 408px;
+  
+}
+@media screen and (min-width:768px) {
+  .modal__cover img {
+    max-width:192px;
+    min-height: 281px;
+    border-radius: 8px;
+    transition: 2s;
+  }
+}
+.modal__details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+@media screen and (min-width: 768px) {
+  .modal__details {
+    gap: 20px;
+  }
+}
+.modal__details-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+@media screen and (min-width: 768px) {
+  .modal__details-header {
+    gap: 8px;
+  }
+}
+.modal__details-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .modal__details-title {
+    font-size: 24px;
+    line-height: 1.16;
+    letter-spacing: -0.06em;
+
+  }
+}
+.modal__details-author {
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+  color: #b4afaf;
+}
+@media screen and (min-width: 768px) {
+  .modal__details-author {
+    font-size: 14px;
+    line-height: 1.28;
+  }
+}
+.modal__details-description {
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.04em;
+}
+@media screen and (min-width: 768px) {
+  .modal__details-description {
+    width: 279px;
+  }
+}
+.modal__details-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.modal__details-links a {
+  mix-blend-mode: luminosity;
+}
+.modal__details-links a:hover {
+  mix-blend-mode: normal;
+}
+.modal-pop-up-btn.button {
+  min-width: 211px;
+  height: 46px;
+  background-color: transparent;
+  border: 2px solid #4f2ee8;
+  border-radius: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 28px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in, box-shadow 0.25s ease-in;
+}
+@media screen and (min-width: 768px) {
+  .modal-pop-up-btn.button {
+    width: 499px;
+    font-size: 18px;
+    padding: 20px 0px;
+    line-height: 1.33;
+    letter-spacing: -0.01em;
+  }
+}
+.modal-pop-up-btn.button:hover,
+.modal-pop-up-btn.button:active {
+  background-color: #4f2ee8;
+  color: #fff;
+}
+.modal-pop-up-btn.button:active {
+  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
+}
+/*------*/
+/*
+.modal-pop-up {
+  position: relative;
   max-width: 579px;
   background-color: #fff;
   padding: 40px;
@@ -850,7 +1026,6 @@ svg.logo-icon {
   cursor: pointer;
   width: 24px;
   height: 24px;
-  border: none;
   border-radius: 50%;
   background-color: transparent;
   display: flex;
@@ -949,14 +1124,16 @@ svg.logo-icon {
   font-size: 10px;
   line-height: 1.2;
   text-align: center;
+
   letter-spacing: -0.04em;
 }
 */
 
+/*
 @media screen and (min-width: 768px) {
   .modal-pop-up {
     border-radius: 8px;
-    position: relative;
+
   }
   .close-modal-button {
     top: 24px;
@@ -988,14 +1165,15 @@ svg.logo-icon {
     font-size: 14px;
     line-height: 1.29;
   }
-
-  /*.modal-message {
+  .modal-message {
     max-width: 324px;
     font-size: 12px;
     line-height: 1.17;
   }
-  */
 }
+*/
+/* --------end for styles modal window ----------*/
+
 
 /* Authorization */
 
