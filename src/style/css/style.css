@@ -528,6 +528,7 @@ svg.logo-icon {
   justify-content: space-between;
   align-items: center;
   padding-left: 14px;
+  background-color: white;
 }
 .hamburger-icon {
   fill: #000000;
@@ -1112,6 +1113,8 @@ svg.logo-icon {
 
 #user-dropdown-menu:not(.hidden) {
   display: block;
+  position: absolute;
+  top: 45px;
 }
 
 #user-info.sign-up-button {
@@ -1132,6 +1135,7 @@ svg.logo-icon {
 
 #user-profile:not(.hidden) {
   display: block;
+  position: relative;
 }
 
 #sign-up-button:not(.hidden) {
