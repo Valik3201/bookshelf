@@ -34,24 +34,42 @@
         <use href="/src/images/icons.svg#icon-close"></use>
       </svg>
     </button>
+    <div class="form-div">
     <form name="signup-form" autocomplete="on" novalidate class="sign-up-form">
-      <label>
-        Name
-        <input type="text" name="name" />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit" id="sign-up">SIGN UP</button>
-      <!-- Кнопка для переключения на форму SIGN IN -->
-      <button type="button" id="switch-to-sign-in">SWITCH TO SIGN IN</button>
-      <!-- Кнопка закрытия формы -->
-      <button type="button">X</button>
+      <div class="form-inputs">
+        <div class="input-position hf-style">
+        <label>
+          <span class="input-text hf-style">Name</span>
+          <input type="text" name="name" class="inputs hf-style"/>
+        </label>
+        </div>
+        <div class="input-position hf-style">
+        <label>
+          <span class="input-text hf-style">Email</span>
+          <input type="email" name="email" class="inputs hf-style"/>
+           <svg class="icon-mobile-position hf-style" width="21px" height="21px">
+                  <use href="/src/images/icons.svg#icon-email"></use>
+                </svg>
+        </label >
+        </div>
+        <div class="input-position hf-style">
+        <label>
+          <span class="input-text hf-style">Password</span>
+          <input type="password" name="password" class="inputs hf-style"/>
+          <svg class="icon-mobile-position hf-style" width="21px" height="21px">
+                  <use href="/src/images/icons.svg#icon-lock"></use>
+                </svg>
+        </label>
+        </div>
+        <button type="submit" id="sign-up" class="sign-button-form">SIGN UP</button>
+      </div>
+      <div class="modal-buttons">
+        <button type="button" id="switch-to-sign-up" class="buttons-style">SIGN UP</button>
+        <!-- Кнопка для переключения на форму SIGN IN -->
+        <button type="button" id="switch-to-sign-in" class="buttons-style">SIGN IN</button>
+        <!-- Кнопка закрытия формы -->
+      </div>
+      </div>
     </form>
   </div>
 </div>
@@ -64,18 +82,36 @@
         <use href="/src/images/icons.svg#icon-close"></use>
       </svg>
     </button>
+    <div class="form-div">
     <form name="signin-form" autocomplete="on" novalidate class="sign-in-form">
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit" id="sign-in">SIGN IN</button>
-      <!-- Кнопка для переключения на форму SIGN UP -->
-      <button type="button" id="switch-to-sign-up">SWITCH TO SIGN UP</button>
+      <div class="form-inputs">
+        <div class="input-position hf-style">
+        <label>
+          <span class="input-text hf-style">Email</span>
+          <input type="email" name="email" class="inputs hf-style"/>
+           <svg class="icon-mobile-position hf-style" width="21px" height="21px">
+                  <use href="/src/images/icons.svg#icon-email"></use>
+                </svg>
+        </label >
+        </div>
+        <div class="input-position hf-style">
+        <label>
+          <span class="input-text hf-style">Password</span>
+          <input type="password" name="password" class="inputs hf-style"/>
+          <svg class="icon-mobile-position hf-style" width="21px" height="21px">
+                  <use href="/src/images/icons.svg#icon-lock"></use>
+                </svg>
+        </label>
+        </div>
+        <button type="submit" id="sign-in" class="sign-button-form">SIGN IN</button>
+      </div>
+      <div class="modal-buttons">       
+        <!-- Кнопка для переключения на форму SIGN IN -->
+        <button type="button" id="switch-to-sign-up" class="buttons-style">SIGN UP</button>
+        <button type="button" id="switch-to-sign-in" class="buttons-style">SIGN IN</button>
+        <!-- Кнопка закрытия формы -->
+      </div>
+      </div>
     </form>
   </div>
 </div>

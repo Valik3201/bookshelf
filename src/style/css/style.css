@@ -405,6 +405,85 @@ input:checked + .slider:before {
 }
 .signup-close-icon {
   stroke: black;
+  fill: black;
+}
+.signup-close-icon:hover,
+.signup-close-icon:focus {
+  stroke: #4f2ee8;
+  fill: #4f2ee8;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.buttons-style {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #00000080;
+}
+.buttons-style:focus,
+.buttons-style:hover {
+  color: #4f2ee8;
+}
+.form-div {
+  margin: 80px 40px 0px 40px;
+}
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.input-position {
+  position: relative;
+}
+.inputs {
+  width: 499px;
+  height: 64px;
+  border: 2px solid black;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  padding-left: 160px;
+}
+.sign-button-form {
+  width: 499px;
+  height: 64px;
+  border: 2px solid black;
+  border-radius: 40px;
+  margin-top: 12px;
+  background-color: black;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+}
+.sign-button-form:hover,
+.sign-button-form:focus {
+  background-color: #4f2ee8;
+  border-color: #4f2ee8;
+}
+.input-text {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  text-transform: uppercase;
+}
+.icon-mobile-position {
+  fill: white;
+  stroke: black;
+  position: absolute;
+  top: 20px;
+  right: 40px;
 }
 
 /* End Sign Up modal */
