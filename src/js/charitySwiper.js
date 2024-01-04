@@ -28,14 +28,21 @@ const foundationList = document.querySelector('.swiper-wrapper');
 
 charityData.forEach(function (item, index) {
   var slideNumber = (index + 1).toString().padStart(2, '0');
+  var imgSrc = item.imgUrl.img;
+  var imgSrcset = `
+    ${item.imgUrl.img} 1x,
+    ${item.imgUrl.img1x} 2x,
+    ${item.imgUrl.img2x} 3x
+  `;
+
   var slideHTML = `
-      <div class="swiper-slide">
+    <div class="swiper-slide">
       <div class="swiper-slide-number">${slideNumber}</div>
-        <a href="${item.url}" target="_blank">
-            <img src="${item.img}" alt="${item.title}">
-        </a>
-      </div>
-    `;
+      <a href="${item.url}" target="_blank">
+        <img src="${imgSrc}" srcset="${imgSrcset}" alt="${item.title}">
+      </a>
+    </div>
+  `;
 
   foundationList.insertAdjacentHTML('beforeend', slideHTML);
 });
