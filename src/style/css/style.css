@@ -519,6 +519,16 @@ svg.logo-icon {
 .sign-up-text {
   margin-left: 14px;
 }
+.log-out-button {
+  width: 184px;
+  height: 45px;
+  border-radius: 18px;
+  border: 1.5 solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 14px;
+}
 .hamburger-icon {
   fill: #000000;
   stroke: black;
