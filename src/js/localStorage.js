@@ -193,19 +193,11 @@ export const checkIfBookInLocalStorage = bookId => {
   return localStorage.getItem(localStorageKey) !== null;
 };
 
-// Function to show the congratulatory message
-export const showCongratulatoryMessage = () => {
+// Function to toggle the congratulatory message
+export const toggleCongratulatoryMessage = show => {
   const congratulatoryMessage = document.querySelector('.congratulatory-message');
   if (congratulatoryMessage) {
-    congratulatoryMessage.style.display = 'block';
-  }
-};
-
-// Function to hide the congratulatory message
-export const hideCongratulatoryMessage = () => {
-  const congratulatoryMessage = document.querySelector('.congratulatory-message');
-  if (congratulatoryMessage) {
-    congratulatoryMessage.style.display = 'none';
+    congratulatoryMessage.style.display = show ? 'block' : 'none';
   }
 };
 
