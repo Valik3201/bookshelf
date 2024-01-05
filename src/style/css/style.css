@@ -893,15 +893,55 @@ svg.logo-icon {
 /*DarkMode style*/
 [data-theme='dark'] {
   body {
-    background: #202024;
+    background-color: #202024;
+    transition: background-color 0.3s ease-in;
+  }
+
+  .form-field,
+  .inputs{
+    background-color: #202024;
+    border-color: #F6F6F6;
+    transition: background-color 0.3s ease-in;
+  }
+
+  .input-text{
+    color: #F6F6F6;
+    transition: color 0.3s ease-in;
+  }
+
+  .icon-mobile-position{
+    stroke: #F6F6F6;
+    fill:#202024;
+    transition: stroke 0.3s ease-in;
+  }
+
+  .sign-button-form{
+    background-color: #F6F6F6;
+    color:#202024;
+    transition: background-color 0.3s ease-in;
+  }
+
+  .button-sign-up{
+    color: #4f2ee8 !important;
+    transition: color 0.3s ease-in;
+  }
+
+  .log-out-button{
+    background-color: #202024;
+    color: #f6f6f6;
+    border-color: #F6F6F6;
+    transition: background-color 0.3s ease-in;
   }
 
   div.modal-pop-up {
     background-color: #202024;
+    transition: background-color 0.3s ease-in;
   }
 
-  .close-modal-button__icon {
+  .close-modal-button__icon,
+  .close-button-icon {
     stroke: #ffffff !important;
+    transition: stroke 0.3s ease-in;
   }
 
   .heading {
@@ -928,7 +968,8 @@ svg.logo-icon {
   .shopping-text,
   .book-title,
   .book-plot,
-  .book-message {
+  .book-message,
+  .logo-header {
     color: #ffffff;
     transition: color 0.3s ease-in;
   }
@@ -948,7 +989,8 @@ svg.logo-icon {
     transition: color 0.3s ease-in;
   }
 
-  header {
+  header,
+  .mobile-header-items {
     background: #111111;
     transition: color 0.3s ease-in;
   }
@@ -1028,10 +1070,6 @@ svg.logo-icon {
   .see-more-btn {
     color: #ffffff !important;
     transition: color 0.3s ease-in;
-  }
-
-  .slider {
-    background: linear-gradient(to bottom, #4f2ee8, #686868);
   }
 }
 /* DarkMode style end */
