@@ -25,6 +25,23 @@ export const toggleModal = showModal => {
 };
 
 /**
+ * Element DOM reprezentujący tło wyskakującego okna modalnego.
+ * @type {HTMLElement}
+ */
+const backdrop = document.querySelector('.backdrop-pop-up');
+
+/**
+ * Słuchacz zdarzeń dla kliknięcia na tło modala. Zamyka modal.
+ */
+backdrop.addEventListener('click', function (event) {
+  // Sprawdź czy kliknięcie nastąpiło w backdrop (nie w jego dzieci)
+  if (event.target === backdrop) {
+    // Zamykaj modal tylko jeśli kliknięcie nastąpiło bezpośrednio w backdrop
+    toggleModal(false);
+  }
+});
+
+/**
  * Element DOM reprezentujący przycisk zamykający wewnątrz modala.
  * @type {HTMLElement}
  */
@@ -47,5 +64,3 @@ document.addEventListener('keydown', function (event) {
     toggleModal(false);
   }
 });
-
-
