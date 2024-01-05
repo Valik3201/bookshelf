@@ -407,11 +407,12 @@ input:checked + .slider:before {
   height: 100%;
   background-color: #4f2ee8;
   z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .form-field {
   position: relative;
-  top: 25%;
-  left: 25%;
   width: 579px;
   height: 516px;
   background-color: white;
