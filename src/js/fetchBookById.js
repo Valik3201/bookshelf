@@ -26,7 +26,7 @@ export const displayBookById = async bookId => {
     },
     {
       name: 'Apple Books',
-      imageUrl: new URL('/src/images/apple.png', import.meta.url).href,
+      imageUrl: new URL('/src/images/apple-books.png', import.meta.url).href,
       buyUrl: '',
     },
   ];

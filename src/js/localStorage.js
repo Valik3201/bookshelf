@@ -101,7 +101,7 @@ export const displayBooksFromLocalStorage = () => {
         },
         {
           name: 'Apple Books',
-          imageUrl: new URL('/src/images/apple.png', import.meta.url).href,
+          imageUrl: new URL('/src/images/apple-books.png', import.meta.url).href,
           buyUrl: '',
         },
       ];
