@@ -1,27 +1,45 @@
+import { onAuthStateChanged } from 'firebase/auth';
+
+import { auth } from './auth/firebase';
+
 const openMenuButton = document.querySelector('.open-mobile-menu');
 const closeMenuButton = document.querySelector('.close-button');
-const mobileMenuField = document.querySelector('.mobile-menu-field');
 const windowSize = window.matchMedia('(min-width: 768px)');
 
+const mobileMenuSingIn = document.querySelector('#sing-in-mobile-menu');
+const mobileMenuSingUp = document.querySelector('#sing-up-mobile-menu');
+
 const openMenu = () => {
-  mobileMenuField.style.display = 'block';
-  setTimeout(() => {
-    mobileMenuField.style.transform = 'translateY(0)';
-  }, 1);
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      mobileMenuSingIn.style.display = 'block';
+      setTimeout(() => {
+        mobileMenuSingIn.style.transform = 'translateX(0)';
+      }, 1);
+    } else {
+      mobileMenuSingUp.style.display = 'block';
+      setTimeout(() => {
+        mobileMenuSingUp.style.transform = 'translateX(0)';
+      }, 1);
+    }
+  });
 };
 
 const closeMenu = () => {
-  mobileMenuField.style.transform = 'translateY(-100%)';
+  mobileMenuSingIn.style.transform = 'translateX(-100%)';
+  mobileMenuSingUp.style.transform = 'translateX(-100%)';
 
   setTimeout(() => {
-    mobileMenuField.style.display = 'none';
+    mobileMenuSingIn.style.display = 'none';
+    mobileMenuSingUp.style.display = 'none';
   }, 500);
 };
 
 //closing mobile menu function if window size is bigger than 768px
 function mobileMenuClose(event) {
   if (event.matches) {
-    mobileMenuField.style.display = 'none';
+    mobileMenuSingIn.style.display = 'none';
+    mobileMenuSingUp.style.display = 'none';
   }
 }
 

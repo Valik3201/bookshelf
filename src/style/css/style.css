@@ -668,7 +668,11 @@ svg.logo-icon {
 .nav-list__link--active {
   background-color: #eac645;
 }
-
+.is-away {
+  transform: translateX(-9999999px);
+  max-width: 1px;
+  z-index: -999999999;
+}
 @media (max-width: 767px) {
   body {
     min-width: 375px;
