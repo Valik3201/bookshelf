@@ -8,11 +8,14 @@ import { onAuthStateChangedListener } from './auth/authStateListener.js';
 const signUpModal = document.querySelector('.sign-up-modal');
 const signInModal = document.querySelector('.sign-in-modal');
 
+const signUpModalMobile = document.querySelector('.sign-up-button-mobile-menu');
+
 export const signUpButton = document.querySelector('.sign-up-button');
 export const logOutButton = document.querySelector('#log-out');
 
-const switchToSignInButton = document.querySelector('#switch-to-sign-in');
-const switchToSignUpButton = document.querySelector('#switch-to-sign-up');
+const switchToSignInButtons = document.querySelectorAll('[data-switch="sign-in"]');
+const switchToSignUpButtons = document.querySelectorAll('[data-switch="sign-up"]');
+
 const signUpForm = document.querySelector('form[name="signup-form"]');
 const signInForm = document.querySelector('form[name="signin-form"]');
 const signUpModalCloseButton = document.querySelector('.sign-up-modal-close');
@@ -36,14 +39,23 @@ signUpButton.addEventListener('click', function () {
   showForm(currentForm);
 });
 
-switchToSignInButton.addEventListener('click', function () {
-  currentForm = 'sign-in';
+signUpModalMobile.addEventListener('click', function () {
+  currentForm = 'sign-up';
   showForm(currentForm);
 });
 
-switchToSignUpButton.addEventListener('click', function () {
-  currentForm = 'sign-up';
-  showForm(currentForm);
+switchToSignInButtons.forEach(button => {
+  button.addEventListener('click', function () {
+    currentForm = 'sign-in';
+    showForm(currentForm);
+  });
+});
+
+switchToSignUpButtons.forEach(button => {
+  button.addEventListener('click', function () {
+    currentForm = 'sign-up';
+    showForm(currentForm);
+  });
 });
 
 signUpModalCloseButton.addEventListener('click', function () {
