@@ -554,6 +554,7 @@ svg.logo-icon {
   align-items: center;
   padding-left: 14px;
   background-color: white;
+  cursor: pointer;
 }
 .hamburger-icon {
   fill: #000000;
