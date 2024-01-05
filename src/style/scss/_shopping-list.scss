@@ -1,0 +1,23 @@
+.shopping-list {
+  margin: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include breakpoint-up(xl) {
+    flex-direction: row;
+  }
+
+  .foundation-list {
+    width: 100%;
+
+    @include breakpoint-up(sm) {
+      display: none;
+    }
+
+    @include breakpoint-up(xl) {
+      display: block;
+      width: 356px;
+    }
+  }
+}

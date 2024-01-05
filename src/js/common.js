@@ -1,4 +1,5 @@
 import './charityData.js';
+import './charitySwiper.js';
 import './mobileMenu.js';
 import './darkMode.js';
 import './auth.js';

@@ -1,0 +1,99 @@
+@import './variables';
+@import './mixins';
+
+.foundation-list {
+  position: relative;
+  padding: 24px 40px;
+  border-radius: 16px;
+  background: radial-gradient(
+    189.32% 190.93% at 59.76% -23.42%,
+    $primary-color 18.03%,
+    $white-color 100%
+  );
+  box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
+  height: 460px;
+
+  @include breakpoint-up(sm) {
+    height: 474px;
+  }
+
+  .swiper-header {
+    display: inline-flex;
+    gap: 12px;
+    color: $white-color;
+    padding-bottom: 40px;
+
+    h1 {
+      @include apply-heading($heading-l-mobile);
+
+      @include breakpoint-up(xl) {
+        @include apply-heading($heading-l);
+      }
+    }
+  }
+
+  .swiper-container {
+    max-height: 292px;
+    overflow: hidden;
+
+    .swiper-wrapper {
+      .swiper-slide {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        max-height: 32px;
+        width: auto;
+
+        &-number {
+          color: $white-color;
+
+          @include apply-heading($body-xs);
+        }
+
+        img {
+          max-height: 32px;
+          width: auto;
+        }
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      border-radius: 50%;
+      top: inherit !important;
+      bottom: 20px !important;
+      left: 50% !important;
+      background-color: $white-color;
+      width: 38px !important;
+      height: 38px !important;
+      transform: translateX(-50%);
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 20px 20px;
+
+      @include breakpoint-up(sm) {
+        bottom: 24px !important;
+      }
+    }
+
+    .swiper-button-next {
+      background-image: url('/src/images/icon-arrow-down.png');
+    }
+    .swiper-button-prev {
+      background-image: url('/src/images/icon-arrow-up.png');
+      filter: fliph();
+    }
+
+    .swiper-button-prev:after,
+    .swiper-button-next:after,
+    .swiper-rtl .swiper-button-next:after,
+    .swiper-rtl .swiper-button-prev:after {
+      content: none !important;
+    }
+
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+}

@@ -30,39 +30,27 @@
     column-gap: 32px;
     row-gap: 100px;
   }
-}
 
-[data-content='top-books'],
-[data-content='category'] {
-  grid-area: books;
-  height: 100%;
-}
-
-.category-list {
-  grid-area: categoryList;
-  height: 228px;
-
-  @include breakpoint-up(sm) {
-    height: 472px;
+  [data-content='top-books'],
+  [data-content='category'] {
+    grid-area: books;
+    height: 100%;
   }
 
-  @include breakpoint-up(xl) {
-    height: 472px;
+  .category-list {
+    grid-area: categoryList;
+    height: 228px;
+
+    @include breakpoint-up(sm) {
+      height: 472px;
+    }
+
+    @include breakpoint-up(xl) {
+      height: 472px;
+    }
   }
-}
 
-.foundation-list {
-  grid-area: foundationList;
-  height: 460px;
-  border-radius: 16px;
-  background: radial-gradient(
-    189.32% 190.93% at 59.76% -23.42%,
-    $primary-color 18.03%,
-    $white-color 100%
-  );
-  box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
-
-  @include breakpoint-up(sm) {
-    height: 474px;
+  .foundation-list {
+    grid-area: foundationList;
   }
 }

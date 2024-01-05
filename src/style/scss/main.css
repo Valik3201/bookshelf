@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -55,39 +56,27 @@ body {
     row-gap: 100px;
   }
 }
-
-[data-content=top-books],
-[data-content=category] {
+.home [data-content=top-books],
+.home [data-content=category] {
   grid-area: books;
   height: 100%;
 }
-
-.category-list {
+.home .category-list {
   grid-area: categoryList;
   height: 228px;
 }
 @media (min-width: 576px) {
-  .category-list {
+  .home .category-list {
     height: 472px;
   }
 }
 @media (min-width: 1100px) {
-  .category-list {
+  .home .category-list {
     height: 472px;
   }
 }
-
-.foundation-list {
+.home .foundation-list {
   grid-area: foundationList;
-  height: 460px;
-  border-radius: 16px;
-  background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4f2ee8 18.03%, #ffffff 100%);
-  box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
-}
-@media (min-width: 576px) {
-  .foundation-list {
-    height: 474px;
-  }
 }
 
 .category-list {
@@ -363,6 +352,124 @@ body {
   [data-content=category] .books__book {
     flex-basis: calc(20% - 25px);
   }
+}
+
+.shopping-list {
+  margin: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (min-width: 1100px) {
+  .shopping-list {
+    flex-direction: row;
+  }
+}
+.shopping-list .foundation-list {
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .shopping-list .foundation-list {
+    display: none;
+  }
+}
+@media (min-width: 1100px) {
+  .shopping-list .foundation-list {
+    display: block;
+    width: 356px;
+  }
+}
+
+.foundation-list {
+  position: relative;
+  padding: 24px 40px;
+  border-radius: 16px;
+  background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4f2ee8 18.03%, #ffffff 100%);
+  box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
+  height: 460px;
+}
+@media (min-width: 576px) {
+  .foundation-list {
+    height: 474px;
+  }
+}
+.foundation-list .swiper-header {
+  display: inline-flex;
+  gap: 12px;
+  color: #ffffff;
+  padding-bottom: 40px;
+}
+.foundation-list .swiper-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.88px;
+}
+@media (min-width: 1100px) {
+  .foundation-list .swiper-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.96px;
+  }
+}
+.foundation-list .swiper-container {
+  max-height: 292px;
+  overflow: hidden;
+}
+.foundation-list .swiper-container .swiper-wrapper .swiper-slide {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  max-height: 32px;
+  width: auto;
+}
+.foundation-list .swiper-container .swiper-wrapper .swiper-slide-number {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+}
+.foundation-list .swiper-container .swiper-wrapper .swiper-slide img {
+  max-height: 32px;
+  width: auto;
+}
+.foundation-list .swiper-container .swiper-button-next,
+.foundation-list .swiper-container .swiper-button-prev {
+  border-radius: 50%;
+  top: inherit !important;
+  bottom: 20px !important;
+  left: 50% !important;
+  background-color: #ffffff;
+  width: 38px !important;
+  height: 38px !important;
+  transform: translateX(-50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+}
+@media (min-width: 576px) {
+  .foundation-list .swiper-container .swiper-button-next,
+  .foundation-list .swiper-container .swiper-button-prev {
+    bottom: 24px !important;
+  }
+}
+.foundation-list .swiper-container .swiper-button-next {
+  background-image: url("/src/images/icon-arrow-down.png");
+}
+.foundation-list .swiper-container .swiper-button-prev {
+  background-image: url("/src/images/icon-arrow-up.png");
+  filter: fliph();
+}
+.foundation-list .swiper-container .swiper-button-prev:after,
+.foundation-list .swiper-container .swiper-button-next:after,
+.foundation-list .swiper-container .swiper-rtl .swiper-button-next:after,
+.foundation-list .swiper-container .swiper-rtl .swiper-button-prev:after {
+  content: none !important;
+}
+.foundation-list .swiper-container .swiper-button-prev {
+  display: none;
 }
 
 #scrollUp {
