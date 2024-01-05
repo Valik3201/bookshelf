@@ -556,6 +556,9 @@ svg.logo-icon {
   padding: 8 16 8 16;
   border-radius: 36px;
 }
+.shopping-link {
+  padding: 16 0 0 0;
+}
 .shopping-text {
   display: flex;
   align-items: center;
@@ -574,7 +577,7 @@ svg.logo-icon {
 .mobile-menu-field {
   display: none;
   transition: transform 500ms ease;
-  transform: translateY(-100%);
+  transform: translateX(-100%);
   position: fixed;
   top: 0;
   left: 0;
@@ -598,12 +601,70 @@ svg.logo-icon {
   border: 1.5 solid black;
   background-color: #4f2ee8;
 }
+.log-out-button-mobile-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 184px;
+  height: 45px;
+  border-radius: 18px;
+  background-color: white;
+  border: 1.5 solid black;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 101;
+}
+.nav-mobile-position {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 30%;
+  top: 30%;
+}
+.nav-mobile-list {
+  list-style: none;
+}
+.position-of-mobile-body {
+  display: flex;
+  flex-direction: column;
+}
 .mobile-header-items {
   background-color: white;
 }
 .switch-button-div-mobile {
   gap: 21px;
   margin-right: 25px;
+}
+.home-text {
+  font-weight: 700;
+  line-height: 18px;
+  font-size: 14px;
+  width: 72px;
+  height: 34px;
+}
+.shopping-mobile-text {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.shopping-list-mobile-icon {
+  fill: white;
+}
+.user-mobile-profile {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 20px 0px 0px 20px;
+}
+.user-icon-mobile {
+  background-color: white;
 }
 .background-cover-container {
   display: flex;
@@ -618,7 +679,11 @@ svg.logo-icon {
 .nav-list__link--active {
   background-color: #eac645;
 }
-
+.is-away {
+  transform: translateX(-9999999px);
+  max-width: 1px;
+  z-index: -999999999;
+}
 @media (max-width: 767px) {
   body {
     min-width: 375px;
@@ -1160,7 +1225,8 @@ svg.logo-icon {
   padding: 4px 12px;
 }
 
-#user-profile-image {
+#user-profile-image,
+.user-icon-mobile {
   width: 37px;
   height: 37px;
   background-color: #f6f6f6;
