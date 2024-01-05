@@ -518,6 +518,17 @@ svg.logo-icon {
 .sign-up-text {
   margin-left: 14px;
 }
+.log-out-button {
+  width: 184px;
+  height: 45px;
+  border-radius: 18px;
+  border: 1.5 solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 14px;
+  background-color: white;
+}
 .hamburger-icon {
   fill: #000000;
   stroke: black;
@@ -1139,6 +1150,8 @@ svg.logo-icon {
 
 #user-dropdown-menu:not(.hidden) {
   display: block;
+  position: absolute;
+  top: 45px;
 }
 
 #user-info.sign-up-button {
@@ -1159,6 +1172,7 @@ svg.logo-icon {
 
 #user-profile:not(.hidden) {
   display: block;
+  position: relative;
 }
 
 #sign-up-button:not(.hidden) {
