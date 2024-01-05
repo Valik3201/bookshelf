@@ -2,7 +2,9 @@
   <div align="center"> 
   <br>
   <picture>
-    <img alt="logo" src="https://github.com/Valik3201/bookshelf/blob/main/src/favicon/mstile-310x150.png" width="400"
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Valik3201/bookshelf/blob/main/src/images/logo-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/Valik3201/bookshelf/blob/main/src/images/logo-light.svg">
+    <img alt="Bookshelf Logo" src="https://github.com/Valik3201/bookshelf/blob/main/src/images/logo_light.svg" width="400">
   </picture>
   </div>
 </a>
@@ -49,21 +51,27 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 <!-- Screenshot -->
 
-**Bookshelf** is a web application for browsing books, with additional features such as the ability to add books to a shopping list, explore categories, view popular books, and support charitable foundations.
+**Bookshelf** is a web application for browsing books, with additional features such as the ability
+to add books to a shopping list, explore categories, view popular books, and support charitable
+foundations.
 
 > [!NOTE]\
-> The project is set up for automatic deployment to GitHub Pages using GitHub Actions by JamesIves ([GitHub Pages Deployment Action](https://github.com/marketplace/actions/deploy-to-github-pages)). The deployment action is configured to push production-ready code into the `gh-pages` branch.
+> The project is set up for automatic deployment to GitHub Pages using GitHub Actions by JamesIves ([GitHub Pages Deployment Action](https://github.com/marketplace/actions/deploy-to-github-pages)).
+> The deployment action is configured to push production-ready code into the `gh-pages` branch.
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 <!-- Built With -->
+
 ## Built With
 
-The "Bookshelf" project employs a diverse set of technologies and tools to create a seamless and engaging user experience.
+The "Bookshelf" project employs a diverse set of technologies and tools to create a seamless and
+engaging user experience.
 
 ### Frontend
 
@@ -78,7 +86,8 @@ The "Bookshelf" project employs a diverse set of technologies and tools to creat
 
 ### Server/API Communication
 
-- **Axios:** HTTP client used to manage asynchronous operations and handle HTTP requests effectively.
+- **Axios:** HTTP client used to manage asynchronous operations and handle HTTP requests
+  effectively.
 
 ### Notifications
 
@@ -89,11 +98,14 @@ The "Bookshelf" project employs a diverse set of technologies and tools to creat
 - **Node.js and npm:** Used for managing project dependencies.
 - **Responsiveness:** Designed to ensure optimal performance across various devices.
 
-This diverse technological stack enables the "Bookshelf" project to deliver a feature-rich platform for book enthusiasts, offering functionalities such as browsing books, supporting charity foundations, managing shopping lists, and more.
+This diverse technological stack enables the "Bookshelf" project to deliver a feature-rich platform
+for book enthusiasts, offering functionalities such as browsing books, supporting charity
+foundations, managing shopping lists, and more.
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 <!-- API -->
+
 ## API Reference
 
 #### Get all categories
@@ -118,9 +130,9 @@ Receives the first 5 books from the collection in each category.
   GET /books/category
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `category`      | `string` | Category name to get a list of books in this category |
+| Parameter  | Type     | Description                                           |
+| :--------- | :------- | :---------------------------------------------------- |
+| `category` | `string` | Category name to get a list of books in this category |
 
 Receives a collection of 20 books of a certain category.
 
@@ -137,41 +149,47 @@ Receives a collection of 20 books of a certain category.
 Receives complete information about the book identified by `{id}`.
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
-This section provides information on prerequisites and installation steps to set up the Bookshelf project locally.
+This section provides information on prerequisites and installation steps to set up the Bookshelf
+project locally.
 
 ### Prerequisites
 
 Make sure you have the following installed:
 
-* [Node.js](https://nodejs.org/)
-* [npm](https://www.npmjs.com/)
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
 
 ### Installation
 
 1. Clone the repository
    ```sh
    git clone https://github.com/Valik3201/bookshelf.git
+   ```
 2. Navigate to the project directory
    ```sh
     cd bookshelf
+   ```
 3. Install dependencies
    ```sh
     npm ci
+   ```
 4. Run the project in development mode:
-    ```sh
-    npm run dev
+   ```sh
+   npm run dev
+   ```
 
 Now you're ready to explore and contribute to Bookshelf locally!
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 <!-- USAGE -->
+
 ## Usage
 
 Users can navigate through the platform using the following features:
-
 
 ### Authentication
 
@@ -181,7 +199,6 @@ Users can navigate through the platform using the following features:
 
 - The homepage displays a list of book categories and best sellers within each category .
 - Enables users to browse books based on categories.
-
 
 ### Shopping List
 
@@ -194,7 +211,8 @@ Users can navigate through the platform using the following features:
 
 ### Charity Foundations
 
-- Users can click on each foundation, opening a new page with the respective foundation's website for more information.
+- Users can click on each foundation, opening a new page with the respective foundation's website
+  for more information.
 
 ### Themes and Responsiveness
 
@@ -210,51 +228,65 @@ Users can navigate through the platform using the following features:
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
-Contributions are welcome! If you have suggestions or improvements, feel free to fork the project, create a new branch, make your changes, and submit a pull request.
+Contributions are welcome! If you have suggestions or improvements, feel free to fork the project,
+create a new branch, make your changes, and submit a pull request.
 
 1. Fork the Project
-2. Create your Feature Branch 
-    ```sh
-    git checkout -b feature/NewFeature
+2. Create your Feature Branch
+
+   ```sh
+   git checkout -b feature/NewFeature
+
+   ```
 
 3. Commit your Changes
-    ```sh
-    git commit -m 'Add some NewFeature'
+   ```sh
+   git commit -m 'Add some NewFeature'
+   ```
 4. Push to the Branch
-    ```sh
-    git push origin feature/NewFeature
+   ```sh
+   git push origin feature/NewFeature
+   ```
 5. Open a Pull Request
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 <!-- CONTRIBUTORS -->
+
 ## Contributors
 
 1. **Valik3201 - Valentyn Chernetskyi** (Team Lead)
+
    - Home Page (list category, top books, books by category)
    - Loader
 
 2. **superfilar - Mateusz Firla** (Scrum Master)
+
    - Header
    - Dark mode theme
 
 3. **tomekstanczak - Tomek Stańczak**
+
    - Header
    - Mobile menu
    - Authorization
 
 4. **Anna0067 - Anna Sanetra**
+
    - Shopping List Page (books in local storage, pagination)
 
 5. **AleksandraJarz - Aleksandra Jarzębska**
+
    - Image
    - Icons
    - Modal window
    - Book by ID
 
 6. **gorniakewa300 - Ewa Górniak**
+
    - Modal window
    - Book by ID
 
