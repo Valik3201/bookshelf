@@ -4,7 +4,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Valik3201/bookshelf/blob/main/src/images/logo-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://github.com/Valik3201/bookshelf/blob/main/src/images/logo-light.svg">
-    <img alt="WebStudio Logo" src="https://github.com/Valik3201/bookshelf/blob/main/src/images/logo_light.svg" width="400">
+    <img alt="Bookshelf Logo" src="https://github.com/Valik3201/bookshelf/blob/main/src/images/logo_light.svg" width="400">
   </picture>
   </div>
 </a>
