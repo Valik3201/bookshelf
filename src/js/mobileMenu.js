@@ -3,7 +3,8 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './auth/firebase';
 
 const openMenuButton = document.querySelector('.open-mobile-menu');
-const closeMenuButton = document.querySelector('.close-button');
+const closeMenuButton = document.querySelector('#close-sing-up-mobile-menu');
+const closeUserMenuButton = document.querySelector('#close-user-mobile-menu');
 const windowSize = window.matchMedia('(min-width: 768px)');
 
 const mobileMenuSingIn = document.querySelector('#sing-in-mobile-menu');
@@ -45,4 +46,5 @@ function mobileMenuClose(event) {
 
 openMenuButton.addEventListener('click', openMenu);
 closeMenuButton.addEventListener('click', closeMenu);
+closeUserMenuButton.addEventListener('click', closeMenu);
 windowSize.addEventListener('change', mobileMenuClose);
