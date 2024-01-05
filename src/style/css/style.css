@@ -384,6 +384,7 @@
   width: 0;
   height: 0;
 }
+
 input:checked + .slider:before {
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
@@ -969,7 +970,8 @@ svg.logo-icon {
   .book-title,
   .book-plot,
   .book-message,
-  .logo-header {
+  .logo-header,
+  .inputs {
     color: #ffffff;
     transition: color 0.3s ease-in;
   }
