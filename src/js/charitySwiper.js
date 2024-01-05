@@ -23,7 +23,6 @@ const swiper = new Swiper('.swiper-container', {
   },
 });
 
-// Заполните слайды вашими данными
 const foundationList = document.querySelector('.swiper-wrapper');
 
 charityData.forEach(function (item, index) {
@@ -48,11 +47,11 @@ charityData.forEach(function (item, index) {
 });
 
 swiper.on('reachEnd', function () {
-  document.querySelector('.swiper-button-next').style.display = 'none';
-  document.querySelector('.swiper-button-prev').style.display = 'block';
+  document.querySelector('.swiper-button-next').classList.add('rotate');
+  document.querySelector('.swiper-button-prev').style.display = 'flex';
 });
 
 swiper.on('reachBeginning', function () {
+  document.querySelector('.swiper-button-next').classList.remove('rotate');
   document.querySelector('.swiper-button-prev').style.display = 'none';
-  document.querySelector('.swiper-button-next').style.display = 'block';
 });

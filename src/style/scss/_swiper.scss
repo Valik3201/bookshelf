@@ -62,15 +62,10 @@
       border-radius: 50%;
       top: inherit !important;
       bottom: 20px !important;
-      left: 50% !important;
-      background-color: $white-color;
       width: 38px !important;
       height: 38px !important;
       transform: translateX(-50%);
-
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 20px 20px;
+      transition: transform 0.25s ease-in-out;
 
       @include breakpoint-up(sm) {
         bottom: 24px !important;
@@ -78,11 +73,22 @@
     }
 
     .swiper-button-next {
-      background-image: url('/src/images/icon-arrow-down.png');
+      transform: rotate(0);
+      left: 45% !important;
+      background-color: $white-color;
+      background-image: url(/src/images/icon-arrow.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 22px;
     }
+
+    .rotate {
+      transform: rotate(180deg);
+    }
+
     .swiper-button-prev {
-      background-image: url('/src/images/icon-arrow-up.png');
-      filter: fliph();
+      left: 50.6% !important;
+      background-color: transparent;
     }
 
     .swiper-button-prev:after,
@@ -92,8 +98,9 @@
       content: none !important;
     }
 
-    .swiper-button-prev {
-      display: none;
+    .swiper-button-next.swiper-button-disabled,
+    .swiper-button-prev.swiper-button-disabled {
+      opacity: 1 !important;
     }
   }
 }

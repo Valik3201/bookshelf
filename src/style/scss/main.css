@@ -440,14 +440,10 @@ body {
   border-radius: 50%;
   top: inherit !important;
   bottom: 20px !important;
-  left: 50% !important;
-  background-color: #ffffff;
   width: 38px !important;
   height: 38px !important;
   transform: translateX(-50%);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px 20px;
+  transition: transform 0.25s ease-in-out;
 }
 @media (min-width: 576px) {
   .foundation-list .swiper-container .swiper-button-next,
@@ -456,11 +452,20 @@ body {
   }
 }
 .foundation-list .swiper-container .swiper-button-next {
-  background-image: url("/src/images/icon-arrow-down.png");
+  transform: rotate(0);
+  left: 45% !important;
+  background-color: #ffffff;
+  background-image: url(/src/images/icon-arrow.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 22px;
+}
+.foundation-list .swiper-container .rotate {
+  transform: rotate(180deg);
 }
 .foundation-list .swiper-container .swiper-button-prev {
-  background-image: url("/src/images/icon-arrow-up.png");
-  filter: fliph();
+  left: 50.6% !important;
+  background-color: transparent;
 }
 .foundation-list .swiper-container .swiper-button-prev:after,
 .foundation-list .swiper-container .swiper-button-next:after,
@@ -468,8 +473,9 @@ body {
 .foundation-list .swiper-container .swiper-rtl .swiper-button-prev:after {
   content: none !important;
 }
-.foundation-list .swiper-container .swiper-button-prev {
-  display: none;
+.foundation-list .swiper-container .swiper-button-next.swiper-button-disabled,
+.foundation-list .swiper-container .swiper-button-prev.swiper-button-disabled {
+  opacity: 1 !important;
 }
 
 #scrollUp {

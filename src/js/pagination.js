@@ -1,4 +1,4 @@
-import localStorage from './localStorage.js';
+import { getBooksFromLocalStorage } from './localStorage.js';
 
 const paginationSection = document.querySelector('.pagination');
 const paginationContainerPages = document.querySelector('.pagination_container-pages');
@@ -9,10 +9,14 @@ const previousButton = document.querySelector("button[name='previousButton']");
 const nextButton = document.querySelector("button[name='nextButton']");
 const endButton = document.querySelector("button[name='endButton']");
 
-const shoppingList = JSON.parse(localStorage.getItem()) || [];
+const shoppingList = getBooksFromLocalStorage();
 
 const pageSize = 3;
-let totalPages = Math.ceil(shoppingList.length / pageSize);
+
+const numberOfItemsInLocalStorage = shoppingList.length;
+
+let totalPages = Math.ceil(numberOfItemsInLocalStorage / pageSize);
+
 let currentPage = 1;
 
 for (let i = 1; i <= totalPages; i++) {
