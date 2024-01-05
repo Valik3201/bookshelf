@@ -21,6 +21,7 @@ const userNameDisplay = document.querySelector('#user-name-display');
 
 export const userProfile = document.querySelector('#user-profile');
 export const userButton = document.querySelector('#user-info');
+export const userNavList = document.querySelector('.nav-list');
 
 const userInfo = document.querySelector('#user-info');
 

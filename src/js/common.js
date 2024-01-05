@@ -3,7 +3,7 @@ import './mobileMenu.js';
 import './darkMode.js';
 import './auth.js';
 import './scrollUp.js';
+import './windowSizeChanges.js';
 
 import 'lazysizes';
 import 'lazysizes/plugins/attrchange/ls.attrchange';
-
