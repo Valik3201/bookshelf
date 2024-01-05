@@ -97,7 +97,6 @@ export const displayTopBooks = async () => {
       if (targetBook) {
         const bookId = targetBook.dataset.bookId;
 
-        console.log('Displaying book with ID:', bookId);
         displayBookById(bookId);
       }
     });

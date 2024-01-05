@@ -15,7 +15,6 @@ export const addToLocalStorage = async bookId => {
 
     //sprawdzamy czy klucz już istnieje w localStorage
     if (localStorage.getItem(localStorageKey)) {
-      console.log('Książka już istnieje w localStorage.');
       return;
     }
 
@@ -36,10 +35,6 @@ export const addToLocalStorage = async bookId => {
 
     // zapisujemy zaktualizowaną tablicę w localStorage pod unikalnym kluczem
     localStorage.setItem(localStorageKey, JSON.stringify(newBook));
-
-    console.log('Książka dodana do localStorage:', newBook);
-  } else {
-    console.log('Twoja przeglądarka nie obsługuje localStorage');
   }
 };
 
@@ -63,10 +58,8 @@ export const getBooksFromLocalStorage = () => {
       }
     }
 
-    console.log('Lista książek z localStorage:', storedBooks);
     return storedBooks;
   } else {
-    console.log('Twoja przeglądarka nie obsługuje localStorage');
     return [];
   }
 };
