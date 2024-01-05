@@ -990,20 +990,18 @@ svg.logo-icon {
 }
 .modal-pop-up {
   position: relative;
-  min-width: 335px;
-  max-width: 335px;
+  width: 335px;
   background-color: #fff;
   padding: 40px 24px;
-  max-height: 100vh;
   border: 2px solid #111;
   border-radius: 18px;
   overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .modal-pop-up {
-    max-width: 579px;
+    width: 579px;
     padding: 40px;
-    max-height: 465px;
+    min-height: 465px;
   }
 }
 .close-modal-button {
@@ -1053,9 +1051,9 @@ svg.logo-icon {
   border-radius: 8px;
   border: none;
 }
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .modal__cover img {
-    max-width:192px;
+    max-width: 192px;
     min-height: 281px;
     border-radius: 8px;
     transition: 2s;
@@ -1093,7 +1091,6 @@ svg.logo-icon {
     font-size: 24px;
     line-height: 1.16;
     letter-spacing: -0.06em;
-
   }
 }
 .modal__details-author {
@@ -1142,16 +1139,18 @@ svg.logo-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
-  padding: 14px 28px;
+  line-height: 18px; /* 128.571% */
+  letter-spacing: -0.14px;
+  padding: 14px 23px;
   text-transform: uppercase;
   cursor: pointer;
   transition: background-color 0.25s ease-in, box-shadow 0.25s ease-in;
 }
 @media screen and (min-width: 768px) {
   .modal-pop-up-btn.button {
-    width: 499px;
+    width: 500px;
     font-size: 18px;
     padding: 20px 0px;
     line-height: 1.33;
@@ -1173,7 +1172,7 @@ svg.logo-icon {
   font-size: 10px;
   line-height: 1.2;
   letter-spacing: -0.04em;
-  color: rgba(255, 255, 255, 0.50);
+  color: rgba(17, 17, 17, 0.5);
   max-width: 242px;
   margin-top: 8px;
   margin-left: auto;
@@ -1184,10 +1183,9 @@ svg.logo-icon {
     max-width: 324px;
     font-size: 12px;
     line-height: 1.17;
-  }  
+  }
 }
 /* --------end for styles modal window ----------*/
-
 
 /* Authorization */
 

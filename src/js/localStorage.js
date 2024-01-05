@@ -182,9 +182,23 @@ const handleDeleteButtonClick = event => {
 };
 
 // Funkcja usuwająca książkę z localStorage
-const removeFromLocalStorage = bookId => {
+export const removeFromLocalStorage = bookId => {
   const localStorageKey = 'book_' + bookId;
   localStorage.removeItem(localStorageKey);
+};
+
+// Function to check if a book with a given bookId is in localStorage
+export const checkIfBookInLocalStorage = bookId => {
+  const localStorageKey = 'book_' + bookId;
+  return localStorage.getItem(localStorageKey) !== null;
+};
+
+// Function to toggle the congratulatory message
+export const toggleCongratulatoryMessage = show => {
+  const congratulatoryMessage = document.querySelector('.congratulatory-message');
+  if (congratulatoryMessage) {
+    congratulatoryMessage.style.display = show ? 'block' : 'none';
+  }
 };
 
 displayBooksFromLocalStorage();
