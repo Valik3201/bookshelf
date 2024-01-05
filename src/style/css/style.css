@@ -123,7 +123,7 @@
 }
 
 .book-buy-links a:hover {
-  filter: drop-shadow(rgba(0, 0, 0, 0.15) 1px 1px 1px);
+  filter: drop-shadow(rgba(0, 0, 0, 0.15) 0 3px 3px);
 }
 
 [data-theme='dark'] {
@@ -131,7 +131,7 @@
     filter: brightness(0) invert(1);
   }
   .book-buy-links a:hover {
-    filter: drop-shadow(rgba(255, 255, 255, 0.15) 1px 1px 1px);
+    filter: drop-shadow(rgba(255, 255, 255, 0.15) 0 3px 3px);
   }
 }
 
@@ -451,6 +451,7 @@ input:checked + .slider:before {
   font-size: 18px;
   line-height: 24px;
   color: #00000080;
+  cursor: pointer;
 }
 .buttons-style:focus,
 .buttons-style:hover {
@@ -488,6 +489,7 @@ input:checked + .slider:before {
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
+  cursor: pointer;
 }
 .sign-button-form:hover,
 .sign-button-form:focus {
@@ -1214,7 +1216,7 @@ svg.logo-icon {
   height: 32px;
 }
 .modal__details-links a:hover {
-  filter: drop-shadow(rgba(0, 0, 0, 0.15) 1px 1px 1px);
+  filter: drop-shadow(rgba(0, 0, 0, 0.15) 0 3px 3px);
 }
 
 [data-theme='dark'] {
@@ -1222,7 +1224,7 @@ svg.logo-icon {
     filter: brightness(0) invert(1);
   }
   .modal__details-links a:hover {
-    filter: drop-shadow(rgba(255, 255, 255, 0.15) 1px 1px 1px);
+    filter: drop-shadow(rgba(255, 255, 255, 0.15) 0 3px 3px);
   }
 }
 
@@ -1272,6 +1274,19 @@ svg.logo-icon {
   }
 }
 /*style dla wiadomości pod przyciskiem remove...*/
+.auth-message {
+  display: none;
+}
+
+#not-allowed {
+  background-color: #b4afaf;
+  cursor: not-allowed;
+}
+
+#not-allowed:hover {
+  background-color: #b4afaf;
+  color: #000;
+}
 
 .modal__message {
   text-align: center;
