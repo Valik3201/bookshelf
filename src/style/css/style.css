@@ -569,13 +569,18 @@ svg.logo-icon {
   background-color: transparent;
   outline: none;
   cursor: pointer;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   fill: #000000;
   stroke: black;
 }
 
+.close-button {
+  padding: 7px;
+}
+
 @media screen and (min-width: 768px) {
-  .hamburger-icon,
+  .hamburger-button,
   .close-button {
     display: none;
   }
@@ -736,6 +741,7 @@ svg.logo-icon {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .background-cover-container {
   display: flex;
   justify-content: flex-start;
@@ -1408,6 +1414,12 @@ svg.logo-icon {
     display: flex;
     justify-content: space-between;
     padding: 4px 12px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #user-info {
+    display: none;
   }
 }
 
