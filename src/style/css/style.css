@@ -540,6 +540,7 @@ svg.logo-icon {
   font-weight: 500;
   color: white;
   cursor: pointer;
+  padding: 4px 12px;
 }
 .arrow-right-icon {
   margin-right: 14px;
@@ -658,8 +659,6 @@ svg.logo-icon {
   stroke: black;
 }
 .sign-up-button-mobile {
-  margin-top: 40px;
-  margin-left: 20px;
   border: 1.5 solid black;
   background-color: #4f2ee8;
 }
@@ -727,6 +726,14 @@ svg.logo-icon {
 }
 .user-icon-mobile {
   background-color: white;
+}
+#user-name-display {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.44px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .background-cover-container {
   display: flex;
@@ -1388,8 +1395,16 @@ svg.logo-icon {
   top: 45px;
 }
 
+.sign-up-button {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .sign-up-button {
+    display: none;
+  }
+  .sign-up-button:not(.hidden) {
+    display: flex;
     justify-content: space-between;
     padding: 4px 12px;
   }
@@ -1409,10 +1424,6 @@ svg.logo-icon {
 #user-profile:not(.hidden) {
   display: block;
   position: relative;
-}
-
-#sign-up-button:not(.hidden) {
-  display: block;
 }
 
 /* Pagination */
