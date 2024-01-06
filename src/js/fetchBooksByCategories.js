@@ -2,6 +2,7 @@ import { fetchBooksByCategory } from './bookAPI.js';
 import { displayTopBooks } from './fetchBooks.js';
 import { displayBookById } from './fetchBookById.js';
 import { topBooksContainer, booksContainer, switchView } from './viewSwitcher.js';
+import { createBookMarkup } from './bookMarkup.js';
 
 const displayBooksByCategory = async categoryName => {
   const booksByCategory = await fetchBooksByCategory(categoryName);
@@ -13,27 +14,9 @@ const displayBooksByCategory = async categoryName => {
 
   switchView('category');
 
-  const placeholderImageURL = new URL('/src/images/placeholder.jpg', import.meta.url).href;
-
   const booksMarkup = booksByCategory
     .flat()
-    .map(book => {
-      return `
-      <div class="books__book" data-book-id="${book._id}">
-        <div class="books__book--cover">
-          <img class="lazyload" 
-          src="${placeholderImageURL}"
-          data-src="${book.book_image}"
-          alt="${book.title}">
-          <div class="books__book--cover-overlay">
-            <div class="books__book--cover-overlay-text">Quick View</div>
-          </div>
-        </div>
-        <div class="books__book--title">${book.title}</div>
-        <div class="books__book--author">${book.author}</div>
-      </div>
-      `;
-    })
+    .map(book => createBookMarkup(book))
     .join('');
 
   const categoryTitleMarkup = `
@@ -52,7 +35,6 @@ const displayBooksByCategory = async categoryName => {
   books.forEach(book => {
     book.addEventListener('click', () => {
       const bookId = book.dataset.bookId;
-      console.log('Displaying book with ID:', bookId);
       displayBookById(bookId);
     });
   });
