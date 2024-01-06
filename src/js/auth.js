@@ -8,8 +8,6 @@ import { onAuthStateChangedListener } from './auth/authStateListener.js';
 const signUpModal = document.querySelector('.sign-up-modal');
 const signInModal = document.querySelector('.sign-in-modal');
 
-const signUpModalMobile = document.querySelector('.sign-up-button-mobile-menu');
-
 export const signUpButton = document.querySelector('.sign-up-button');
 export const logOutButton = document.querySelector('#log-out');
 
@@ -37,11 +35,6 @@ let currentForm = 'sign-up';
 onAuthStateChangedListener(userNameDisplay);
 
 signUpButton.addEventListener('click', function () {
-  currentForm = 'sign-up';
-  showForm(currentForm);
-});
-
-signUpModalMobile.addEventListener('click', function () {
   currentForm = 'sign-up';
   showForm(currentForm);
 });
