@@ -21,7 +21,6 @@ export const onAuthStateChangedListener = userNameDisplay => {
       userNameDisplay.textContent = displayName;
       userNameDisplayMobile.textContent = displayName;
 
-      userProfile.classList.remove('hidden');
       userButton.classList.remove('hidden');
       userProfileMobile.classList.remove('hidden');
       signUpButtons.forEach(function (button) {
@@ -32,7 +31,6 @@ export const onAuthStateChangedListener = userNameDisplay => {
       logOutButton.addEventListener('click', handleLogout);
     } else {
       userNameDisplay.textContent = '';
-      userProfile.classList.add('hidden');
       userButton.classList.add('hidden');
       userProfileMobile.classList.add('hidden');
       signUpButtons.forEach(function (button) {
