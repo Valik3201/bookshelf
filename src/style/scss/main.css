@@ -36,7 +36,8 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
-  margin: 40px 24px;
+  padding: 40px 24px;
+  margin-top: 64px;
 }
 @media (min-width: 576px) {
   .home {
@@ -45,6 +46,7 @@ body {
     -moz-column-gap: 40px;
          column-gap: 40px;
     row-gap: 86px;
+    margin-top: 0;
   }
 }
 @media (min-width: 1100px) {

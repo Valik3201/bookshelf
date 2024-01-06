@@ -1,28 +1,36 @@
-<!-- Authorization  -->
+<!-- Authorization Section -->
+
+<!-- Sign-up button -->
 <button type="button" class="sign-up-button sign-up-modal-open">
   <span class="sign-up-text">Sign up</span>
+  <!-- Arrow icon next to the sign-up button -->
   <svg class="arrow-right-icon" width="20" height="20">
     <use href="/src/images/icons.svg#icon-arrow-right"></use>
   </svg>
 </button>
 
+<!-- User Profile Section -->
 <div id="user-profile">
+  <!-- User information display with profile image, name, and dropdown arrow -->
   <div id="user-info" class="sign-up-button">
     <div id="user-profile-image">
+      <!-- User profile image icon -->
       <svg width="12" height="16" fill="#4F2EE8">
         <use href="/src/images/icons.svg#icon-user"></use>
       </svg>
     </div>
-
+    <!-- User name display -->
     <div id="user-name-display"></div>
-
+    <!-- Dropdown arrow icon -->
     <svg id="user-dropdown-arrow" width="20" height="20" fill="#fff">
       <use href="/src/images/icons.svg#icon-arrow-user"></use>
     </svg>
   </div>
+  <!-- User dropdown menu with log-out button -->
   <div id="user-dropdown-menu" class="hidden">
     <button id="log-out" class="log-out-button">
       <span>Log Out</span>
+      <!-- Arrow icon next to the log-out button -->
       <svg class="arrow-right-icon" width="13" height="10">
         <use href="/src/images/icons.svg#icon-arrow-right"></use>
       </svg>
@@ -30,43 +38,54 @@
   </div>
 </div>
 
-<!-- Sign Up modal -->
+<!-- Sign Up Modal Section -->
 <div class="sign-up-modal is-hidden">
   <div class="form-field">
+    <!-- Close button for the sign-up modal -->
     <button type="button" class="sign-up-modal-close">
+      <!-- Close icon for the button -->
       <svg class="signup-close-icon" width="14px" height="14px">
         <use href="/src/images/icons.svg#icon-close"></use>
       </svg>
     </button>
     <div class="form-div">
+      <!-- Sign-up form with input fields and buttons -->
       <form name="signup-form" autocomplete="on" novalidate class="sign-up-form">
+        <!-- Input fields for name, email, and password -->
         <div class="form-inputs">
+          <!-- Name input field -->
           <div class="input-position hf-style">
             <label>
               <span class="input-text hf-style">Name</span>
               <input type="text" name="name" class="inputs hf-style" />
             </label>
           </div>
+          <!-- Email input field with icon -->
           <div class="input-position hf-style">
             <label>
               <span class="input-text hf-style">Email</span>
               <input type="email" name="email" class="inputs hf-style" />
+              <!-- Email icon next to the input field -->
               <svg class="icon-mobile-position hf-style" width="21px" height="21px">
                 <use href="/src/images/icons.svg#icon-email"></use>
               </svg>
             </label>
           </div>
+          <!-- Password input field with icon -->
           <div class="input-position hf-style">
             <label>
               <span class="input-text hf-style">Password</span>
               <input type="password" name="password" class="inputs hf-style" />
+              <!-- Lock icon next to the password input field -->
               <svg class="icon-mobile-position hf-style" width="21px" height="21px">
                 <use href="/src/images/icons.svg#icon-lock"></use>
               </svg>
             </label>
           </div>
+          <!-- Sign-up button -->
           <button type="submit" id="sign-up" class="sign-button-form">SIGN UP</button>
         </div>
+        <!-- Modal buttons for switching between sign-up and sign-in -->
         <div class="modal-buttons">
           <button type="button" data-switch="sign-up" class="buttons-style button-sign-up">
             SIGN UP
@@ -78,37 +97,47 @@
   </div>
 </div>
 
-<!-- Sign In modal -->
+<!-- Sign In Modal Section -->
 <div class="sign-in-modal is-hidden">
   <div class="form-field">
+    <!-- Close button for the sign-in modal -->
     <button type="button" class="sign-in-modal-close">
+      <!-- Close icon for the button -->
       <svg class="signup-close-icon" width="14px" height="14px">
         <use href="/src/images/icons.svg#icon-close"></use>
       </svg>
     </button>
     <div class="form-div">
+      <!-- Sign-in form with input fields and buttons -->
       <form name="signin-form" autocomplete="on" novalidate class="sign-in-form">
+        <!-- Input fields for email and password -->
         <div class="form-inputs">
+          <!-- Email input field with icon -->
           <div class="input-position hf-style">
             <label>
               <span class="input-text hf-style">Email</span>
               <input type="email" name="email" class="inputs hf-style" />
+              <!-- Email icon next to the input field -->
               <svg class="icon-mobile-position hf-style" width="21px" height="21px">
                 <use href="/src/images/icons.svg#icon-email"></use>
               </svg>
             </label>
           </div>
+          <!-- Password input field with icon -->
           <div class="input-position hf-style">
             <label>
               <span class="input-text hf-style">Password</span>
               <input type="password" name="password" class="inputs hf-style" />
+              <!-- Lock icon next to the password input field -->
               <svg class="icon-mobile-position hf-style" width="21px" height="21px">
                 <use href="/src/images/icons.svg#icon-lock"></use>
               </svg>
             </label>
           </div>
+          <!-- Sign-in button -->
           <button type="submit" id="sign-in" class="sign-button-form">SIGN IN</button>
         </div>
+        <!-- Modal buttons for switching between sign-up and sign-in -->
         <div class="modal-buttons">
           <button type="button" data-switch="sign-up" class="buttons-style button-sign-up">
             SIGN UP
@@ -119,3 +148,4 @@
     </div>
   </div>
 </div>
+<!-- End of Authorization Section -->
