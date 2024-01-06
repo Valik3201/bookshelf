@@ -559,10 +559,26 @@ svg.logo-icon {
   background-color: white;
   cursor: pointer;
 }
-.hamburger-icon {
+
+.hamburger-button,
+.close-button {
+  display: block;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  height: 20px;
   fill: #000000;
   stroke: black;
 }
+
+@media screen and (min-width: 768px) {
+  .hamburger-icon,
+  .close-button {
+    display: none;
+  }
+}
+
 .switch-button-div,
 .switch-button-div-mobile {
   display: flex;
@@ -594,20 +610,24 @@ svg.logo-icon {
   align-items: center;
   justify-content: space-between;
 }
-.hamburger-button,
-.close-button {
-  border: none;
-  background-color: transparent;
-  outline: none;
-  cursor: pointer;
-  height: 20px;
-  stroke: #000;
+
+.mobile-menu-open {
+  display: block;
 }
-.mobile-menu-body {
-  padding: 20px;
-}
-.mobile-menu-field {
+
+.mobile-menu-close {
   display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-menu-open,
+  .mobile-menu-close {
+    display: none;
+  }
+}
+
+.mobile-menu-field {
+  display: block;
   transition: transform 500ms ease;
   transform: translateX(-100%);
   position: fixed;
@@ -618,11 +638,21 @@ svg.logo-icon {
   z-index: 20;
   background: radial-gradient(circle at top, #4f2ee8 25%, #ffffff);
 }
+
+@media (min-width: 768px) {
+  .mobile-menu-field {
+    display: none;
+  }
+}
+
+.mobile-menu-body {
+  padding: 20px;
+}
+
 .mobile-logo-header {
   margin-left: 20px;
 }
 .close-button-icon {
-  display: none;
   stroke: black;
 }
 .sign-up-button-mobile-menu {
@@ -804,9 +834,6 @@ svg.logo-icon {
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .hamburger-icon {
-    display: none;
-  }
   .switch-button-div {
     display: flex;
     justify-content: space-between;
@@ -847,10 +874,6 @@ svg.logo-icon {
   }
 }
 @media (min-width: 1024px) {
-  .hamburger-icon {
-    display: none;
-  }
-
   .switch-button-div {
     display: flex;
     justify-content: space-between;
