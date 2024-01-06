@@ -5,7 +5,7 @@ import { auth } from './firebase.js';
 import {
   logOutButton,
   handleLogout,
-  signUpButton,
+  signUpButtons,
   userProfile,
   userButton,
   userNavList,
@@ -19,7 +19,7 @@ export const onAuthStateChangedListener = userNameDisplay => {
       userNameDisplay.textContent = displayName;
       userProfile.classList.remove('hidden');
       userButton.classList.remove('hidden');
-      signUpButton.classList.add('hidden');
+      signUpButtons.classList.add('hidden');
       userNavList.classList.remove('hidden');
 
       logOutButton.addEventListener('click', handleLogout);
@@ -27,7 +27,7 @@ export const onAuthStateChangedListener = userNameDisplay => {
       userNameDisplay.textContent = '';
       userProfile.classList.add('hidden');
       userButton.classList.add('hidden');
-      signUpButton.classList.remove('hidden');
+      signUpButtons.classList.remove('hidden');
       userNavList.classList.add('hidden');
     }
   });

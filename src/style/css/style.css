@@ -647,6 +647,7 @@ svg.logo-icon {
 
 .mobile-menu-body {
   padding: 20px;
+  margin-top: 64px;
 }
 
 .mobile-logo-header {
@@ -749,8 +750,7 @@ svg.logo-icon {
   z-index: -999999999;
 }
 @media (max-width: 767px) {
-  .nav-list,
-  .sign-up-button {
+  .nav-list {
     display: none;
   }
   .header-items,
@@ -1047,17 +1047,6 @@ svg.logo-icon {
     stroke: rgb(255, 255, 255);
   }
 
-  body,
-  .books__book--title,
-  .books__heading,
-  .shopping-list-link,
-  .category-list__item,
-  h1,
-  .sign-up-button {
-    color: #ffffff;
-    transition: color 0.3s ease-in;
-  }
-
   .see-more-btn {
     color: #ffffff !important;
     transition: color 0.3s ease-in;
@@ -1081,17 +1070,6 @@ svg.logo-icon {
 
   .slider {
     background: linear-gradient(to bottom, #4f2ee8, #686868);
-  }
-
-  body,
-  .books__book--title,
-  .books__heading,
-  .shopping-list-link,
-  .category-list__item,
-  h1,
-  .sign-up-button {
-    color: #ffffff;
-    transition: color 0.3s ease-in;
   }
 
   .see-more-btn {
@@ -1410,10 +1388,16 @@ svg.logo-icon {
   top: 45px;
 }
 
-#user-info.sign-up-button {
-  display: flex;
-  justify-content: space-between;
-  padding: 4px 12px;
+.sign-up-button {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .sign-up-button {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 12px;
+  }
 }
 
 #user-profile-image,
