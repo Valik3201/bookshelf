@@ -1,6 +1,7 @@
-import { fetchBooks } from './bookAPI.js';
+import { fetchTopBooks } from './bookAPI.js';
 import { displayBookById } from './fetchBookById.js';
 import { topBooksContainer, switchView } from './viewSwitcher.js';
+import { createBookMarkup } from './bookMarkup.js';
 
 /**
  * Displays top books in the specified HTML container.
@@ -12,36 +13,13 @@ export const displayTopBooks = async () => {
   switchView('topBooks');
 
   // Fetch top books from the API.
-  const topBooks = await fetchBooks('top-books');
-
-  const placeholderImageURL = new URL('/src/images/placeholder.jpg', import.meta.url).href;
+  const topBooks = await fetchTopBooks();
 
   // Generate markup for each top book category.
   const markup = topBooks
     .map(category => {
-      // Generate markup for each book within the category.
-      const booksMarkup = category.books
-        .map(({ title, author, book_image, _id }) => {
-          return `
-          <div class="books__book" data-book-id="${_id}">
-            <div class="books__book--cover">
-              <img class="lazyload" 
-              data-sizes="auto"
-              src="${placeholderImageURL}"
-              data-src="${book_image}"
-              alt="${title}">
-              <div class="books__book--cover-overlay">
-                <div class="books__book--cover-overlay-text">Quick View</div>
-              </div>
-            </div>
-            <div class="books__book--title">${title}</div>
-            <div class="books__book--author">${author}</div>
-          </div>
-        `;
-        })
-        .join('');
+      const booksMarkup = category.books.map(book => createBookMarkup(book)).join('');
 
-      // Combine category title, book markup, and "See more" button into a single category markup.
       return `
       <div class="books__category">
         <h2 class="books__category--title">${category.list_name}</h2>
