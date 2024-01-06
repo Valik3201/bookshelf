@@ -543,6 +543,11 @@ svg.logo-icon {
   cursor: pointer;
   padding: 4px 12px;
 }
+.sign-up-button-user {
+  justify-content: left;
+  gap: 9px;
+  background-color: transparent;
+}
 .arrow-right-icon {
   margin-right: 14px;
   stroke: #eac645;
@@ -668,12 +673,13 @@ svg.logo-icon {
   border: 1.5 solid black;
   background-color: #4f2ee8;
 }
+
 .log-out-button-mobile-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 184px;
-  height: 45px;
+  width: 118px;
+  height: 48px;
   border-radius: 18px;
   background-color: white;
   border: 1.5 solid black;
@@ -733,7 +739,8 @@ svg.logo-icon {
 .user-icon-mobile {
   background-color: white;
 }
-#user-name-display {
+#user-name-display,
+#user-name-display-mobile {
   max-width: 90px;
   font-size: 22px;
   font-weight: 700;
