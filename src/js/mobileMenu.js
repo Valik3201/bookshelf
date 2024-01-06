@@ -26,13 +26,19 @@ const openMenu = () => {
 };
 
 const closeMenu = () => {
-  mobileMenuSingIn.style.transform = 'translateX(-100%)';
-  mobileMenuSingUp.style.transform = 'translateX(-100%)';
-
-  setTimeout(() => {
-    mobileMenuSingIn.style.display = 'none';
-    mobileMenuSingUp.style.display = 'none';
-  }, 500);
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      mobileMenuSingIn.style.transform = 'translateX(-100%)';
+      setTimeout(() => {
+        mobileMenuSingIn.style.display = 'none';
+      }, 500);
+    } else {
+      mobileMenuSingIn.style.transform = 'translateX(-100%)';
+      setTimeout(() => {
+        mobileMenuSingUp.style.transform = 'translateX(-100%)';
+      }, 500);
+    }
+  });
 };
 
 //closing mobile menu function if window size is bigger than 768px
