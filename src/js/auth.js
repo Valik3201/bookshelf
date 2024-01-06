@@ -11,6 +11,9 @@ const signInModal = document.querySelector('.sign-in-modal');
 export const signUpButtons = document.querySelectorAll('.sign-up-button');
 export const logOutButton = document.querySelector('#log-out');
 
+export const userProfileMobile = document.querySelector('#mobile-user-profile');
+export const userNameDisplayMobile = document.querySelector('#user-name-display-mobile');
+
 const logOutMobileButton = document.querySelector('#mobile-log-out-button');
 
 const switchToSignInButtons = document.querySelectorAll('[data-switch="sign-in"]');

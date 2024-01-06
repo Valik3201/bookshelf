@@ -5,52 +5,66 @@
   <!-- Body of the mobile menu, including authorization partial -->
   <div class="mobile-menu-body">
     <!-- Sign-up button -->
-    <button type="button" class="sign-up-button-mobile">
+    <button type="button" class="sign-up-button">
       <span class="sign-up-text">Sign up</span>
       <!-- Arrow icon next to the sign-up button -->
       <svg class="arrow-right-icon" width="20" height="20">
         <use href="/src/images/icons.svg#icon-arrow-right"></use>
       </svg>
     </button>
-    <!-- Navigation links for the mobile menu -->
-    <div class="nav-mobile-position">
-      <ul class="nav-mobile-list">
-        <!-- Home link -->
-        <li>
-          <a
-            href="/src/index.html"
-            class="nav-list__link nav-list__link--active home-link home-text"
-            >HOME</a
-          >
-        </li>
-        <!-- Shopping list link with SVG icon -->
-        <li>
-          <div class="nav-list__link shopping-link">
-            <a href="./shopping-list.html" class="shopping-mobile-text"
-              >SHOPPING LIST
-              <svg class="shopping-list-mobile-icon" width="20px" height="20px">
-                <use href="/src/images/icons.svg#icon-shop"></use>
-              </svg>
-            </a>
-          </div>
-        </li>
-      </ul>
-    </div>
+    <!-- User Profile Section -->
+    <div id="mobile-user-profile">
+      <!-- User information display with profile image, name, and dropdown arrow -->
+      <div class="sign-up-button-user">
+        <div class="user-icon-mobile">
+          <!-- User profile image icon -->
+          <svg width="12" height="16" fill="#4F2EE8">
+            <use href="/src/images/icons.svg#icon-user"></use>
+          </svg>
+        </div>
+        <!-- User name display -->
+        <div id="user-name-display-mobile"></div>
+      </div>
+      <!-- Navigation links for the mobile menu -->
+      <div class="nav-mobile-position">
+        <ul class="nav-mobile-list">
+          <!-- Home link -->
+          <li>
+            <a
+              href="/src/index.html"
+              class="nav-list__link nav-list__link--active home-link home-text"
+              >HOME</a
+            >
+          </li>
+          <!-- Shopping list link with SVG icon -->
+          <li>
+            <div class="nav-list__link shopping-link">
+              <a href="./shopping-list.html" class="shopping-mobile-text"
+                >SHOPPING LIST
+                <svg class="shopping-list-mobile-icon" width="20px" height="20px">
+                  <use href="/src/images/icons.svg#icon-shop"></use>
+                </svg>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
 
-    <!-- Log out button and background image container -->
-    <div>
-      <button id="mobile-log-out-button" type="button" class="log-out-button-mobile-menu">
-        <span class="sign-up-text">Log out</span>
-        <!-- Arrow icon for the log out button -->
-        <svg class="arrow-right-icon" width="20px" height="20px">
-          <use href="/src/images/icons.svg#icon-arrow-right"></use>
-        </svg>
-      </button>
-      <!-- Background cover container with an image of book covers -->
-      <div class="background-cover-container">
-        <img src="/src/images/mobile-background-img.png" alt="picture of book covers" />
+      <!-- Log out button and background image container -->
+      <div>
+        <button id="mobile-log-out-button" type="button" class="log-out-button-mobile-menu">
+          <span class="sign-up-text">Log out</span>
+          <!-- Arrow icon for the log out button -->
+          <svg class="arrow-right-icon" width="20px" height="20px">
+            <use href="/src/images/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </button>
+        <!-- Background cover container with an image of book covers -->
+        <div class="background-cover-container">
+          <img src="/src/images/mobile-background-img.png" alt="picture of book covers" />
+        </div>
       </div>
     </div>
   </div>
+  <!-- End of Mobile Menu Section -->
 </div>
-<!-- End of Mobile Menu Section -->
