@@ -618,6 +618,7 @@ svg.logo-icon {
   min-height: 812px;
   z-index: 20;
   background: radial-gradient(circle at top, #4f2ee8 25%, #ffffff);
+  overflow: hidden;
 }
 .mobile-logo-header {
   margin-left: 20px;
