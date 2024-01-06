@@ -1,4 +1,4 @@
-import { fetchBooks } from './bookAPI.js';
+import { fetchTopBooks } from './bookAPI.js';
 import { displayBookById } from './fetchBookById.js';
 import { topBooksContainer, switchView } from './viewSwitcher.js';
 
@@ -12,7 +12,7 @@ export const displayTopBooks = async () => {
   switchView('topBooks');
 
   // Fetch top books from the API.
-  const topBooks = await fetchBooks('top-books');
+  const topBooks = await fetchTopBooks();
 
   const placeholderImageURL = new URL('/src/images/placeholder.jpg', import.meta.url).href;
 

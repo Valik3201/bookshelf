@@ -1,4 +1,4 @@
-import { fetchBooks } from './bookAPI.js';
+import { fetchCategories } from './bookAPI.js';
 
 /**
  * Displays book categories in the specified HTML container.
@@ -11,7 +11,7 @@ const displayCategories = async () => {
   const categoriesContainer = document.querySelector('.category-list');
 
   // Fetch book categories from the API.
-  const bookCategories = await fetchBooks('category-list');
+  const bookCategories = await fetchCategories();
 
   // Sorting categories alphabetically.
   bookCategories.sort((a, b) => a.list_name.localeCompare(b.list_name));

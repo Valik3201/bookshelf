@@ -1,9 +1,9 @@
-import { fetchBooks } from './bookAPI.js';
+import { fetchBookById } from './bookAPI.js';
 
 //Funkcja dodająca książkę do localStorage
 export const addToLocalStorage = async bookId => {
   //wykonujemy zapytanie do serwera w celu pobrania danych o książce
-  const bookById = await fetchBooks(bookId);
+  const bookById = await fetchBookById(bookId);
 
   //sprawdzamy czy lacalStorage jest obsługiwane w bieżącej przeglądarce
   if (typeof Storage != 'undefined') {

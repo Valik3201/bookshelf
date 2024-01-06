@@ -1,4 +1,4 @@
-import { fetchBooks } from './bookAPI.js';
+import { fetchBookById } from './bookAPI.js';
 import { modalContainer, toggleModal } from './modalHandler.js';
 import { bookAddButtonHandler } from './handleBookAddition.js';
 
@@ -12,7 +12,7 @@ export const displayBookById = async bookId => {
   toggleModal(true);
 
   // Fetch book details using the provided bookId
-  const bookById = await fetchBooks(`${bookId}`);
+  const bookById = await fetchBookById(bookId);
 
   // Destructure book details
   const { _id, title, author, book_image, description, buy_links } = bookById;

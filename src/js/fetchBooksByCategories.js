@@ -1,10 +1,10 @@
-import { fetchBooks } from './bookAPI.js';
+import { fetchBooksByCategory } from './bookAPI.js';
 import { displayTopBooks } from './fetchBooks.js';
 import { displayBookById } from './fetchBookById.js';
 import { topBooksContainer, booksContainer, switchView } from './viewSwitcher.js';
 
 const displayBooksByCategory = async categoryName => {
-  const booksByCategory = await fetchBooks('category', categoryName);
+  const booksByCategory = await fetchBooksByCategory(categoryName);
 
   if (!booksByCategory || !Array.isArray(booksByCategory)) {
     console.error('Invalid response from fetchBooks:', booksByCategory);
