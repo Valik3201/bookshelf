@@ -10,7 +10,9 @@
   flex-wrap: wrap;
   gap: 40px;
 
-  margin: 40px 24px;
+  padding: 40px 24px;
+
+  margin-top: 64px;
 
   @include breakpoint-up(sm) {
     grid-template-columns: 1fr 1fr;
@@ -19,6 +21,10 @@
       'books books';
     column-gap: 40px;
     row-gap: 86px;
+  }
+
+  @include breakpoint-up(md) {
+    margin-top: 0;
   }
 
   @include breakpoint-up(xl) {

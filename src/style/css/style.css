@@ -526,8 +526,10 @@ body {
 svg.logo-icon {
   margin-right: 8px;
 }
+.sign-up-button-user,
+.sign-up-button-auth,
 .sign-up-button,
-.sign-up-button-mobile-menu {
+.sign-up-button-mobile {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -559,10 +561,26 @@ svg.logo-icon {
   background-color: white;
   cursor: pointer;
 }
-.hamburger-icon {
+
+.hamburger-button,
+.close-button {
+  display: block;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  height: 20px;
   fill: #000000;
   stroke: black;
 }
+
+@media screen and (min-width: 768px) {
+  .hamburger-icon,
+  .close-button {
+    display: none;
+  }
+}
+
 .switch-button-div,
 .switch-button-div-mobile {
   display: flex;
@@ -594,38 +612,53 @@ svg.logo-icon {
   align-items: center;
   justify-content: space-between;
 }
-.hamburger-button,
-.close-button {
-  border: none;
-  background-color: transparent;
-  outline: none;
-  cursor: pointer;
-  height: 20px;
-  stroke: #000;
+
+.mobile-menu-open {
+  display: block;
+}
+
+.mobile-menu-close {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-menu-open,
+  .mobile-menu-close {
+    display: none;
+  }
 }
 
 .mobile-menu-field {
-  display: none;
+  display: block;
   transition: transform 500ms ease;
   transform: translateX(-100%);
   position: fixed;
   top: 0;
   left: 0;
-  margin: 0;
   width: 100%;
   height: 100%;
-  min-width: 375px;
-  min-height: 812px;
   z-index: 20;
   background: radial-gradient(circle at top, #4f2ee8 25%, #ffffff);
 }
+
+@media (min-width: 768px) {
+  .mobile-menu-field {
+    display: none;
+  }
+}
+
+.mobile-menu-body {
+  padding: 20px;
+  margin-top: 64px;
+}
+
 .mobile-logo-header {
   margin-left: 20px;
 }
 .close-button-icon {
   stroke: black;
 }
-.sign-up-button-mobile-menu {
+.sign-up-button-mobile {
   margin-top: 40px;
   margin-left: 20px;
   border: 1.5 solid black;
@@ -699,7 +732,11 @@ svg.logo-icon {
 .background-cover-container {
   display: flex;
   justify-content: flex-start;
-  margin-top: 80%;
+  margin-top: 70%;
+  padding-top: 20%;
+  overflow-x: hidden;
+  margin-left: -20px;
+  margin-right: -20px;
 }
 
 .background-cover-container img {
@@ -715,8 +752,7 @@ svg.logo-icon {
   z-index: -999999999;
 }
 @media (max-width: 767px) {
-  .nav-list,
-  .sign-up-button {
+  .nav-list {
     display: none;
   }
   .header-items,
@@ -727,6 +763,12 @@ svg.logo-icon {
     height: 64px;
     border: 1.5px solid #111111;
     border-radius: 0px 0px 8px 8px;
+    background-color: white;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
   .nav-item {
     margin-left: 20px;
@@ -794,9 +836,6 @@ svg.logo-icon {
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .hamburger-icon {
-    display: none;
-  }
   .switch-button-div {
     display: flex;
     justify-content: space-between;
@@ -837,10 +876,6 @@ svg.logo-icon {
   }
 }
 @media (min-width: 1024px) {
-  .hamburger-icon {
-    display: none;
-  }
-
   .switch-button-div {
     display: flex;
     justify-content: space-between;
@@ -983,7 +1018,8 @@ svg.logo-icon {
   }
 
   header,
-  .mobile-header-items {
+  .mobile-header-items,
+  .header-items {
     background: #111111;
     transition: color 0.3s ease-in;
   }
@@ -1013,17 +1049,6 @@ svg.logo-icon {
     stroke: rgb(255, 255, 255);
   }
 
-  body,
-  .books__book--title,
-  .books__heading,
-  .shopping-list-link,
-  .category-list__item,
-  h1,
-  .sign-up-button {
-    color: #ffffff;
-    transition: color 0.3s ease-in;
-  }
-
   .see-more-btn {
     color: #ffffff !important;
     transition: color 0.3s ease-in;
@@ -1047,17 +1072,6 @@ svg.logo-icon {
 
   .slider {
     background: linear-gradient(to bottom, #4f2ee8, #686868);
-  }
-
-  body,
-  .books__book--title,
-  .books__heading,
-  .shopping-list-link,
-  .category-list__item,
-  h1,
-  .sign-up-button {
-    color: #ffffff;
-    transition: color 0.3s ease-in;
   }
 
   .see-more-btn {
@@ -1375,10 +1389,11 @@ svg.logo-icon {
   top: 45px;
 }
 
-#user-info.sign-up-button {
-  display: flex;
-  justify-content: space-between;
-  padding: 4px 12px;
+@media screen and (min-width: 768px) {
+  .sign-up-button {
+    justify-content: space-between;
+    padding: 4px 12px;
+  }
 }
 
 #user-profile-image,

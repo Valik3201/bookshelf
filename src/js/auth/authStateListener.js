@@ -5,10 +5,12 @@ import { auth } from './firebase.js';
 import {
   logOutButton,
   handleLogout,
-  signUpButton,
+  signUpButtons,
   userProfile,
   userButton,
   userNavList,
+  userProfileMobile,
+  userNameDisplayMobile,
 } from '../auth.js';
 
 export const onAuthStateChangedListener = userNameDisplay => {
@@ -17,9 +19,14 @@ export const onAuthStateChangedListener = userNameDisplay => {
       const displayName = user.displayName;
 
       userNameDisplay.textContent = displayName;
+      userNameDisplayMobile.textContent = displayName;
+
       userProfile.classList.remove('hidden');
       userButton.classList.remove('hidden');
-      signUpButton.classList.add('hidden');
+      userProfileMobile.classList.remove('hidden');
+      signUpButtons.forEach(function (button) {
+        button.classList.add('hidden');
+      });
       userNavList.classList.remove('hidden');
 
       logOutButton.addEventListener('click', handleLogout);
@@ -27,7 +34,10 @@ export const onAuthStateChangedListener = userNameDisplay => {
       userNameDisplay.textContent = '';
       userProfile.classList.add('hidden');
       userButton.classList.add('hidden');
-      signUpButton.classList.remove('hidden');
+      userProfileMobile.classList.add('hidden');
+      signUpButtons.forEach(function (button) {
+        button.classList.remove('hidden');
+      });
       userNavList.classList.add('hidden');
     }
   });
