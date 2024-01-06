@@ -728,6 +728,7 @@ svg.logo-icon {
   background-color: white;
 }
 #user-name-display {
+  max-width: 90px;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.44px;
