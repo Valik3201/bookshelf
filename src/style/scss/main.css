@@ -46,6 +46,10 @@ body {
     -moz-column-gap: 40px;
          column-gap: 40px;
     row-gap: 86px;
+  }
+}
+@media (min-width: 768px) {
+  .home {
     margin-top: 0;
   }
 }

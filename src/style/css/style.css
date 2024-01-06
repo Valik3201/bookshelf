@@ -1366,7 +1366,6 @@ svg.logo-icon {
 #user-profile,
 #logout-button {
   display: none;
-  top: 64px;
 }
 
 #user-profile:not(.hidden),
