@@ -528,7 +528,7 @@ svg.logo-icon {
 }
 .sign-up-button-auth,
 .sign-up-button,
-.sign-up-button-mobile-menu {
+.sign-up-button-mobile {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -657,7 +657,7 @@ svg.logo-icon {
 .close-button-icon {
   stroke: black;
 }
-.sign-up-button-mobile-menu {
+.sign-up-button-mobile {
   margin-top: 40px;
   margin-left: 20px;
   border: 1.5 solid black;
