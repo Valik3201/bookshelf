@@ -53,7 +53,7 @@
       </a>
       <div class="switch-button-div-mobile">
         <label for="t-switch-mobile-menu" class="switch">
-        <input type="checkbox" class="theme-switch" id="t-switch-mobile-menu" checked />
+          <input type="checkbox" class="theme-switch" id="t-switch-mobile-menu" checked />
           <span class="slider"></span>
         </label>
         <button class="close-button" id="close-sing-up-mobile-menu">
@@ -64,56 +64,16 @@
       </div>
     </div>
     <div class="mobile-menu-body">
-      <button
-        id="mobile-sing-up-button"
-        type="button"
-        class="sign-up-button-mobile-menu sign-up-modal-open"
-      >
-        <span class="sign-up-text">Sign up</span
-        ><svg class="arrow-right-icon" width="20px" height="20px">
-          <use href="/src/images/icons.svg#icon-arrow-right"></use>
-        </svg>
-      </button>
-      <div class="background-cover-container">
-        <img src="/src/images/mobile-background-img.png" alt="pictur of books covers" />
-      </div>
+      <include src="./partials/authorization/auth.html"></include>
     </div>
-  </div>
-<!--user mobile menu-->
-  <div class="mobile-menu-field" id="sing-in-mobile-menu">
-    <div class="mobile-header-items">
-      <a href="/src/index.html" class="logo-header mobile-logo-header">
-        <svg class="logo-icon" width="24px" height="24px">
-          <use href="/src/images/icons.svg#icon-logo"></use>
-        </svg>
-        <p>Bookshelf</p>
-      </a>
-      <div class="switch-button-div-mobile">
-        <label for="t-switch-user-mobile-menu" class="switch">
-        <input type="checkbox" class="theme-switch" id="t-switch-user-mobile-menu" checked />
-          <span class="slider"></span>
-        </label>
-        <button class="close-button" id="close-user-mobile-menu">
-          <svg class="close-button-icon" width="14px" height="14px">
-            <use href="/src/images/icons.svg#icon-close"></use>
-          </svg>
-        </button>
-      </div>
-    </div>
-<div class="mobile-menu-body">
-  <div class="position-of-mobile-body">
-  <div class="user-mobile-profile">
-    <div>
-      <svg class="user-icon-mobile" width="12" height="16" fill="#4F2EE8">
-        <use href="/src/images/icons.svg#icon-user"></use>
-      </svg>
-    </div>
-    <div id="user-name-display-mobile"></div>
-  </div>
-      <div class="nav-mobile-position">
-        <ul class="nav-mobile-list">
+    <div class="nav-mobile-position">
+      <ul class="nav-mobile-list">
         <li>
-          <a href="/src/index.html" class="nav-list__link nav-list__link--active home-link home-text">HOME</a>
+          <a
+            href="/src/index.html"
+            class="nav-list__link nav-list__link--active home-link home-text"
+            >HOME</a
+          >
         </li>
         <li>
           <div class="nav-list__link shopping-link">
@@ -126,11 +86,8 @@
         </li>
       </ul>
     </div>
-      <button
-        id="mobile-log-out-button"
-        type="button"
-        class="log-out-button-mobile-menu"
-      >
+    <div>
+      <button id="mobile-log-out-button" type="button" class="log-out-button-mobile-menu">
         <span class="sign-up-text">Log out</span
         ><svg class="arrow-right-icon" width="20px" height="20px">
           <use href="/src/images/icons.svg#icon-arrow-right"></use>

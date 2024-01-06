@@ -8,12 +8,10 @@ import { onAuthStateChangedListener } from './auth/authStateListener.js';
 const signUpModal = document.querySelector('.sign-up-modal');
 const signInModal = document.querySelector('.sign-in-modal');
 
-const signUpModalMobile = document.querySelector('.sign-up-button-mobile-menu');
-
 export const signUpButton = document.querySelector('.sign-up-button');
 export const logOutButton = document.querySelector('#log-out');
 
-const logOutMobileMenuButton = document.querySelector('#mobile-log-out-button');
+const logOutMobileButton = document.querySelector('#mobile-log-out-button');
 
 const switchToSignInButtons = document.querySelectorAll('[data-switch="sign-in"]');
 const switchToSignUpButtons = document.querySelectorAll('[data-switch="sign-up"]');
@@ -37,11 +35,6 @@ let currentForm = 'sign-up';
 onAuthStateChangedListener(userNameDisplay);
 
 signUpButton.addEventListener('click', function () {
-  currentForm = 'sign-up';
-  showForm(currentForm);
-});
-
-signUpModalMobile.addEventListener('click', function () {
   currentForm = 'sign-up';
   showForm(currentForm);
 });
@@ -127,6 +120,14 @@ logOutButton.addEventListener('click', async function () {
   }
 });
 
+logOutMobileButton.addEventListener('click', async function () {
+  try {
+    await signOutUser();
+  } catch (error) {
+    console.error('Logout error:', error);
+  }
+});
+
 export const handleLogout = async () => {
   try {
     await signOut(auth);
@@ -134,14 +135,6 @@ export const handleLogout = async () => {
     console.error('Error during logout:', error);
   }
 };
-
-logOutMobileMenuButton.addEventListener('click', async function () {
-  try {
-    await signOutUser();
-  } catch (error) {
-    console.error('Logout error:', error);
-  }
-});
 
 const toggleDropdownMenu = () => {
   const dropdownMenu = document.getElementById('user-dropdown-menu');

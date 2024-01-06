@@ -16,10 +16,7 @@ export const onAuthStateChangedListener = userNameDisplay => {
     if (user) {
       const displayName = user.displayName;
 
-      const userNameDisplayMobile = document.querySelector('#user-name-display-mobile');
-
       userNameDisplay.textContent = displayName;
-      userNameDisplayMobile.textContent = displayName;
       userProfile.classList.remove('hidden');
       userButton.classList.remove('hidden');
       signUpButton.classList.add('hidden');
