@@ -21,6 +21,9 @@
       'books books';
     column-gap: 40px;
     row-gap: 86px;
+  }
+
+  @include breakpoint-up(md) {
     margin-top: 0;
   }
 
