@@ -11,8 +11,6 @@ const signInModal = document.querySelector('.sign-in-modal');
 export const signUpButtons = document.querySelectorAll('.sign-up-button');
 export const logOutButton = document.querySelector('#log-out');
 
-const signUpButtonMobile = document.querySelector('.sign-up-modal-mobile');
-
 const logOutMobileButton = document.querySelector('#mobile-log-out-button');
 
 const switchToSignInButtons = document.querySelectorAll('[data-switch="sign-in"]');
@@ -41,11 +39,6 @@ signUpButtons.forEach(button => {
     currentForm = 'sign-up';
     showForm(currentForm);
   });
-});
-
-signUpButtonMobile.addEventListener('click', function () {
-  currentForm = 'sign-up';
-  showForm(currentForm);
 });
 
 switchToSignInButtons.forEach(button => {
