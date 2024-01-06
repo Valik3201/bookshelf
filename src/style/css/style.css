@@ -760,9 +760,11 @@ svg.logo-icon {
   z-index: -999999999;
 }
 @media (max-width: 767px) {
-  .nav-list {
+  .nav-list,
+  .sign-up-modal-open {
     display: none;
   }
+
   .header-items,
   .mobile-header-items {
     display: flex;
@@ -1395,10 +1397,6 @@ svg.logo-icon {
   display: block;
   position: absolute;
   top: 45px;
-}
-
-.sign-up-button {
-  display: none;
 }
 
 @media screen and (min-width: 768px) {
