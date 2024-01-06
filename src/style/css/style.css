@@ -749,6 +749,9 @@ svg.logo-icon {
     width: 293px;
     height: 50px;
   }
+  .inputs {
+    padding-left: 120px;
+  }
   .sign-button-form {
     margin-top: 0px;
   }
@@ -899,38 +902,38 @@ svg.logo-icon {
   }
 
   .form-field,
-  .inputs{
+  .inputs {
     background-color: #202024;
-    border-color: #F6F6F6;
+    border-color: #f6f6f6;
     transition: background-color 0.3s ease-in;
   }
 
-  .input-text{
-    color: #F6F6F6;
+  .input-text {
+    color: #f6f6f6;
     transition: color 0.3s ease-in;
   }
 
-  .icon-mobile-position{
-    stroke: #F6F6F6;
-    fill:#202024;
+  .icon-mobile-position {
+    stroke: #f6f6f6;
+    fill: #202024;
     transition: stroke 0.3s ease-in;
   }
 
-  .sign-button-form{
-    background-color: #F6F6F6;
-    color:#202024;
+  .sign-button-form {
+    background-color: #f6f6f6;
+    color: #202024;
     transition: background-color 0.3s ease-in;
   }
 
-  .button-sign-up{
+  .button-sign-up {
     color: #4f2ee8 !important;
     transition: color 0.3s ease-in;
   }
 
-  .log-out-button{
+  .log-out-button {
     background-color: #202024;
     color: #f6f6f6;
-    border-color: #F6F6F6;
+    border-color: #f6f6f6;
     transition: background-color 0.3s ease-in;
   }
 
