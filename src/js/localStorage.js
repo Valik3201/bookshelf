@@ -76,8 +76,10 @@ export const displayBooksFromLocalStorage = () => {
   if (storedBooks.length === 0 && container) {
     // Jeśli localStorage jest pusty, wyświetl komunikat
     const emptyMessageMarkup = `
-      <div class="book-message">This page is empty, add some books and proceed to order.</div>
-      <img class="books-img" src="${imageBooks}" alt="books" />
+      <div class="book-message">
+        <p>This page is empty, add some books and proceed to order.</p>
+        <img class="books-img" src="${imageBooks}" alt="books" />
+      </div>
     `;
 
     container.innerHTML = emptyMessageMarkup;
@@ -137,11 +139,13 @@ export const displayBooksFromLocalStorage = () => {
             <button class="button-delete" type="button" data-book-id="${_id}">
               ${svgString}
             </button>
-            <p class="book-title">${title}</p>
-            <p class="book-genre">${list_name}</p>
-            <p class="book-plot">${
-              description ? description : 'Sorry, the description for this book is not available.'
-            }</p>
+            <div class="book-info">
+              <p class="book-title">${title}</p>
+              <p class="book-genre">${list_name}</p>
+              <p class="book-plot">${
+                description ? description : 'Sorry, the description for this book is not available.'
+              }</p>
+            </div>
             <p class="book-author">${author}</p>
             <div class="book-buy-links">${buyLinksMarkup}</div>
           </div>
