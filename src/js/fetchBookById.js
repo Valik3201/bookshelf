@@ -1,3 +1,4 @@
+// Importing functions and elements from other modules
 import { fetchBookById } from './bookAPI.js';
 import { modalContainer, toggleModal } from './modalHandler.js';
 import { bookAddButtonHandler } from './handleBookAddition.js';
@@ -55,25 +56,26 @@ export const displayBookById = async bookId => {
     <div class="modal">
       <div class="modal__info">
         <div class="modal__cover">
-        <img class="lazyload" src="${placeholderImageURL}" data-src="${book_image}" alt="${title}">
+          <img class="lazyload" src="${placeholderImageURL}" data-src="${book_image}" alt="${title}">
         </div>
         <div class="modal__details">
-            <div class="modal__details-header">
-              <p class="modal__details-title">${title}</p>
-              <p class="modal__details-author">${author}</p>
-            </div>
-            <p class="modal__details-description">${
-              description ? description : 'Sorry, the description for this book is not available.'
-            }</p>
-            <div class="modal__details-links">${buyLinksMarkup}</div>
+          <div class="modal__details-header">
+            <p class="modal__details-title">${title}</p>
+            <p class="modal__details-author">${author}</p>
+          </div>
+          <p class="modal__details-description">${
+            description ? description : 'Sorry, the description for this book is not available.'
+          }</p>
+          <div class="modal__details-links">${buyLinksMarkup}</div>
         </div>
       </div>
     </div>
-    <button type = "button" class = "modal-pop-up-btn button" data-book-id = "${_id}">Add to shopping list</button>
+    <button type="button" class="modal-pop-up-btn button" data-book-id="${_id}">Add to shopping list</button>
   `;
 
   // Insert the modal markup into the modal container
   modalContainer.innerHTML = markup;
 
+  // Call the bookAddButtonHandler to handle the "Add to Shopping List" button functionality
   bookAddButtonHandler();
 };

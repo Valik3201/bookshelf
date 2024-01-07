@@ -1,63 +1,64 @@
 /**
- * Element DOM reprezentujący kontener na treść wewnątrz wyskakującego okna modalnego.
+ * DOM element representing the container for the content inside the popup modal.
  * @type {HTMLElement}
  */
 export const modalContainer = document.querySelector('.modal-pop-up-content');
 
 /**
- * Funkcja do przełączania widoczności wyskakującego okna modalnego.
- * @param {boolean} showModal - Jeśli wartość to true, pokaż okno modalne; jeśli false, ukryj okno modalne.
+ * Function to toggle the visibility of the popup modal.
+ * @param {boolean} showModal - If true, show the modal; if false, hide the modal.
  */
 export const toggleModal = showModal => {
   /**
-   * Element DOM reprezentujący tło wyskakującego okna modalnego.
+   * DOM element representing the backdrop of the popup modal.
    * @type {HTMLElement}
    */
   const backdrop = document.querySelector('.backdrop-pop-up');
 
   if (showModal) {
-    // Pokaż okno modalne, usuwając klasę 'is-hidden' z tła
+    // Show the modal by removing the 'is-hidden' class from the backdrop
     backdrop.classList.remove('is-hidden');
   } else {
-    // Ukryj okno modalne, dodając klasę 'is-hidden' do tła
+    // Hide the modal by adding the 'is-hidden' class to the backdrop
     backdrop.classList.add('is-hidden');
   }
 };
 
 /**
- * Element DOM reprezentujący tło wyskakującego okna modalnego.
+ * DOM element representing the backdrop of the popup modal.
  * @type {HTMLElement}
  */
 const backdrop = document.querySelector('.backdrop-pop-up');
 
 /**
- * Słuchacz zdarzeń dla kliknięcia na tło modala. Zamyka modal.
+ * Event listener for clicking on the modal backdrop. Closes the modal.
  */
 backdrop.addEventListener('click', function (event) {
-  // Sprawdź czy kliknięcie nastąpiło w backdrop (nie w jego dzieci)
+  // Check if the click occurred on the backdrop (not its children)
   if (event.target === backdrop) {
-    // Zamykaj modal tylko jeśli kliknięcie nastąpiło bezpośrednio w backdrop
+    // Close the modal only if the click occurred directly on the backdrop
     toggleModal(false);
   }
 });
 
 /**
- * Element DOM reprezentujący przycisk zamykający wewnątrz modala.
+ * DOM element representing the close button inside the modal.
  * @type {HTMLElement}
  */
 const closeButton = document.querySelector('.close-modal-button');
 
 /**
- * Słuchacz zdarzeń dla kliknięcia na przycisk zamykający. Czyści zawartość modala i ukrywa go.
+ * Event listener for clicking on the close button. Clears the modal content and hides it.
  */
 closeButton.addEventListener('click', function () {
-  // Wyczyść zawartość wewnątrz kontenera modala
+  // Clear the content inside the modal container
   modalContainer.innerHTML = '';
 
-  // Ukryj modal
+  // Hide the modal
   toggleModal(false);
 });
-//zamknięcie za pomocą klawiszy
+
+// Closing with keyboard keys
 
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {

@@ -1,3 +1,4 @@
+// Importing functions from localStorage module for managing local storage
 import {
   addToLocalStorage,
   removeFromLocalStorage,
@@ -5,15 +6,21 @@ import {
   toggleCongratulatoryMessage,
 } from './localStorage.js';
 
+// Importing onAuthStateChanged function and auth object from Firebase
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './auth/firebase';
 
+/**
+ * Handle the click events for the "Add to Shopping List" buttons.
+ */
 export const bookAddButtonHandler = () => {
-  // Adding event handling for the "Add to Shopping List" buttons
+  // Selecting all buttons with class 'modal-pop-up-btn'
   const addToShoppingListButtons = document.querySelectorAll('.modal-pop-up-btn');
 
+  // Checking the authentication state when the page loads
   onAuthStateChanged(auth, user => {
     if (user) {
+      // If the user is authenticated
       addToShoppingListButtons.forEach(function (button) {
         const bookId = button.getAttribute('data-book-id');
 
@@ -21,16 +28,15 @@ export const bookAddButtonHandler = () => {
         const isBookInLocalStorage = checkIfBookInLocalStorage(bookId);
 
         if (isBookInLocalStorage) {
-          // If the book is in localStorage, change the button text
+          // If the book is in localStorage, change the button text and show congratulatory message
           button.textContent = 'Remove from the shopping list';
-          // Add the congratulatory message
           toggleCongratulatoryMessage(true);
         } else {
-          // If the book is not in localStorage, add it and change the button text
+          // If the book is not in localStorage, hide the congratulatory message
           toggleCongratulatoryMessage(false);
         }
 
-        // Adding click event listener with  function
+        // Adding click event listener to the button
         button.addEventListener('click', function () {
           // Checking if the book is already in localStorage
           const isBookInLocalStorage = checkIfBookInLocalStorage(bookId);
@@ -39,22 +45,25 @@ export const bookAddButtonHandler = () => {
             // If the book is in localStorage, remove it and change the button text
             removeFromLocalStorage(bookId);
             button.textContent = 'Add to shopping list';
-            // Remove the congratulatory message
+            // Hide the congratulatory message
             toggleCongratulatoryMessage(false);
           } else {
             // If the book is not in localStorage, add it and change the button text
             addToLocalStorage(bookId);
             button.textContent = 'Remove from the shopping list';
-            // Add the congratulatory message
+            // Show the congratulatory message
             toggleCongratulatoryMessage(true);
           }
         });
       });
     } else {
+      // If the user is not authenticated
       toggleCongratulatoryMessage(false);
 
+      // Show authentication message
       document.querySelector('.auth-message').style.display = 'block';
 
+      // Disable the buttons and visually indicate it
       addToShoppingListButtons.forEach(function (button) {
         button.id = 'not-allowed';
       });
