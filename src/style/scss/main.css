@@ -449,10 +449,15 @@ body {
   min-width: 335px;
   flex: 0 0 100%;
   gap: 24px;
-  padding: 24px;
+  padding: 14px;
   border-radius: 16px;
   border: 2px solid rgba(79, 46, 232, 0.4);
   background: #ffffff;
+}
+@media (min-width: 576px) {
+  .shopping-list .books-container .book-card {
+    padding: 24px;
+  }
 }
 .shopping-list .books-container .book-card .books-card-img {
   width: 100px;
