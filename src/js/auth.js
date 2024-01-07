@@ -1,3 +1,4 @@
+// Import necessary functions and modules
 import './auth';
 import { updateProfile } from 'firebase/auth';
 import { createUser } from './auth/authSignUpPassword.js';
@@ -5,6 +6,7 @@ import { signInUser } from './auth/authSignInPassword.js';
 import { signOutUser } from './auth/authSignOut.js';
 import { onAuthStateChangedListener } from './auth/authStateListener.js';
 
+// DOM elements
 const signUpModal = document.querySelector('.sign-up-modal');
 const signInModal = document.querySelector('.sign-in-modal');
 
@@ -35,8 +37,10 @@ userProfile.classList.add('hidden');
 
 let currentForm = 'sign-up';
 
+// Attach listener for authentication state changes
 onAuthStateChangedListener(userNameDisplay);
 
+// Add event listeners for switching between sign-up and sign-in forms
 signUpButtons.forEach(button => {
   button.addEventListener('click', function () {
     currentForm = 'sign-up';
@@ -58,6 +62,7 @@ switchToSignUpButtons.forEach(button => {
   });
 });
 
+// Add event listeners for closing sign-up and sign-in modals
 signUpModalCloseButton.addEventListener('click', function () {
   signUpModal.classList.add('is-hidden');
 });
@@ -66,6 +71,19 @@ signInModalCloseButton.addEventListener('click', function () {
   signInModal.classList.add('is-hidden');
 });
 
+// Closing with keyboard keys
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    if (currentForm === 'sign-up') {
+      signUpModal.classList.add('is-hidden');
+    } else {
+      signInModal.classList.add('is-hidden');
+    }
+  }
+});
+
+// Function to show the appropriate form based on the current state
 function showForm(form) {
   if (form === 'sign-up') {
     signUpForm.reset();
@@ -78,6 +96,7 @@ function showForm(form) {
   }
 }
 
+// Add event listener for sign-up form submission
 signUpForm.addEventListener('submit', async function (event) {
   event.preventDefault();
 
@@ -86,14 +105,13 @@ signUpForm.addEventListener('submit', async function (event) {
   const name = signUpForm.elements['name'].value;
 
   try {
+    // Create a new user and update the user profile
     const userCredential = await createUser(email, password);
-
     const user = userCredential.user;
-
     await updateProfile(user, { displayName: name, photoURL: 'basic photo' });
 
+    // Hide sign-up modal and update user display name
     signUpModal.classList.add('is-hidden');
-
     onAuthStateChangedListener(userNameDisplay);
 
     console.log('User signed up and profile updated:', user);
@@ -102,6 +120,7 @@ signUpForm.addEventListener('submit', async function (event) {
   }
 });
 
+// Add event listener for sign-in form submission
 signInForm.addEventListener('submit', async function (event) {
   event.preventDefault();
 
@@ -109,14 +128,14 @@ signInForm.addEventListener('submit', async function (event) {
   const password = signInForm.elements['password'].value;
 
   if (currentForm === 'sign-in') {
+    // Sign in the user and hide the sign-in modal
     await signInUser(email, password);
-
     signInModal.classList.add('is-hidden');
-
     onAuthStateChangedListener(userNameDisplay);
   }
 });
 
+// Add event listeners for log out buttons
 logOutButton.addEventListener('click', async function () {
   try {
     await signOutUser();
@@ -133,6 +152,7 @@ logOutMobileButton.addEventListener('click', async function () {
   }
 });
 
+// Exported function for handling logout
 export const handleLogout = async () => {
   try {
     await signOut(auth);
@@ -141,9 +161,11 @@ export const handleLogout = async () => {
   }
 };
 
+// Function to toggle the visibility of the user dropdown menu
 const toggleDropdownMenu = () => {
   const dropdownMenu = document.getElementById('user-dropdown-menu');
   dropdownMenu.classList.toggle('hidden');
 };
 
+// Add event listener to toggle the dropdown menu on user info click
 userInfo.addEventListener('click', toggleDropdownMenu);

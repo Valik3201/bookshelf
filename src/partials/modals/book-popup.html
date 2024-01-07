@@ -1,16 +1,27 @@
 <div class="backdrop-pop-up is-hidden" data-pop-up>
+  <!-- Modal pop-up container -->
   <div class="modal-pop-up">
+    <!-- Close button for the modal -->
     <button type="button" class="close-modal-button" data-pop-up-close aria-label="Close">
       <svg class="close-modal-button__icon" width="20" height="20">
+        <!-- Close button icon -->
         <use href="/src/images/icons.svg#icon-close"></use>
       </svg>
     </button>
+
+    <!-- Container for the modal content -->
     <div class="modal-pop-up-content"></div>
+
+    <!-- Congratulatory message section -->
     <div class="congratulatory-message modal__message">
-      Сongratulations! You have added the book to the shopping list. To delete, press the button
+      <!-- Congratulatory message for adding a book to the shopping list -->
+      Congratulations! You have added the book to the shopping list. To delete, press the button
       “Remove from the shopping list”.
     </div>
+
+    <!-- Authentication message section -->
     <div class="auth-message modal__message">
+      <!-- Message for users who need to be authenticated to add books to the shopping list -->
       You need to be authenticated to add books to the shopping list
     </div>
   </div>

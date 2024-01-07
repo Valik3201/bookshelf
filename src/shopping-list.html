@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags for character set and viewport settings -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bookshelf</title>
 
-    <!-- Modern Normalize -->
+    <!-- Include favicon using an external file -->
+    <include src="./favicon/favicon.html"></include>
+    <title>Bookshelf - Shopping List</title>
+
+    <!-- Include Modern Normalize CSS library for consistent default styles -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
@@ -13,33 +17,37 @@
       crossorigin="anonymous"
     />
 
-    <!-- Podłączenie zwykłego CSS -->
+    <!-- Include regular CSS style file -->
     <link rel="stylesheet" type="text/css" href="./style/css/style.css" />
-    <!-- Podłączenie SCSS -->
+    <!-- Include SCSS style file -->
     <link rel="stylesheet" type="text/css" href="./style/scss/main.css" />
   </head>
   <body>
-    <!-- Plik HTML zawierający sekcję nagłówka -->
+    <!-- Include HTML file with the shopping list header section -->
     <include src="./partials/shopping-list/shopping-list-header.html"></include>
 
     <main>
       <div class="shopping-list">
+        <!-- Include HTML file for the slider in the shopping list -->
         <include src="./partials/slider/foundation-slider.html"></include>
         <div class="container">
+          <!-- Include HTML file for the main content of the shopping list -->
           <include src="./partials/shopping-list/shopping-list-main.html"></include>
         </div>
       </div>
     </main>
 
+    <!-- Button to scroll up with an icon -->
     <button id="scrollUp">
       <svg width="20px" height="20px">
         <use href="/src/images/icons.svg#icon-scroll-up"></use>
       </svg>
     </button>
 
+    <!-- Include HTML file for the mobile menu in the shopping list -->
     <include src="./partials/shopping-list/shopping-list-mobile-menu.html"></include>
 
-    <!-- Skrypt -->
+    <!-- Include JavaScript files with type="module" for modular script loading -->
     <script src="./js/common.js" type="module"></script>
     <script src="./js/shoppingListModules.js" type="module"></script>
   </body>

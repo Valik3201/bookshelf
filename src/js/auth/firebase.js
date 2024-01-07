@@ -1,10 +1,8 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 
 import { getAuth } from 'firebase/auth';
 
-// Web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration object with credentials
 const firebaseConfig = {
   apiKey: 'AIzaSyAM02cYOlrv_thfaNpu0NdBsBkK1_BXyXI',
   authDomain: 'bookshelf-85bf5.firebaseapp.com',
@@ -15,8 +13,8 @@ const firebaseConfig = {
   measurementId: 'G-96KXF37B2X',
 };
 
-// Initialize Firebase
+// Initialize Firebase app with the provided configuration
 const app = initializeApp(firebaseConfig);
 
-// Initialize Firebase Authentication and get a reference to the service
+// Get authentication instance from the initialized Firebase app
 export const auth = getAuth(app);
