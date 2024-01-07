@@ -1,4 +1,5 @@
 @import './variables';
+@import './mixins';
 
 // Apply box-sizing to all elements
 * {
@@ -25,4 +26,8 @@ button {
 // Set base font family for the entire body
 body {
   font-family: $main-family;
+
+  @include breakpoint-up(sm) {
+    overflow-x: hidden;
+  }
 }

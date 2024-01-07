@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -26,6 +27,11 @@ button {
 
 body {
   font-family: "DM Sans", sans-serif;
+}
+@media (min-width: 576px) {
+  body {
+    overflow-x: hidden;
+  }
 }
 
 .home {
@@ -361,15 +367,24 @@ body {
 }
 
 .shopping-list {
-  margin: 40px 24px;
+  padding: 40px 24px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+@media (min-width: 768px) {
+  .shopping-list {
+    margin-top: 0;
+  }
 }
 @media (min-width: 1100px) {
   .shopping-list {
     flex-direction: row;
   }
+}
+.shopping-list .container {
+  width: 100%;
 }
 .shopping-list .foundation-list {
   width: 100%;
@@ -384,6 +399,248 @@ body {
     display: block;
     width: 356px;
   }
+}
+.shopping-list .heading {
+  color: #111111;
+  margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: -0.28px;
+}
+@media (min-width: 576px) {
+  .shopping-list .heading {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: -0.92px;
+  }
+}
+.shopping-list .heading-span {
+  color: #4f2ee8;
+}
+.shopping-list .books-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.shopping-list .books-container .book-message {
+  margin: 0 auto;
+}
+.shopping-list .books-container .book-message p {
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  margin-top: 100px;
+  width: 350px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.36px;
+}
+.shopping-list .books-container .book-message .books-img {
+  width: 322px;
+  height: 241px;
+  margin-top: 20px;
+}
+.shopping-list .books-container .book-card {
+  display: flex;
+  min-width: 335px;
+  flex: 0 0 100%;
+  gap: 24px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  background: #ffffff;
+}
+.shopping-list .books-container .book-card .books-card-img {
+  width: 100px;
+  height: 142px;
+  border-radius: 8px;
+}
+@media (min-width: 576px) {
+  .shopping-list .books-container .book-card .books-card-img {
+    width: 116px;
+    height: 165px;
+  }
+}
+.shopping-list .books-container .book-card .book-description {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.shopping-list .books-container .book-card .book-description .button-delete {
+  position: absolute;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  background-color: #4f2ee8;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+@media (min-width: 576px) {
+  .shopping-list .books-container .book-card .book-description .button-delete {
+    width: 34px;
+    height: 34px;
+  }
+}
+.shopping-list .books-container .book-card .book-description .button-delete svg {
+  width: 28px;
+  height: 28px;
+  fill: #4f2ee8;
+  stroke: #ffffff;
+  padding: 8px;
+}
+@media (min-width: 576px) {
+  .shopping-list .books-container .book-card .book-description .button-delete svg {
+    width: 34px;
+    height: 34px;
+  }
+}
+.shopping-list .books-container .book-card .book-description .book-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+.shopping-list .books-container .book-card .book-description .book-title {
+  width: 125px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.64px;
+}
+@media (min-width: 576px) {
+  .shopping-list .books-container .book-card .book-description .book-title {
+    width: 100%;
+  }
+}
+.shopping-list .books-container .book-card .book-description .book-genre {
+  width: 125px;
+  color: #b4afaf;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 14px; /* 116.667% */
+  letter-spacing: 0.36px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (min-width: 576px) {
+  .shopping-list .books-container .book-card .book-description .book-genre {
+    width: 100%;
+  }
+}
+.shopping-list .books-container .book-card .book-description .book-plot {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+}
+.shopping-list .books-container .book-card .book-description .book-author {
+  color: #b4afaf;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.48px;
+}
+.shopping-list .books-container .book-card .book-description .book-buy-links {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+@media (min-width: 768px) {
+  .shopping-list .books-container .book-card .book-description .book-buy-links {
+    gap: 16px;
+  }
+}
+.shopping-list .books-container .book-card .book-description .book-buy-links a {
+  mix-blend-mode: luminosity;
+}
+.shopping-list .books-container .book-card .book-description .book-buy-links a:hover {
+  filter: drop-shadow(rgba(0, 0, 0, 0.15) 0 3px 3px);
+}
+.shopping-list .books-container .book-card .book-description .book-buy-links a:first-child img {
+  width: 32px;
+  height: 11px;
+}
+@media (min-width: 768px) {
+  .shopping-list .books-container .book-card .book-description .book-buy-links a:first-child img {
+    width: 62px;
+    height: 19px;
+  }
+}
+.shopping-list .books-container .book-card .book-description .book-buy-links a:nth-child(2) img {
+  width: auto;
+  height: 16px;
+}
+@media (min-width: 768px) {
+  .shopping-list .books-container .book-card .book-description .book-buy-links a:nth-child(2) img {
+    height: 32px;
+  }
+}
+
+[data-theme=dark] .book-buy-links a:first-child img {
+  filter: brightness(0) invert(1);
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.page-arrows-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.next-page,
+.go-to-last-page {
+  width: 30px;
+  height: 30px;
+  border: #111, solid;
+  border-radius: 50%;
+  background-color: #eac645;
+}
+
+.morePages,
+.first-page,
+.second-page,
+.third-page {
+  font-family: DM Sans;
+  width: 30px;
+  height: 30px;
+  border: #111, solid;
+  border-radius: 50%;
+}
+
+.prev-page,
+.go-to-first-page {
+  width: 30px;
+  height: 30px;
+  fill: white;
+  border: #000, solid;
+  background-color: #000;
+  border-radius: 50%;
 }
 
 .foundation-list {
