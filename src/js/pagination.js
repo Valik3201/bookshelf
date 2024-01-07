@@ -19,30 +19,36 @@ let totalPages = Math.ceil(numberOfItemsInLocalStorage / pageSize);
 
 let currentPage = 1;
 
-for (let i = 1; i <= totalPages; i++) {
-  if (shoppingList.length <= 3) {
-    return;
+// Check if paginationContainerPages is not null before interacting with it
+if (paginationContainerPages) {
+  for (let i = 1; i <= totalPages; i++) {
+    if (shoppingList.length <= 3) {
+      return;
+    }
+    const pageNumber = i;
+    const button = document.createElement('button');
+    button.classList.add('pagination_btn');
+    button.classList.add('pagination_btn--pages');
+    button.textContent = i;
+
+    activDisplayFlexOnElement(paginationContainerBackBtn);
+    activDisplayFlexOnElement(paginationContainerEndBtn);
+
+    button.addEventListener('click', () => {
+      currentPage = pageNumber;
+      removeDisableforElement(startButton);
+      removeDisableforElement(endButton);
+    });
+    paginationContainerPages.appendChild(button);
   }
-  const pageNumber = i;
-  const button = document.createElement('button');
-  button.classList.add('pagination_btn');
-  button.classList.add('pagination_btn--pages');
-  button.textContent = i;
 
-  activDisplayFlexOnElement(paginationContainerBackBtn);
-  activDisplayFlexOnElement(paginationContainerEndBtn);
+  // Check if paginationContainerPages has child nodes before accessing the first child
+  if (paginationContainerPages.firstChild) {
+    paginationContainerPages.firstChild.classList.add('active');
+  }
 
-  button.addEventListener('click', () => {
-    currentPage = pageNumber;
-    removeDisableforElement(startButton);
-    removeDisableforElement(endButton);
-  });
-  paginationContainerPages.appendChild(button);
+  paginationSection.addEventListener('click', handlerPaginationButtonsStartPreviousNextStart);
 }
-
-paginationContainerPages.firstChild.classList.add('active');
-
-paginationSection.addEventListener('click', handlerPaginationButtonsStartPreviousNextStart);
 
 function handlerPaginationButtonsStartPreviousNextStart(event) {
   const activButton = document.querySelector('.active');
@@ -90,8 +96,6 @@ function handlerPaginationButtonsStartPreviousNextStart(event) {
   }
 }
 
-paginationContainerPages.addEventListener('click', handleButtonPaginationContainerPages);
-
 function handleButtonPaginationContainerPages(event) {
   if (event.target.tagName !== 'BUTTON') {
     return;
@@ -100,15 +104,21 @@ function handleButtonPaginationContainerPages(event) {
 }
 
 function removeDisableforElement(element) {
-  element.disabled = false;
+  if (element) {
+    element.disabled = false;
+  }
 }
 
 function addDisableforElement(element) {
-  element.disabled = true;
+  if (element) {
+    element.disabled = true;
+  }
 }
 
 function activDisplayFlexOnElement(element) {
-  element.style.display = 'flex';
+  if (element) {
+    element.style.display = 'flex';
+  }
 }
 
 function highlighteTheCurrentPage(element) {
@@ -118,5 +128,7 @@ function highlighteTheCurrentPage(element) {
     activButton.classList.remove('active');
   }
 
-  element.classList.add('active');
+  if (element) {
+    element.classList.add('active');
+  }
 }
