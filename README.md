@@ -258,40 +258,36 @@ create a new branch, make your changes, and submit a pull request.
 
 ## Contributors
 
-1. **Valik3201 - Valentyn Chernetskyi** (Team Lead)
-
-   - Home Page (list category, top books, books by category)
+1. **[Valentyn Chernetskyi](https://github.com/Valik3201)** - Team Lead
+   - Home Page
    - Loader
-
-2. **superfilar - Mateusz Firla** (Scrum Master)
-
-   - Header
-   - Dark mode theme
-
-3. **tomekstanczak - Tomek Stańczak**
-
-   - Header
-   - Mobile menu
    - Authorization
 
-4. **Anna0067 - Anna Sanetra**
+2. **[Mateusz Firla](https://github.com/superfilar)** - Scrum Master
+   - Header
+   - Dark Mode
 
-   - Shopping List Page (books in local storage, pagination)
+3. **[Tomek Stańczak](https://github.com/tomekstanczak)**
+   - Header
+   - Mobile Menu
+   - Authorization
 
-5. **AleksandraJarz - Aleksandra Jarzębska**
+4. **[Anna Sanetra](https://github.com/Anna0067)**
+   - Shopping List Page
+   - Books in localStorage
+   - Pagination
 
-   - Image
-   - Icons
-   - Modal window
+5. **[Aleksandra Jarzębska](https://github.com/AleksandraJarz)**
+   - Images & Icons
+   - Modal Window
    - Book by ID
 
-6. **gorniakewa300 - Ewa Górniak**
-
-   - Modal window
+6. **[Ewa Górniak](https://github.com/gorniakewa300)**
+   - Modal Window
    - Book by ID
 
-7. **patryq03 - Patryk Kuca**
-   - Charity foundations
-   - Scroll up button
+7. **[Patryk Kuca](https://github.com/patryq03)**
+   - Charity Foundations
+   - Scroll Up Button
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
