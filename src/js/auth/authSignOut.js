@@ -16,7 +16,7 @@ export const signOutUser = async () => {
     await signOut(auth);
 
     // Redirect the user to the home page after successful sign-out
-    window.location.href = '/index.html';
+    window.location.href = '/';
 
     // Show a success notification after sign-out
     Notify.success('User successfully signed out. Come back soon!');
