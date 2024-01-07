@@ -623,7 +623,13 @@ svg.logo-icon {
   border-radius: 36px;
 }
 .shopping-link {
-  padding: 16 0 0 0;
+  padding: 16px 0 0 0;
+}
+.shopping-link-active {
+  display: flex;
+  align-items: center;
+  padding: 8 16 8 16;
+  color: black;
 }
 .shopping-text {
   display: flex;
@@ -720,10 +726,10 @@ svg.logo-icon {
   margin-right: 25px;
 }
 .home-text {
-  font-weight: 700;
   line-height: 18px;
   font-size: 14px;
   width: 72px;
+  color: white;
   height: 34px;
 }
 .shopping-mobile-text {
@@ -735,6 +741,11 @@ svg.logo-icon {
 }
 .shopping-list-mobile-icon {
   fill: white;
+}
+.mobile-link-active {
+  font-weight: 700;
+  color: black;
+  fill: black;
 }
 .user-mobile-profile {
   color: white;
@@ -863,6 +874,9 @@ svg.logo-icon {
     left: 306px;
     width: 10px;
     height: 10px;
+  }
+  #mobile-user-profile.hidden {
+    display: none;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
