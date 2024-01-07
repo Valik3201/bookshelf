@@ -389,6 +389,9 @@ svg.logo-icon {
 }
 .nav-mobile-list {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .position-of-mobile-body {
   display: flex;
