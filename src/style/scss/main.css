@@ -600,7 +600,7 @@ body {
 [data-theme=dark] .book-buy-links a:first-child img {
   filter: brightness(0) invert(1);
 }
-[data-theme=dark] .book-message p {
+[data-theme=dark] .shopping-list .books-container .book-message p {
   color: rgba(255, 255, 255, 0.6);
 }
 
