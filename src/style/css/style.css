@@ -397,6 +397,7 @@ svg.logo-icon {
   display: flex;
   flex-direction: column;
 }
+
 .mobile-header-items {
   background-color: white;
 }
@@ -449,17 +450,16 @@ svg.logo-icon {
 
 .background-cover-container {
   position: absolute;
-  top: 40%;
+  bottom: -4px;
+  left: 0;
   z-index: -1;
   overflow: hidden;
-  padding: 20% 0;
-  width: 100%;
 }
 
 .background-cover-container img {
-  transform: rotate(-15deg);
-  width: 130%;
+  width: 100%;
 }
+
 .nav-list__link--active {
   background-color: #eac645;
 }
@@ -717,11 +717,6 @@ svg.logo-icon {
 
   .book-card {
     background-color: #111111 !important;
-  }
-
-  a.home-link {
-    color: #000000;
-    transition: color 0.3s ease-in;
   }
 
   .nav-list__link,
