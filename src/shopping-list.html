@@ -25,7 +25,9 @@
     <main>
       <div class="shopping-list">
         <include src="./partials/slider/foundation-slider.html"></include>
-        <div><include src="./partials/shopping-list/shopping-list-main.html"></include></div>
+        <div class="container">
+          <include src="./partials/shopping-list/shopping-list-main.html"></include>
+        </div>
       </div>
     </main>
 
@@ -34,6 +36,8 @@
         <use href="/src/images/icons.svg#icon-scroll-up"></use>
       </svg>
     </button>
+
+    <include src="./partials/shopping-list/shopping-list-mobile-menu.html"></include>
 
     <!-- Skrypt -->
     <script src="./js/common.js" type="module"></script>
