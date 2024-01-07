@@ -445,18 +445,17 @@ svg.logo-icon {
 }
 
 .background-cover-container {
-  display: flex;
   position: absolute;
-  bottom: -240px;
-  z-index: -99999;
-  width: 90%;
+  top: 40%;
+  z-index: -1;
+  overflow: hidden;
+  padding: 20% 0;
+  width: 100%;
 }
 
 .background-cover-container img {
   transform: rotate(-15deg);
   width: 130%;
-  margin: 0 -20px 0 -20px;
-  overflow: hidden;
 }
 .nav-list__link--active {
   background-color: #eac645;
