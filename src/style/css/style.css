@@ -88,6 +88,7 @@ input:checked + .slider:before {
 .signup-close-icon {
   stroke: black;
   fill: black;
+  cursor: pointer;
 }
 .signup-close-icon:hover,
 .signup-close-icon:focus {
@@ -134,6 +135,7 @@ input:checked + .slider:before {
   font-size: 18px;
   line-height: 24px;
   padding-left: 160px;
+  padding-right: 80px;
 }
 .sign-button-form {
   width: 499px;
@@ -648,13 +650,25 @@ svg.logo-icon {
 
   .signup-close-icon {
     stroke: #f6f6f6;
-   fill: #f6f6f6;
-  transition: stroke 0.3s ease-in;
+    fill: #f6f6f6;
+    transition: stroke 0.3s ease-in;
   }
+
+  .signup-close-icon:hover,
+  .signup-close-icon:focus {
+    stroke: #4f2ee8;
+    fill: #4f2ee8;
+  }
+
   .input-text,
   .buttons-style {
     color: #f6f6f6;
     transition: color 0.3s ease-in;
+  }
+
+  .buttons-style:focus,
+  .buttons-style:hover {
+    color: #4f2ee8;
   }
 
   .icon-mobile-position {
@@ -667,11 +681,6 @@ svg.logo-icon {
     background-color: #f6f6f6;
     color: #202024;
     transition: background-color 0.3s ease-in;
-  }
-
-  .button-sign-up {
-    color: #4f2ee8 !important;
-    transition: color 0.3s ease-in;
   }
 
   .log-out-button {
@@ -706,12 +715,6 @@ svg.logo-icon {
     transition: color 0.3s ease-in;
   }
 
-  .nav-list__link--active {
-    color: #000000;
-    fill: #000000;
-    transition: color 0.3s ease-in;
-  }
-
   .nav-list__link,
   .shopping-text,
   .book-title,
@@ -721,6 +724,18 @@ svg.logo-icon {
   .inputs {
     color: #ffffff;
     transition: color 0.3s ease-in;
+  }
+
+  .nav-list__link--active {
+    color: #000000;
+    fill: #000000;
+    transition: color 0.3s ease-in;
+  }
+
+  .nav-list__link--active .shopping-text,
+  .nav-list__link--active .shopping-list-icon {
+    fill: #000000;
+    color: #000000;
   }
 
   .shopping-list-icon {

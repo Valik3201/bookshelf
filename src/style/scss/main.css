@@ -397,7 +397,8 @@ body {
 @media (min-width: 1100px) {
   .shopping-list .foundation-list {
     display: block;
-    width: 356px;
+    width: 100%;
+    max-width: 356px;
   }
 }
 .shopping-list .heading {
