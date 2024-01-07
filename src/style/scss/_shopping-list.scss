@@ -21,6 +21,7 @@
   }
 
   .foundation-list {
+    min-width: 335px;
     width: 100%;
 
     @include breakpoint-up(sm) {
