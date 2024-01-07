@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags for character set and viewport settings -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Include favicon using an external file -->
     <include src="./favicon/favicon.html"></include>
-    <title>Bookshelf</title>
+    <title>Bookshelf - Home</title>
 
-    <!-- Modern Normalize -->
+    <!-- Include Modern Normalize CSS library for consistent default styles -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
@@ -15,17 +17,18 @@
       crossorigin="anonymous"
     />
 
-    <!-- Podłączenie zwykłego CSS -->
+    <!-- Include regular CSS style file -->
     <link rel="stylesheet" type="text/css" href="./style/css/style.css" />
-    <!-- Podłączenie SCSS -->
+    <!-- Include SCSS style file -->
     <link rel="stylesheet" type="text/css" href="./style/scss/main.css" />
   </head>
   <body>
-    <!-- Plik HTML zawierający sekcję nagłówka -->
+    <!-- Include HTML file with the header section -->
     <include src="./partials/home/home-header.html"></include>
 
     <main>
       <div class="home">
+        <!-- Include HTML files for different sections in the main content area -->
         <include src="./partials/home/home-categories.html"></include>
         <include src="./partials/slider/foundation-slider.html"></include>
         <include src="./partials/home/home-top-books.html"></include>
@@ -33,18 +36,20 @@
       </div>
     </main>
 
-    <!-- Plik HTML zawierający kod dla modalnego okna z informacjami o książce -->
+    <!-- Include HTML file for the modal popup with book information -->
     <include src="./partials/modals/book-popup.html"></include>
 
+    <!-- Include HTML file for the mobile menu -->
     <include src="./partials/home/home-mobile-menu.html"></include>
 
+    <!-- Button to scroll up with an icon -->
     <button id="scrollUp">
       <svg width="20px" height="20px">
         <use href="/src/images/icons.svg#icon-scroll-up"></use>
       </svg>
     </button>
 
-    <!-- Skrypt -->
+    <!-- Include JavaScript files with type="module" for modular script loading -->
     <script src="./js/common.js" type="module"></script>
     <script src="./js/indexModules.js" type="module"></script>
   </body>
