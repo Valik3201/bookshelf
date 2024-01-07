@@ -56,13 +56,13 @@
 
 <!-- Screenshot -->
 
-[![screenshot](https://github.com/Valik3201/bookshelf/blob/update/minor-corrections/src/images/screenshots/1.png)](https://github.com/Valik3201/bookshelf/blob/update/minor-corrections/src/images/screenshots/1.png)
+[![screenshot](https://github.com/Valik3201/bookshelf/blob/main/src/images/screenshots/1.png)](https://github.com/Valik3201/bookshelf/blob/main/src/images/screenshots/1.png)
 
 **Bookshelf** is a web application for browsing books, with additional features such as the ability
 to add books to a shopping list, explore categories, view popular books, and support charitable
 foundations.
 
-[![screenshot](https://github.com/Valik3201/bookshelf/blob/update/minor-corrections/src/images/screenshots/5.png)](https://github.com/Valik3201/bookshelf/blob/update/minor-corrections/src/images/screenshots/5.png)
+[![screenshot](https://github.com/Valik3201/bookshelf/blob/main/src/images/screenshots/5.png)](https://github.com/Valik3201/bookshelf/blob/main/src/images/screenshots/5.png)
 
 > [!NOTE]\
 > The project is set up for automatic deployment to GitHub Pages using GitHub Actions by JamesIves ([GitHub Pages Deployment Action](https://github.com/marketplace/actions/deploy-to-github-pages)).
@@ -106,7 +106,7 @@ This diverse technological stack enables the "Bookshelf" project to deliver a fe
 for book enthusiasts, offering functionalities such as browsing books, supporting charity
 foundations, managing shopping lists, and more.
 
-[![screenshot](https://github.com/Valik3201/bookshelf/blob/update/minor-corrections/src/images/screenshots/6.png)](https://github.com/Valik3201/bookshelf/blob/update/minor-corrections/src/images/screenshots/6.png)
+[![screenshot](https://github.com/Valik3201/bookshelf/blob/main/src/images/screenshots/6.png)](https://github.com/Valik3201/bookshelf/blob/main/src/images/screenshots/6.png)
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
