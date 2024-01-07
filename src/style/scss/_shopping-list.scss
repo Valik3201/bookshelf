@@ -232,6 +232,10 @@
   .book-buy-links a:first-child img {
     filter: brightness(0) invert(1);
   }
+
+  .book-message p {
+    color: rgba(255, 255, 255, 0.6);
+  }
 }
 
 .pagination {
