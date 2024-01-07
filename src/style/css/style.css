@@ -389,6 +389,9 @@ svg.logo-icon {
 }
 .nav-mobile-list {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .position-of-mobile-body {
   display: flex;
@@ -445,18 +448,17 @@ svg.logo-icon {
 }
 
 .background-cover-container {
-  display: flex;
   position: absolute;
-  bottom: -240px;
-  z-index: -99999;
-  width: 90%;
+  top: 40%;
+  z-index: -1;
+  overflow: hidden;
+  padding: 20% 0;
+  width: 100%;
 }
 
 .background-cover-container img {
   transform: rotate(-15deg);
   width: 130%;
-  margin: 0 -20px 0 -20px;
-  overflow: hidden;
 }
 .nav-list__link--active {
   background-color: #eac645;
@@ -833,7 +835,7 @@ svg.logo-icon {
   width: 100%;
   height: 100%;
   background-color: rgba(17, 17, 17, 0.4);
-  z-index: 100;
+  z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
