@@ -29,7 +29,8 @@
 
     @include breakpoint-up(xl) {
       display: block;
-      width: 356px;
+      width: 100%;
+      max-width: 356px;
     }
   }
 
