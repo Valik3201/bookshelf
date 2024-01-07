@@ -78,10 +78,14 @@
       min-width: 335px;
       flex: 0 0 100%;
       gap: 24px;
-      padding: 24px;
+      padding: 14px;
       border-radius: 16px;
       border: 2px solid rgba(79, 46, 232, 0.4);
       background: $white-color;
+
+      @include breakpoint-up(sm) {
+        padding: 24px;
+      }
 
       .books-card-img {
         width: 100px;
