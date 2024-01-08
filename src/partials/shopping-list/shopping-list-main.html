@@ -6,12 +6,15 @@
 
 <!-- Pagination section for navigating through pages -->
 <div class="pagination">
+  <!-- Pagination group for starting pages -->
   <div class="pagination__group pagination__group--start">
+    <!-- Button to go to the first page -->
     <button id="firstPageBtn" aria-label="Go to the first page" type="button">
       <svg width="24" height="24">
         <use href="./images/icons.svg#icon-slider-double-left"></use>
       </svg>
     </button>
+    <!-- Button to go to the previous page -->
     <button id="prevPageBtn" aria-label="Go to the previous page" type="button">
       <svg class="pagination__icon" width="24" height="24">
         <use href="./images/icons.svg#icon-slider-left"></use>
@@ -19,14 +22,18 @@
     </button>
   </div>
 
+  <!-- Container for displaying page numbers -->
   <div id="pageNumbers" class="pagination__numbers"></div>
 
+  <!-- Pagination group for ending pages -->
   <div class="pagination__group pagination__group--end">
+    <!-- Button to go to the next page -->
     <button id="nextPageBtn" aria-label="Go to the next page" type="button">
       <svg width="24" height="24">
         <use href="./images/icons.svg#icon-slider-right"></use>
       </svg>
     </button>
+    <!-- Button to go to the last page -->
     <button id="lastPageBtn" aria-label="Go to the last page" type="button">
       <svg class="pagination__icon" width="24" height="24">
         <use href="./images/icons.svg#icon-slider-double-right"></use>
