@@ -1,4 +1,4 @@
-import { fetchBookById } from './bookAPI.js';
+import { fetchBookById } from '../fetch/bookAPI.js';
 
 //Funkcja dodająca książkę do localStorage
 export const addToLocalStorage = async bookId => {

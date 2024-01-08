@@ -1,10 +1,10 @@
 // Import necessary functions and modules
-import './auth';
+import './auth.js';
 import { updateProfile } from 'firebase/auth';
-import { createUser } from './auth/authSignUpPassword.js';
-import { signInUser } from './auth/authSignInPassword.js';
-import { signOutUser } from './auth/authSignOut.js';
-import { onAuthStateChangedListener } from './auth/authStateListener.js';
+import { createUser } from './authSignUpPassword.js';
+import { signInUser } from './authSignInPassword.js';
+import { signOutUser } from './authSignOut.js';
+import { onAuthStateChangedListener } from './authStateListener.js';
 
 // DOM elements
 const signUpModal = document.querySelector('.sign-up-modal');

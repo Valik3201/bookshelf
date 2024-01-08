@@ -2,7 +2,7 @@
 import { userProfile } from './auth.js';
 // Importing onAuthStateChanged function and auth object from Firebase
 import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from './auth/firebase';
+import { auth } from './firebase.js';
 
 /**
  * Check the screen width and adjust the visibility of the userProfile element accordingly.

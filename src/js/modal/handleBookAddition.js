@@ -4,11 +4,11 @@ import {
   removeFromLocalStorage,
   checkIfBookInLocalStorage,
   toggleCongratulatoryMessage,
-} from './localStorage.js';
+} from '../shoppingList/localStorage.js';
 
 // Importing onAuthStateChanged function and auth object from Firebase
 import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from './auth/firebase';
+import { auth } from '../auth/firebase.js';
 
 /**
  * Handle the click events for the "Add to Shopping List" buttons.

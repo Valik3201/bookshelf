@@ -2,7 +2,7 @@ import { signOut } from 'firebase/auth';
 
 import { auth } from './firebase.js';
 
-import { Notify } from '../notiflixConfig.js';
+import { Notify } from '../common/notiflixConfig.js';
 
 /**
  * Sign out the currently authenticated user using Firebase authentication.

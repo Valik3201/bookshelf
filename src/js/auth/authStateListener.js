@@ -10,7 +10,7 @@ import {
   userNavList,
   userProfileMobile,
   userNameDisplayMobile,
-} from '../auth.js';
+} from './auth.js';
 
 /**
  * Listener function for the 'onAuthStateChanged' event in Firebase.
