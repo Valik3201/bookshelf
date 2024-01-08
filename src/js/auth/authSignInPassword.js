@@ -2,7 +2,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 
 import { auth } from './firebase.js';
 
-import { Notify } from '../notiflixConfig.js';
+import { Notify } from '../common/notiflixConfig.js';
 
 /**
  * Sign in a user with the provided email and password using Firebase authentication.

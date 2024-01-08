@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { Notify, Loading } from './notiflixConfig.js';
+import { Notify, Loading } from '../common/notiflixConfig.js';
 
 /**
  * Base URL for the Books API.

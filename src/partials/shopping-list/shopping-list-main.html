@@ -6,60 +6,36 @@
 
 <!-- Pagination section for navigating through pages -->
 <div class="pagination">
-  <!-- Container for back navigation buttons -->
-  <div class="pagination-container pagination_container-back">
-    <!-- Jump to first page button -->
-    <button
-      type="button"
-      name="startButton"
-      class="pagination_btn pagination_btn--back"
-      aria-label="Jump to first page"
-    >
-      <!-- Icon for jumping to the first page -->
-      <svg class="pagination_icon" width="24" height="24">
+  <!-- Pagination group for starting pages -->
+  <div class="pagination__group pagination__group--start">
+    <!-- Button to go to the first page -->
+    <button id="firstPageBtn" aria-label="Go to the first page" type="button">
+      <svg width="24" height="24">
         <use href="./images/icons.svg#icon-slider-double-left"></use>
       </svg>
     </button>
-    <!-- Previous page button -->
-    <button
-      type="button"
-      name="previousButton"
-      class="pagination_btn pagination_btn--back"
-      aria-label="Previous page"
-    >
-      <!-- Icon for navigating to the previous page -->
-      <svg class="pagination_icon" width="24" height="24">
+    <!-- Button to go to the previous page -->
+    <button id="prevPageBtn" aria-label="Go to the previous page" type="button">
+      <svg class="pagination__icon" width="24" height="24">
         <use href="./images/icons.svg#icon-slider-left"></use>
       </svg>
     </button>
   </div>
 
   <!-- Container for displaying page numbers -->
-  <div class="pagination-container pagination_container-pages"></div>
+  <div id="pageNumbers" class="pagination__numbers"></div>
 
-  <!-- Container for end navigation buttons -->
-  <div class="pagination-container pagination_container-end">
-    <!-- Next page button -->
-    <button
-      type="button"
-      name="nextButton"
-      class="pagination_btn pagination_btn--end"
-      aria-label="Next page"
-    >
-      <!-- Icon for navigating to the next page -->
-      <svg class="pagination_icon" width="24" height="24">
+  <!-- Pagination group for ending pages -->
+  <div class="pagination__group pagination__group--end">
+    <!-- Button to go to the next page -->
+    <button id="nextPageBtn" aria-label="Go to the next page" type="button">
+      <svg width="24" height="24">
         <use href="./images/icons.svg#icon-slider-right"></use>
       </svg>
     </button>
-    <!-- Jump to last page button -->
-    <button
-      type="button"
-      name="endButton"
-      class="pagination_btn pagination_btn--end"
-      aria-label="Jump to last pages"
-    >
-      <!-- Icon for jumping to the last page -->
-      <svg class="pagination_icon" width="24" height="24">
+    <!-- Button to go to the last page -->
+    <button id="lastPageBtn" aria-label="Go to the last page" type="button">
+      <svg class="pagination__icon" width="24" height="24">
         <use href="./images/icons.svg#icon-slider-double-right"></use>
       </svg>
     </button>

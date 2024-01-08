@@ -1,6 +1,6 @@
-import './bookAPI.js';
-import './viewSwitcher.js';
-import './fetchCategories.js';
-import './fetchBooks.js';
-import './fetchBooksByCategories.js';
-import './fetchBookById.js';
+import './fetch/bookAPI.js';
+import './fetch/viewSwitcher.js';
+import './fetch/fetchCategories.js';
+import './fetch/fetchBooks.js';
+import './fetch/fetchBooksByCategories.js';
+import './fetch/fetchBookById.js';

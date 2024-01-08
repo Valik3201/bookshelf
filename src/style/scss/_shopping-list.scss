@@ -231,6 +231,88 @@
       }
     }
   }
+
+  .pagination {
+    display: flex;
+    gap: 14px;
+
+    @include breakpoint-up(md) {
+      gap: 24px;
+    }
+
+    button {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid $black-color;
+      cursor: pointer;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 22px;
+
+      &:disabled {
+        cursor: not-allowed;
+      }
+
+      @include breakpoint-up(md) {
+        width: 44px;
+        height: 44px;
+      }
+    }
+
+    &__group {
+      display: flex;
+      gap: 5px;
+
+      @include breakpoint-up(md) {
+        gap: 8px;
+      }
+
+      &--start {
+        button {
+          background-color: $dark-color;
+        }
+      }
+
+      &--end {
+        button {
+          background-color: $yellow-color;
+        }
+      }
+    }
+
+    &__numbers {
+      display: flex;
+      gap: 8px;
+
+      @include breakpoint-up(md) {
+        gap: 10px;
+      }
+
+      button {
+        background-color: transparent;
+        color: $dark-color;
+
+        &:disabled {
+          display: none;
+
+          @include breakpoint-up(xs) {
+            display: block;
+          }
+        }
+
+        &.active {
+          background-color: $dark-color;
+          color: $white-color;
+        }
+      }
+    }
+  }
 }
 
 [data-theme='dark'] {
@@ -241,43 +323,4 @@
   .shopping-list .books-container .book-message p {
     color: rgba(255, 255, 255, 0.6);
   }
-}
-
-.pagination {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 30px;
-}
-.page-arrows-left {
-  display: flex;
-  flex-direction: row;
-}
-.next-page,
-.go-to-last-page {
-  width: 30px;
-  height: 30px;
-  border: #111, solid;
-  border-radius: 50%;
-  background-color: #eac645;
-}
-.morePages,
-.first-page,
-.second-page,
-.third-page {
-  font-family: DM Sans;
-  width: 30px;
-  height: 30px;
-  border: #111, solid;
-  border-radius: 50%;
-}
-.prev-page,
-.go-to-first-page {
-  width: 30px;
-  height: 30px;
-  fill: white;
-  border: #000, solid;
-  background-color: #000;
-  border-radius: 50%;
 }

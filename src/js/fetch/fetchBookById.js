@@ -1,7 +1,7 @@
 // Importing functions and elements from other modules
 import { fetchBookById } from './bookAPI.js';
-import { modalContainer, toggleModal } from './modalHandler.js';
-import { bookAddButtonHandler } from './handleBookAddition.js';
+import { modalContainer, toggleModal } from '../modal/modalHandler.js';
+import { bookAddButtonHandler } from '../modal/handleBookAddition.js';
 
 /**
  * Display book details by ID in a modal pop-up.

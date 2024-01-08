@@ -1,2 +1,2 @@
-import './localStorage.js';
-import './pagination.js';
+import './shoppingList/localStorage.js';
+import './shoppingList/pagination.js';

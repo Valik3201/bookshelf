@@ -2,7 +2,7 @@ import { auth } from './firebase.js';
 
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
-import { Notify } from '../notiflixConfig.js';
+import { Notify } from '../common/notiflixConfig.js';
 
 /**
  * Create a new user account with the provided email and password using Firebase authentication.
