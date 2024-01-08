@@ -323,4 +323,13 @@
   .shopping-list .books-container .book-message p {
     color: rgba(255, 255, 255, 0.6);
   }
+
+  .shopping-list .pagination__numbers button.active {
+    background-color: $white-color;
+    color: $black-color;
+  }
+  .shopping-list .pagination__numbers button {
+    border: 1px solid $white-color;
+    color: $white-color;
+  }
 }
