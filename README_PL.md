@@ -1,3 +1,7 @@
+**Languages:**
+[English](https://github.com/Valik3201/bookshelf/blob/main/README.md), 
+[Polish](https://github.com/Valik3201/bookshelf/blob/main/README_PL.md)  
+
 <a name="readme-top">
   <div align="center"> 
   <br>
