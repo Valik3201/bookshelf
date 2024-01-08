@@ -45,7 +45,7 @@
     </li>
     <li><a href="#użycie">Użycie</a></li>
     <li><a href="#współtworzenie">Współtworzenie</a></li>
-    <li><a href="#współtwórcy">Współtwórcy</a></li>
+    <li><a href="#zespół">Zespół</a></li>
   </ol>
 </details>
 
