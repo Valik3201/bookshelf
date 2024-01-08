@@ -29,9 +29,14 @@ const displayBooksByCategory = async categoryName => {
     .join('');
 
   // Generate markup for the category title and books
+  const lastWord = categoryName.split(' ').pop();
+
   const categoryTitleMarkup = `
     <div class="books-category visible" data-category="${categoryName}">
-      <h2 class="books__heading">${categoryName}</h2>
+      <h2 class="books__heading">${categoryName.replace(
+        lastWord,
+        `<span class="books__heading--highlight">${lastWord}</span>`,
+      )}</h2>
       <div class="books__category--books">
         ${booksMarkup}
       </div>
