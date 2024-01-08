@@ -680,6 +680,14 @@ body {
 [data-theme=dark] .shopping-list .books-container .book-message p {
   color: rgba(255, 255, 255, 0.6);
 }
+[data-theme=dark] .shopping-list .pagination__numbers button.active {
+  background-color: #ffffff;
+  color: #000000;
+}
+[data-theme=dark] .shopping-list .pagination__numbers button {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
 
 .foundation-list {
   position: relative;
