@@ -1,6 +1,6 @@
-**Languages:**
-[English](https://github.com/Valik3201/bookshelf/blob/main/README.md), 
-[Polish](https://github.com/Valik3201/bookshelf/blob/main/README_PL.md)  
+**Język:**
+[Angielski](https://github.com/Valik3201/bookshelf/blob/main/README.md), 
+[Polski](https://github.com/Valik3201/bookshelf/blob/main/README_PL.md)  
 
 <a name="readme-top">
   <div align="center"> 
@@ -272,7 +272,7 @@ nową gałąź, wprowadź zmiany i prześlij pull request.
    - Nagłówek
    - Tryb Ciemny
 
-3. **[Tomek Stańczak](https://github.com/tomekstanczak)**
+3. **[Tomasz Stańczak](https://github.com/tomekstanczak)**
    - Nagłówek
    - Menu Mobilne
    - Autoryzacja
